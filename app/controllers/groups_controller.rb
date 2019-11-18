@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :authenticate_user!, only: [:create, :new]
 
   def index
   end
