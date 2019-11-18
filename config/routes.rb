@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'events/index'
   get 'events/show'
   devise_for :users
-  root to: 'pages#home'
+  root to: 'events#home'
 
   resources :events, only: [:index, :show]
   resources :groups
