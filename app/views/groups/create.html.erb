@@ -1,2 +1,10 @@
 <h1>Groups#create</h1>
 <p>Find me in app/views/groups/create.html.erb</p>
+
+
+<%= simple_form_for(@group) do |group| %>
+  <%= f.input :name %>
+  <%= f.input :date_event %>
+  <%= f.input :location %>
+  <%= f.submit "create a group", class: "btn btn-primary" %>
+<% end %>
