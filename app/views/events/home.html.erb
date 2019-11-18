@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container d-flex flex-column justify-content-center align-items-center">
+
+    <h1>FESTUM</h1>
+    <p>Come out, Discover, Enjoy !</p>
+        <div class="bg_search">
+            <div class="search">
+              <%= form_with do |f| %>
+              <div class="field">
+                <%= f.label 'Where do you go?', class: 'label' %>
+                <%= f.text_field :location, place_holder: 'Where do you want to go?'%>
+              </div>
+              <div class="field">
+                <%= f.label 'When ?', class: 'label' %>
+                <%= f.date_field :date_start, place_holder: 'Your date please' %>
+              </div>
+              <div class="main-search">
+                <%= f.submit 'Search', class: 'btn-flat', id: 'toto' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+  </div>
+</div>
