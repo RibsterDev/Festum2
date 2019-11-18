@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_130832) do
+ActiveRecord::Schema.define(version: 2019_11_18_134236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_users", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "group_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_users_on_event_id"
+    t.index ["group_id"], name: "index_event_users_on_group_id"
+    t.index ["user_id"], name: "index_event_users_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "date_start"
+    t.date "date_end"
+    t.string "address"
+    t.string "category"
+    t.string "sub_category"
+    t.string "photo_url"
+    t.float "lat"
+    t.float "long"
+    t.text "description"
+    t.string "event_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.date "date_event"
+    t.integer "vote_duration"
+    t.integer "proposition_duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_user_groups_on_group_id"
+    t.index ["user_id"], name: "index_user_groups_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +73,9 @@ ActiveRecord::Schema.define(version: 2019_11_18_130832) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "event_users", "events"
+  add_foreign_key "event_users", "groups"
+  add_foreign_key "event_users", "users"
+  add_foreign_key "user_groups", "groups"
+  add_foreign_key "user_groups", "users"
 end
