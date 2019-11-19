@@ -18,15 +18,28 @@
       <%= f.label "Temps pour proposer un évènement" %>
       <%= f.input_field :proposition_duration %>
     </div>
-     <div class="form">
+    <div class="form">
       <%= f.label "Temps pour voter" %>
       <%= f.input_field :vote_duration %>
-    </div>
-    <div class="form">
-      <input type="text" id="member" name="member" value="">Nombre de membres: (max. 10)<br />
-      <a href="#" id="filldetails" onclick="addFields()">Entrer les emails</a>
     </div>
     <%= f.submit "create a group", class: "btn btn-primary" %>
     <% end %>
 </div>
 
+<!-- <script>
+  function addFields(){
+    var number = document.querySelector("#member").value;
+    var container = document.querySelector("#contain");
+    while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+    }
+    for (i=0;i<number;i++){
+        container.appendChild(document.createTextNode("Member " + (i+1)));
+        var input = document.createElement("input");
+        input.type = "text";
+        container.appendChild(input);
+        container.appendChild(document.createElement("br"));
+    }
+    console.log('coucou');
+  }
+</script> -->
