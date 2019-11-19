@@ -32,7 +32,7 @@
 #     name:
 #   }
 # end
-content = File.read("#{Rails.root}/db/events.json")
+content = File.read("#{Rails.root}/db/events#{@department}.json")
 events = JSON.parse(content)
 events.each do |event|
   Event.create!(event)
