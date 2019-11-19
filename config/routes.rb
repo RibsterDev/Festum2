@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'events#home'
 
-  resources :events, only: [:index, :show]
+  resources :events, only: [:index, :show] do
+     collection do
+      get 'categories'
+    end
+  end
   resources :groups
 
   # get 'groups/:id/join'

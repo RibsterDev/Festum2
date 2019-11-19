@@ -91,7 +91,7 @@ results = results.first.coordinates
   # "#{html_doc.search('.place').text.gsub(/\n/, "")}, #{departement}"
 catego = html_doc.search('h1').text.split(" ")
 
- Event.create!({
+Event.create!({
     name: html_doc.search('h1').text,
     date_start: Date.new(a, m, d),
     date_end: Date.new(a_end, m_end, d_end),
@@ -131,4 +131,3 @@ user3 = User.new(
   )
 user3.save!
 users = [user1, user2, user3]
-
