@@ -1,8 +1,45 @@
 <h1>Groups#new</h1>
 
-<%= simple_form_for(@group) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :date_event %>
-  <%= f.input :location %>
-  <%= f.submit "create a group", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@group) do |f| %>
+    <div class="form">
+      <%= f.label 'Nom du groupe' %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form">
+      <%= f.label "Date de l'évènement" %>
+      <%= f.input_field :date_event%>
+    </div>
+    <div class="form">
+      <%= f.label "Lieux de l'évènement" %>
+      <%= f.text_field :location %>
+    </div>
+    <div class="form">
+      <%= f.label "Temps pour proposer un évènement" %>
+      <%= f.input_field :proposition_duration %>
+    </div>
+    <div class="form">
+      <%= f.label "Temps pour voter" %>
+      <%= f.input_field :vote_duration %>
+    </div>
+    <%= f.submit "create a group", class: "btn btn-primary" %>
+    <% end %>
+</div>
+
+<!-- <script>
+  function addFields(){
+    var number = document.querySelector("#member").value;
+    var container = document.querySelector("#contain");
+    while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+    }
+    for (i=0;i<number;i++){
+        container.appendChild(document.createTextNode("Member " + (i+1)));
+        var input = document.createElement("input");
+        input.type = "text";
+        container.appendChild(input);
+        container.appendChild(document.createElement("br"));
+    }
+    console.log('coucou');
+  }
+</script> -->
