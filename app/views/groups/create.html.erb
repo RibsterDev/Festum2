@@ -1,0 +1,8 @@
+<h1>CREATE NEW GROUP</h1>
+
+<%= simple_form_for(@group) do |group| %>
+  <%= f.input :name %>
+  <%= f.input :date_event %>
+  <%= f.input :location %>
+  <%= f.submit "create a group", class: "btn btn-primary" %>
+<% end %>
