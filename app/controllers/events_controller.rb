@@ -44,8 +44,8 @@ class EventsController < ApplicationController
 
     @markers = @events.map do |event|
       {
-        lat: event.latitude,
-        lng: event.longitude,
+        lat: event.lat,
+        lng: event.long,
         # infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
       }
     end

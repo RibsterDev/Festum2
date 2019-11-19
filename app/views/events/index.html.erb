@@ -2,7 +2,7 @@
   <% @events.each do |event| %>
     <div class="card-event">
     <% if event.photo_url.present? %>
-      <%= event.photo_url %>
+      <img src="<%= event.photo_url %>" />
     <% else %>
       <img src="" />
     <% end %>
