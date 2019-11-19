@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create, :new, :index]
+
   def index
   end
 
@@ -6,9 +8,12 @@ class GroupsController < ApplicationController
   end
 
   def new
+    @group = Group.new
   end
 
   def create
+    @group = Group.new
+    @group.save
   end
 
   def update
