@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create, :new, :index]
+  before_action :find_group, only: [:show]
 
   def index
   end
@@ -12,8 +13,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new
-    @group.save
+    @group = Group.new(group_params)
+    # @group.user = current_user
+    if @group.save
+      redirect_to group_path(@group)
+    else
+      render :new
+    end
+
+    # join(params)
   end
 
   def update
@@ -23,5 +31,19 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+  end
+
+
+  private
+
+  def join
+  end
+
+  def find_group
+    @group = Group.find(params[:id])
+  end
+
+  def group_params
+    params.require(:group).permit(:name, :date, :location)
   end
 end
