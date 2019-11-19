@@ -5,14 +5,14 @@ class EventHome
   end
 
   def home
-    filter_by_location if @params[:location].present?
+    filter_by_location if @params[:address].present?
     filter_by_date_start if @params[:date_start].present?
 
     @events
   end
 
   def result
-    filter_by_location if @params[:location].present?
+    filter_by_location if @params[:address].present?
     filter_by_date_start if @params[:date_start].present?
     filter_by_category if @params[:category].present?
 
@@ -27,7 +27,7 @@ class EventHome
   private
 
   def filter_by_location
-    @events = @events.where(location: @params[:location])
+    @events = @events.where(address: @params[:address])
   end
 
   def filter_by_date_start
