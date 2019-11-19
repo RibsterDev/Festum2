@@ -6,22 +6,23 @@
         <div class="bg_search">
           <h4>Chercher un évènement</h4>
             <div class="search">
-              <%= form_with do |f| %>
+              <%= form_for(:query, url: categories_events_path, method: :get) do |f| %>
               <div class="field">
                 <%= f.label 'Où ?', class: 'label' %>
                 <div class="field-input">
-                  <%= f.text_field :address, place_holder: 'Where do you want to go?'%>
+                  <%= f.text_field :address, name: 'address', place_holder: 'Where do you want to go?'%>
                 </div>
               </div>
               <div class="field">
                 <%= f.label 'Quand ?', class: 'label' %>
                 <div class="field-input">
-                  <%= f.date_field :date_start, place_holder: 'Your date please' %>
+                  <%= f.date_field :date_start, name: 'date_start', place_holder: 'Your date please' %>
                 </div>
               </div>
               <div class="main-search">
                 <%= link_to "events", events_path %>
                 <%= f.submit 'Search', class: 'btn-flat', id: 'btn-flat-1' %>
+
               </div>
             </div>
           <% end %>
