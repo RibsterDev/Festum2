@@ -1,3 +1,41 @@
-<h1>Events#show</h1>
+<% if @event.photo_url.present? %>
+  <% url = @event.photo_url %>
+<% else %>
+  <% url ="https://images.unsplash.com/photo-1571575522341-be760794a35b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"%>
+<%end %>
 
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
+  <h1><%=@event.name%></h1>
+</div>
+<div class="show">
+  <div class="container" id="event">
+    <div class="col-md-8 col-lg-8">
+      <div class="text">
+        <h2><%=@event.name%></h2>
+        <p><%=@event.description%></p>
+      </div>
+    </div>
+    <div class="col-md-3 col-lg-3">
+      <div class="infos-global">
+        <div class="infos">
+          <h2><%= @event.category %></h2>
+          <h4><%= @event.sub_category %></h4>
+          <div class="date">
+            <% if @event.date_start != @event.date_end %>
+              <p><%= @event.date_start %></p>
+              <p><%= @event.date_end %></p>
+            <% else %>
+              <p><%= @event.date_start %></p>
+            <% end %>
+          </div>
+          <div class="infos-pratiques">
+            <h5>Plus d'informations</h5>
+            <%= link_to @event.event_url %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

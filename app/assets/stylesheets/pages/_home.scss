@@ -2,3 +2,32 @@
 .bg-search {
 
 }
+
+#event {
+  display: flex;
+}
+
+.show {
+  background-color: $other-yellow;
+}
+
+.text {
+  background-color: white;
+  padding: 40px;
+  position: relative;
+  top: -120px;
+}
+
+.text h4 {
+  color: $light-orange;
+  margin-bottom: 20px;
+}
+
+.infos-global {
+  padding: 20px;
+  background-color: white;
+  position:relative;
+  top: -120px;
+  // position: sticky;
+  // top: 80px;
+}
