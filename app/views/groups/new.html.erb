@@ -22,24 +22,25 @@
       <%= f.label "Temps pour voter" %>
       <%= f.input_field :vote_duration %>
     </div>
+    <div class="form">
+      <%= f.label "Ajouter un ami(es)" %>
+      <%= f.input_field :location %>
+      <div class="email">
+        <a href="#" onclick="myFunction()">Ajouter</a>
+      </div>
+    </div>
+
+
+
     <%= f.submit "create a group", class: "btn btn-primary" %>
     <% end %>
 </div>
 
-<!-- <script>
-  function addFields(){
-    var number = document.querySelector("#member").value;
-    var container = document.querySelector("#contain");
-    while (container.hasChildNodes()) {
-        container.removeChild(container.lastChild);
-    }
-    for (i=0;i<number;i++){
-        container.appendChild(document.createTextNode("Member " + (i+1)));
-        var input = document.createElement("input");
-        input.type = "text";
-        container.appendChild(input);
-        container.appendChild(document.createElement("br"));
-    }
-    console.log('coucou');
-  }
-</script> -->
+<script>
+function myFunction() {
+  document.querySelector('.email').insertAdjacentHTML('beforeend', '<div><input type="text" name="invit-email[]"/><a href="#" class="delete">Supprimer</a></div><br>');
+  document.querySelector(on("click",".delete", function(e){
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    }))
+}
+</script>
