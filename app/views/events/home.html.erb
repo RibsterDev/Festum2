@@ -8,15 +8,10 @@
             <div class="search">
               <%= form_with do |f| %>
               <div class="field">
-<<<<<<< HEAD
-                <%= f.label 'Where do you go?', class: 'label' %>
-                <%= f.text_field :address, place_holder: 'Where do you want to go?'%>
-=======
                 <%= f.label 'Où ?', class: 'label' %>
                 <div class="field-input">
-                  <%= f.text_field :location, place_holder: 'Where do you want to go?'%>
+                  <%= f.text_field :address, place_holder: 'Where do you want to go?'%>
                 </div>
->>>>>>> master
               </div>
               <div class="field">
                 <%= f.label 'Quand ?', class: 'label' %>
@@ -25,12 +20,8 @@
                 </div>
               </div>
               <div class="main-search">
-<<<<<<< HEAD
                 <%= link_to "events", events_path %>
-                <%= f.submit 'Search', class: 'btn-flat', id: 'toto' %>
-=======
-                <%= f.submit 'Search', class: 'btn-flat', id: 'btn-flat-1' %>
->>>>>>> master
+                <%= f.submit 'Search',  class: 'btn-flat', id: 'btn-flat-1' %>
               </div>
             </div>
           <% end %>
