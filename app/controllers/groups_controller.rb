@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :index, :categories, :show]
+  skip_before_action :authenticate_user!, only: [:create, :new, :index]
+
   def index
   end
 
@@ -12,12 +13,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new
-    # creator = @user.id
-    if @group.save
-      redirect_to group_path(@group)
-    else
-      render :new
-    end
+    @group.save
   end
 
   def update
