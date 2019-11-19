@@ -26,11 +26,11 @@ class EventsController < ApplicationController
 
     cookies[:event_id] = params[:id]
 
-    if user_signed_in?
-      @is_creator = current_user == @event.creator
-    else
-      @is_creator = false
-    end
+    # if user_signed_in?
+    #   @is_creator = current_user == @event.creator
+    # else
+    #   @is_creator = false
+    # end
   end
 
 
@@ -88,7 +88,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :date_start, :date_end, :address, :category, :sub_category, :creator_id, :photo)
+    params.require(:event).permit(:name, :date_start, :date_end, :address, :category, :photo_url)
   end
 end
 
