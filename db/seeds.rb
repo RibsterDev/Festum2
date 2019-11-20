@@ -7,27 +7,34 @@ departments.each do |department|
     Event.create!(event)
   end
 end
-# EventUser.destroy_all
-# Event.destroy_all
+
 User.destroy_all
 
+user1 = User.new(
+  name: "lea",
+  email: "lcbelzunces@gmail.com",
+  password: "lealea"
+  )
+user1.save!
 
-# user1 = User.new(
-#   name: "lea",
-#   email: "lea@gmail.com",
-#   password: "lealea"
-#   )
-# user1.save!
-# user2 = User.new(
-#   name: "evan",
-#   email: "evan@gmail.com",
-#   password: "evanevan"
-#   )
-# user2.save!
-# user3 = User.new(
-#   name: "jeremy",
-#   email: "jeremy@gmail.com",
-#   password: "jeremy"
-#   )
-# user3.save!
-# users = [user1, user2, user3]
+user2 = User.new(
+  name: "evan",
+  email: "evanwichlarz1@hotmail.fr",
+  password: "evanevan"
+  )
+user2.save!
+
+user3 = User.new(
+  name: "jeremy",
+  email: "jeremygibilaro@gmail.com",
+  password: "jeremy"
+  )
+user3.save!
+
+user4 = User.new(
+  name: "nicolasmorlot@gmail.com",
+  password: "nicolas"
+  )
+user4.save!
+
+users = [user1, user2, user3, user4]
