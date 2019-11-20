@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :new, :index]
+  skip_before_action :authenticate_user!, only: [:create, :index]
   before_action :find_group, only: [:show]
 
   def index
@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
     emails = []
     emails << params["group"]["email"]
     emails << params["invit-email"]
+    emails.flatten
     emails = emails.to_s
     #finir de formatter
 

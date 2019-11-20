@@ -5,4 +5,7 @@
   <h2><%= @group.vote_duration %></h2>
   <h2><%= @group.proposition_duration %></h2>
   <h2><%= @group.email %></h2>
+  <%= link_to "Ajouter un event", new_group_event_user_path(@group) %>
+  <%= link_to "Voter", group_votes_path(@group) %>
+
 </div>
