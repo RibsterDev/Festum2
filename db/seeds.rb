@@ -32,7 +32,8 @@ user3 = User.new(
 user3.save!
 
 user4 = User.new(
-  name: "nicolasmorlot@gmail.com",
+  name: "nicolas",
+  email: "nicolasmorlot@gmail.com",
   password: "nicolas"
   )
 user4.save!
