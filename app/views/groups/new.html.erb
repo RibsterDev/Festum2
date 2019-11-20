@@ -24,23 +24,12 @@
     </div>
     <div class="form">
       <%= f.label "Ajouter un ami(es)" %>
-      <%= f.input_field :location %>
+      <%= f.input_field :email %>
       <div class="email">
-        <a href="#" onclick="myFunction()">Ajouter</a>
+        <a href="#" id="add-friend-input" >Ajouter</a>
       </div>
     </div>
-
-
 
     <%= f.submit "create a group", class: "btn btn-primary" %>
     <% end %>
 </div>
-
-<script>
-function myFunction() {
-  document.querySelector('.email').insertAdjacentHTML('beforeend', '<div><input type="text" name="invit-email[]"/><a href="#" class="delete">Supprimer</a></div><br>');
-  document.querySelector(on("click",".delete", function(e){
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    }))
-}
-</script>
