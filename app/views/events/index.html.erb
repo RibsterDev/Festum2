@@ -1,2 +1,17 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="container">
+  <% @events.each do |event| %>
+    <div class="card-event">
+    <% if event.photo_url.present? %>
+      <img src="<%= event.photo_url %>" />
+    <% else %>
+      <img src="" />
+    <% end %>
+      <div class="card-event-infos">
+        <h2><%= link_to event.name, event_path(event)%></h2>
+        <p><%= event.date_start %> | <%= event.date_end %> </p>
+        <h4><%= event.category %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>
+

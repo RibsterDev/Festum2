@@ -14,12 +14,7 @@ class EventsController < ApplicationController
   def index
     cookies[:category] = params[:category]
     @events = EventHome.new(cookies).result
-
-    # date = Event.where(date_start: cookies[:date_start])
-    # loca = Event.where(location: cookies[:location])
-    # catego = Event.where(categories: cookies[:categories])
-    # @events = date & loca & catego
-
+    # @events = Event.new
   end
 
   def show
@@ -31,11 +26,11 @@ class EventsController < ApplicationController
 
     cookies[:event_id] = params[:id]
 
-    if user_signed_in?
-      @is_creator = current_user == @event.creator
-    else
-      @is_creator = false
-    end
+    # if user_signed_in?
+    #   @is_creator = current_user == @event.creator
+    # else
+    #   @is_creator = false
+    # end
   end
 
 
@@ -49,8 +44,8 @@ class EventsController < ApplicationController
 
     @markers = @events.map do |event|
       {
-        lat: event.latitude,
-        lng: event.longitude,
+        lat: event.lat,
+        lng: event.long,
         # infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
       }
     end
@@ -60,31 +55,31 @@ class EventsController < ApplicationController
   def home
   end
 
-  def new
-    @event = Event.new
-  end
+  # def new
+  #   @event = Event.new
+  # end
 
-  def create
-    @event = Event.new(event_params)
-    @event.creator = current_user
-    if @event.save
-      redirect_to event_path(@event)
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @event = Event.new(event_params)
+  #   @event.creator = current_user
+  #   if @event.save
+  #     redirect_to event_path(@event)
+  #   else
+  #     render :new
+  #   end
+  # end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    @event.update(event_params)
-  end
+  # def update
+  #   @event.update(event_params)
+  # end
 
-  def destroy
-    @event.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   @event.destroy
+  #   redirect_to root_path
+  # end
 
   private
 
@@ -93,7 +88,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :date_start, :date_end, :address, :category, :sub_category, :creator_id, :photo)
+    params.require(:event).permit(:name, :date_start, :date_end, :address, :category, :photo_url)
   end
 end
 
