@@ -1,11 +1,12 @@
 
-
-content = File.read("#{Rails.root}/db/events#{@department}.json")
-events = JSON.parse(content)
-events.each do |event|
-  Event.create!(event)
+departments = [69, 92]
+departments.each do |department|
+  content = File.read("#{Rails.root}/db/events#{department}.json")
+  events = JSON.parse(content)
+  events.each do |event|
+    Event.create!(event)
+  end
 end
-
 # EventUser.destroy_all
 # Event.destroy_all
 User.destroy_all
