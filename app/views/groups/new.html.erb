@@ -22,6 +22,14 @@
       <%= f.label "Temps pour voter" %>
       <%= f.input_field :vote_duration %>
     </div>
+    <div class="form">
+      <%= f.label "Ajouter un ami(es)" %>
+      <%= f.input_field :email %>
+      <div class="email">
+        <a href="#" id="add-friend-input" >Ajouter</a>
+      </div>
+    </div>
+
     <%= f.submit "create a group", class: "btn btn-primary" %>
     <% end %>
 </div>
