@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'event_users/create'
+  get 'event_users/new'
+  get 'votes/index'
   # get 'groups/index'
   # get 'groups/show'
   # get 'groups/new'
@@ -9,14 +12,16 @@ Rails.application.routes.draw do
   # get 'events/index'
   # get 'events/show'
   devise_for :users
-  root to: 'events#home'
+  root to: 'pages#home'
 
   resources :events, only: [:index, :show] do
      collection do
       get 'categories'
     end
   end
-  resources :groups
-
+  resources :groups do
+    resources :event_users, only: [:new, :create]
+    resources :votes, only: [:index]
+  end
   # get 'groups/:id/join'
 end
