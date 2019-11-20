@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     @img_url = IMAGE_URL
     cookies[:date_start] = params[:date_start]
     cookies[:address] = params[:address].capitalize if params.key? :address
+    # cookies[:address] = Event.near(params[:address], 50)
     @events = EventHome.new(cookies).home
 
     @events = @events.geocoded #returns events with coordinates

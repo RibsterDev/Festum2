@@ -9,7 +9,6 @@ class EventHome
     filter_by_date_start if @params[:date_start].present?
 
     @events
-    # @department = ad
   end
 
   def result
