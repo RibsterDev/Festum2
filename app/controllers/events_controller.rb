@@ -11,10 +11,10 @@ class EventsController < ApplicationController
     'Spectacle' => 'https://images.unsplash.com/photo-1469510360132-9fa6abcd9df0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     'Théâtre' => 'https://images.unsplash.com/photo-1507924538820-ede94a04019d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
   }
+
   def index
     cookies[:category] = params[:category]
     @events = EventHome.new(cookies).result
-    # @events = Event.new
   end
 
   def show
@@ -92,4 +92,3 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :date_start, :date_end, :address, :category, :photo_url)
   end
 end
-
