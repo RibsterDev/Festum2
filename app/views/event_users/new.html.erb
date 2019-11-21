@@ -18,11 +18,17 @@
   <% end %>
 
   <%= f.button :submit %>
+
+   <div
+       id="map"
+       style="width: 100%;
+       height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+     ></div>
 <% end %>
 
 
   <%= link_to "Groupe show", group_path(params[:group_id]) %>
-
-
 
 

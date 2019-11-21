@@ -5,22 +5,22 @@
  <% @events.each do |event| %>
    <% array.include?(event.category) ? array.push(nil) : array.push(event.category)%>
    <% array_compte.push(event.category) %>
-   <% end %>
+  <% end %>
      <div class="title">
         CATEGORIES
      </div>
-     <div class="sub-title">
-       <% @events.each do |event| %>
-       <% a.push(event.category) %>
-       <% end %>
-       <hr>
-       <h4><b><%= a.count %></b> évènements à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
-       <hr>
-     </div>
+      <div class="events-loc">
+         <% @events.each do |event| %>
+         <% a.push(event.category) %>
+         <% end %>
+         <hr>
+         <h4><b><%= a.count %></b> évènements à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
+         <hr>
+      </div>
        <div class="card-container">
          <% @events.each_with_index do |event, index| %>
            <% if array[index] %>
-             <div class="category" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%=@img_url[event.category]%>)">
+             <div class ="category" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%=@img_url[event.category]%>)">
                <h2><%= link_to array[index] ? "#{array[index]} " : "" , events_path(category: event.category) %></h2>
                <!-- <div class="separator"></div> -->
                <h3><b><%= array_compte.count(event.category) %></b> évènements</h3>
@@ -29,6 +29,7 @@
              <% end  %>
            <% end %>
        </div>
+      </div>
      <div
        id="map"
        style="width: 100%;
@@ -37,3 +38,10 @@
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
      ></div>
 </div>
+
+
+
+
+
+
+

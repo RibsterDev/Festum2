@@ -9,21 +9,22 @@ class GroupsController < ApplicationController
   end
 
   def new
-    cookies[:date_start] = params[:date_event]
-    cookies[:address] = params[:location].capitalize if params.key? :location
     @group = Group.new
   end
 
   def create
-    cookies[:date_start] = params[:date_event]
-    cookies[:address] = params[:location].capitalize if params.key? :location
+
+    cookies[:date_start] = "#{params["group"]["date_event(1i)"]}-#{params["group"]["date_event(2i)"]}-#{params["group"]["date_event(3i)"]}"
+    cookies[:address] = params["group"]["location"]
     # emails = []
     emails = params["invit-email"]
     emails << params["group"]["email"]
     # emails = emails.map(&:inspect).join(', ').to_a
 
+
     @group = Group.new(group_params)
     @group.email = emails
+    # cookies[:date_start] = @group.date_event
     # @group.user = current_user
     if @group.save
       mail = UserMailer.with(user: @user).send_invitation(@group)
