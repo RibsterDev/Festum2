@@ -2,7 +2,7 @@ class EventUsersController < ApplicationController
   def new
     @event_user = EventUser.new
     @group = Group.find(params[:group_id])
-    @events = Event.all
+    @events = EventHome.new(cookies).home
   end
 
   def create

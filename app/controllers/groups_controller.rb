@@ -9,23 +9,22 @@ class GroupsController < ApplicationController
   end
 
   def new
-    cookies[:date_start] = params[:date_event]
-    cookies[:address] = params[:location].capitalize if params.key? :location
     @group = Group.new
   end
 
   def create
-    cookies[:date_start] = params[:date_event]
-    cookies[:address] = params[:location].capitalize if params.key? :location
+    cookies[:date_start] = params["group"]["date_event(1i)"], params["group"]["date_event(2i)"], params["group"]["date_event(3i)"]
+    cookies[:address] = params["group"]["location"]
+    # .capitalize if params.key? "location"
     emails = []
     emails << params["group"]["email"]
     emails << params["invit-email"]
     emails.flatten
     emails = emails.to_s
     #finir de formatter
-
     @group = Group.new(group_params)
     @group.email = emails
+    # cookies[:date_start] = @group.date_event
     # @group.user = current_user
     if @group.save
       redirect_to group_path(@group)
