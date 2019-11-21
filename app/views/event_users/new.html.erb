@@ -4,6 +4,21 @@
 
 <h1> LISTE DE TOUS NOS EVENEMENTS</h1>
 
+<%= simple_form_for([@group, @event_user]) do |f| %>
+
+  <% @events.each do |event| %>
+    <label>
+      <div style="height: 200px; margin-bottom: 20px; background: steelblue">
+
+        <input style="display: none;" type="radio" name="event_id" value="<%= event.id %>">
+
+        <p><%= event.name %></p>
+      </div>
+    </label>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>
 
 
   <%= link_to "Groupe show", group_path(params[:group_id]) %>

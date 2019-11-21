@@ -8,4 +8,8 @@
   <%= link_to "Ajouter un event", new_group_event_user_path(@group) %>
   <%= link_to "Voter", group_votes_path(@group) %>
 
+  <% @group.event_users.each do |event_user| %>
+    <p><%= event_user.user.email %></p>
+    <p><%= event_user.event.name %></p>
+  <% end %>
 </div>
