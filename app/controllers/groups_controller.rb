@@ -17,19 +17,19 @@ class GroupsController < ApplicationController
   def create
     cookies[:date_start] = params[:date_event]
     cookies[:address] = params[:location].capitalize if params.key? :location
-    emails = []
+    # emails = []
+    emails = params["invit-email"]
     emails << params["group"]["email"]
-    emails << params["invit-email"]
-    emails.flatten
-    emails = emails.to_s
-    #finir de formatter
+    # emails = emails.map(&:inspect).join(', ').to_a
 
     @group = Group.new(group_params)
     @group.email = emails
     # @group.user = current_user
     if @group.save
+      mail = UserMailer.with(user: @user).send_invitation(@group)
+      mail.deliver_later
       redirect_to group_path(@group)
-      # faire partir les mails
+
     else
       render :new
     end
@@ -45,6 +45,8 @@ class GroupsController < ApplicationController
 
   def destroy
   end
+
+
 
 
   private
