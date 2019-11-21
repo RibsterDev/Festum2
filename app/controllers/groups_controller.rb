@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
     cookies[:date_start] = "#{params["group"]["date_event(1i)"]}-#{params["group"]["date_event(2i)"]}-#{params["group"]["date_event(3i)"]}"
     cookies[:address] = params["group"]["location"]
     # emails = []
-    emails = params["invit-email"]
+    params["invit-email"].nil? ? emails = [] : emails = params["invit-email"]
     emails << params["group"]["email"]
     # emails = emails.map(&:inspect).join(', ').to_a
 
