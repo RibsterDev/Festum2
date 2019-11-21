@@ -3,35 +3,35 @@
 
 }
 
-#event {
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  border: 0.5px solid white;
+}
+
+.festeam h1 {
+  color: white;
+  font-family: $font;
+  margin-left: 200px;
+}
+
+.festeam p {
+  color: white;
+  font-family: $font;
+  margin-left: 200px;
+}
+
+.infos {
+  width: 100%;
+  background-color: black;
   display: flex;
+
 }
 
-.show {
-  background-color: $other-yellow;
-}
-
-.text {
-  background-color: white;
-  padding: 40px;
-  position: relative;
-  top: -120px;
-}
-
-.text h2 {
-  color: $light-orange;
-  margin-bottom: 35px;
-}
-
-.text p {
-   color: $other-orange;
-}
-
-.infos-global {
-  padding: 20px;
-  background-color: white;
-  position:relative;
-  top: -120px;
-  // position: sticky;
-  // top: 80px;
+.img-home {
+  width: 900px;
+  align-items: right;
 }
