@@ -11,6 +11,6 @@ class EventUsersController < ApplicationController
     EventUser.create(
       group: group, event: event, user: current_user
     )
-    redirect_to group_path(@params[:group_id])
+    redirect_to group_path(params[:group_id])
   end
 end
