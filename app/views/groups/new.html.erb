@@ -1,56 +1,6 @@
 <h1>Groups#new</h1>
 
-
-<!--  <div class="container">
-            <div class="form">
-              <%= form_for(:query, url: (@group), method: :post) do |f| %>
-              <div class="field">
-                <%= f.label 'Nom du groupe', class: 'form' %>
-                <div class="field-input">
-                  <%= f.text_field :name, name: 'Nom du groupe', place_holder: 'Where do you want to go?'%>
-                </div>
-              </div>
-              <div class="field">
-                <%= f.label "Date de l'évènement", class: 'form' %>
-                <div class="field-input">
-                  <%= f.text_field :date_event, name: "Date de l'évènement", place_holder: 'Where do you want to go?'%>
-                </div>
-              </div>
-              <div class="field">
-                <%= f.label "Lieux de l'évènement", class: 'form' %>
-                <div class="field-input">
-                  <%= f.text_field :location, name: "Lieux de l'évènement", place_holder: 'Where do you want to go?'%>
-                </div>
-              </div><div class="field">
-                <%= f.label "Temps pour proposer un évènement", class: 'form' %>
-                <div class="field-input">
-                  <%= f.text_field :proposition_duration, name: "Temps pour proposer un évènement", place_holder: 'Where do you want to go?'%>
-                </div>
-              </div><div class="field">
-                <%= f.label "Temps pour voter", class: 'form' %>
-                <div class="field-input">
-                  <%= f.text_field :vote_duration, name: "Temps pour voter", place_holder: 'Where do you want to go?'%>
-                </div>
-              </div>
-              <div class="field">
-                <%= f.label "Ajouter un ami(es)", class: 'form' %>
-                <div class="field-input">
-                  <%= f.text_field :email, name: "Ajouter un ami(es)", place_holder: 'Your date please' %>
-                  <div class="email">
-                    <a href="#" id="add-friend-input" >Ajouter</a>
-                  </div>
-                </div>
-              </div>
-              <div class="email">
-                <%= link_to "events", (@group) %>
-                <%= f.submit "create a group", class: "btn btn-primary" %>
-              </div>
-            </div>
-          <% end %>
-        </div> -->
-
-
-        <div class="container">
+<div class="container">
   <%= simple_form_for(@group) do |f| %>
     <div class="form">
       <%= f.label 'Nom du groupe' %>
@@ -82,6 +32,5 @@
 
     <%= f.submit "create a group", class: "btn btn-primary" %>
     <% end %>
-
-
+</div>
 
