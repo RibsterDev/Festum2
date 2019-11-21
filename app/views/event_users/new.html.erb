@@ -1,20 +1,44 @@
 <h1>EventUsers#new</h1>
 <p>Find me in app/views/event_users/new.html.erb</p>
 
+<% array = [] %>
+ <% array_compte = [] %>
+ <% a = [] %>
+ <% @events.each do |event| %>
+   <% array.include?(event.category) ? array.push(nil) : array.push(event.category)%>
+   <% array_compte.push(event.category) %>
+  <% end %>
+
 
 <h1> LISTE DE TOUS NOS EVENEMENTS</h1>
 
 <%= simple_form_for([@group, @event_user]) do |f| %>
 
+ <div class="card-container">
+         <% @events.each_with_index do |event, index| %>
+           <% if array[index] %>
+             <div class ="category" data-category="<%= event.category %>" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))">
+               <h2><%= array[index] ? "#{array[index]} " : "" %></h2>
+
+               <!-- <div class="separator"></div> -->
+               <h3><b><%= array_compte.count(event.category) %></b> évènements</h3>
+             </div>
+             <% else  %>
+             <% end  %>
+           <% end %>
+       </div>
+
   <% @events.each do |event| %>
-    <label>
-      <div style="height: 200px; margin-bottom: 20px; background: steelblue">
+      <div class="event" data-category="<%= event.category %>">
+        <label>
+          <div style="height: 200px; margin-bottom: 20px; background: steelblue">
 
-        <input style="display: none;" type="radio" name="event_id" value="<%= event.id %>">
+            <input style="display: none;" type="radio" name="event_id" value="<%= event.id %>">
 
-        <p><%= event.name %></p>
+            <p><%= event.name %></p>
+          </div>
+        </label>
       </div>
-    </label>
   <% end %>
 
   <%= f.button :submit %>
