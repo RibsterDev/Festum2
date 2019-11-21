@@ -15,13 +15,23 @@
 .festeam h1 {
   color: white;
   font-family: $font;
+  margin-left: 200px;
 }
 
 .festeam p {
   color: white;
   font-family: $font;
+  margin-left: 200px;
 }
 
+
 .container-home {
-  text-align: center;
+  // background-color: black;
+  width: 100%;
+  height:100vh;
+}
+
+.container-home img {
+  width: 100px;
+  height: 100px;
 }
