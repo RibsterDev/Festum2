@@ -1,33 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-  <div class="container d-flex flex-column justify-content-center align-items-center">
-
+<div class="container">
+  <div class="moto">
     <h1>FESTUM</h1>
     <p>Come out, Discover, Enjoy !</p>
-        <div class="bg_search">
-          <h4>Chercher un évènement</h4>
-            <div class="search">
-              <%= form_for(:query, url: categories_events_path, method: :get) do |f| %>
-              <div class="field">
-                <%= f.label 'Où ?', class: 'label' %>
-                <div class="field-input">
-                  <%= f.text_field :address, name: 'address', place_holder: 'Where do you want to go?'%>
-                </div>
-              </div>
-              <div class="field">
-                <%= f.label 'Quand ?', class: 'label' %>
-                <div class="field-input">
-                  <%= f.date_field :date_start, name: 'date_start', place_holder: 'Your date please' %>
-                </div>
-              </div>
-              <div class="main-search">
-                <%= link_to "events", events_path %>
-                <%= f.submit 'Search', class: 'btn-flat', id: 'btn-flat-1' %>
-
-                <%=link_to "Créer un groupe", new_group_path %>
-
-              </div>
-            </div>
-          <% end %>
-        </div>
   </div>
+
+    <%=link_to "Créer un groupe", new_group_path %>
 </div>
