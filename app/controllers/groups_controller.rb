@@ -27,8 +27,10 @@ class GroupsController < ApplicationController
     # cookies[:date_start] = @group.date_event
     # @group.user = current_user
     if @group.save
-      mail = UserMailer.with(user: @user, group: @group).send_invitation
-      mail.deliver_now
+      JSON.parse(@group.email).each do |email|
+        mail = UserMailer.with(email: email).send_invitation
+        mail.deliver_now
+      end
       redirect_to group_path(@group)
 
     else

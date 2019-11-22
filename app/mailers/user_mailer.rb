@@ -9,11 +9,11 @@ class UserMailer < ApplicationMailer
   end
 
   def send_invitation
-    @users = params[:group].email
+    @email = params[:email]
 
     mail(
-      to:       @users,
-      subject:  "Welcome and join to your group"
+      to: @email,
+      subject: "Welcome and join to your group"
     )
   end
 end
