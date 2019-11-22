@@ -27,8 +27,8 @@ class GroupsController < ApplicationController
     # cookies[:date_start] = @group.date_event
     # @group.user = current_user
     if @group.save
-      mail = UserMailer.with(user: @user).send_invitation(@group)
-      mail.deliver_later
+      mail = UserMailer.with(user: @user, group: @group).send_invitation
+      mail.deliver_now
       redirect_to group_path(@group)
 
     else
