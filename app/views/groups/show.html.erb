@@ -7,8 +7,6 @@
     <h2><%= @group.proposition_duration %></h2>
     <h2><%= @group.email %></h2>
 
-    <%= link_to "Ajouter un event", new_group_event_user_path(@group) %>
-    <%= link_to "Voter", group_votes_path(@group) %>
 
     <ul class="list_event-notvoted">
       <% @group.event_users.each do |event_user| %>
@@ -18,8 +16,12 @@
         </li>
       <% end %>
     </ul>
-  </div>
 
+
+    <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
+    <%= link_to "Va voter !", group_votes_path(@group), class: "boutton-groupe" %>
+
+  </div>
 </div>
 
 
