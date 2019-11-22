@@ -2,7 +2,7 @@
 
 <ul class="list_event">
   <% @group.event_users.each do |event_user| %>
-    <li id="<%= event_user.event.id %>" class="event_choices">
+  <li id="<%= event_user.event.id %>" class="event_choices">
       <%= event_user.event.name %>
       <%= event_user.user.name %>
     </li>
