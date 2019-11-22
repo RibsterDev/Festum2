@@ -3,4 +3,11 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/filters';
+import { initSortable } from '../plugins/sortable.js';
+
+  // console.log("toto")
+  // console.log("test2222")
+
+
 initMapbox();
+initSortable();
