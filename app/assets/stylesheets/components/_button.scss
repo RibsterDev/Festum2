@@ -3,6 +3,7 @@ color: white;
 text-decoration: none;
 }
 
+
 .btn-create {
   border: 0.5px solid white;
   transition: 0.3s;
@@ -14,4 +15,25 @@ text-decoration: none;
 .btn-create:hover {
   transition: 0.5s;
   background-color: #00BCD4;
+}
+// #btn-flat-1 {
+//   background: transparent;
+//   color: white;
+// }
+
+.valid-vote {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #202126;
+  color: white;
+  padding: 8px 15px;
+  &:hover{
+    border: 0.5px solid #202126 ;
+    background-color: transparent;
+    color: #202126;
+    text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+  
 }

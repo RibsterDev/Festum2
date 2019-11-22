@@ -1,4 +1,12 @@
-<h1>Votes#index</h1>
-<p>Find me in app/views/votes/index.html.erb</p>
+<h1>Il est l'heure de voter !</h1>
 
-<%= link_to "Valider mon vote", group_path(params[:group_id]) %>
+<ul class="list_event">
+  <% @group.event_users.each do |event_user| %>
+  <li id="<%= event_user.event.id %>" class="event_choices">
+      <%= event_user.event.name %>
+      <%= event_user.user.name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Valide ton vote !", group_path(params[:group_id]), class: "valid-vote" %>
