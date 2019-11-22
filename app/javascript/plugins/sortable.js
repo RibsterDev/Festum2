@@ -20,15 +20,16 @@ if (lea) {
     event.preventDefault()
     const lis = document.querySelector(".list_event").getElementsByTagName("li");
     console.log(lis)
-  });
-}
-
-
-$.ajax({
+    $.ajax({
         url : "/groups/:group_id/votes",
         type : "post",
         data : { votes_result: JSON.stringify(lis) }
     });
+  });
+}
+
+
+
 
 // console.log(lis);
 // var lis = document.getElementById(".list_event").getElementsByTagName("li");

@@ -5,7 +5,7 @@
 
 
 const categories = document.querySelectorAll('.category');
-const events = document.querySelectorAll('.event');
+const events = document.querySelectorAll('.event-presentation');
 
 categories.forEach((category) => {
   category.addEventListener('click', () => {
