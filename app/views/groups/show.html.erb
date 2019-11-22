@@ -9,7 +9,7 @@
   <%= link_to "Ajouter un event", new_group_event_user_path(@group) %>
   <%= link_to "Voter", group_votes_path(@group) %>
 
-  <ul class="list_event">
+  <ul class="list_event-notvoted">
     <% @group.event_users.each do |event_user| %>
       <li id="event_choices">
         <%= event_user.event.name %>

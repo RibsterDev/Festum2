@@ -5,9 +5,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/filters';
 import { initSortable } from '../plugins/sortable.js';
 
-  // console.log("toto")
-  // console.log("test2222")
-
-
 initMapbox();
 initSortable();
