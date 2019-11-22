@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
 
     mail(
       to:       @users,
-      subject:  "Welcome Bitch"
+      subject:  "Welcome and join to your group"
     )
   end
 end
