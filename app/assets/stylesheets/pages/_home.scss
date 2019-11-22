@@ -3,35 +3,47 @@
 
 }
 
-#event {
+
+.btn-create a {
+color: white;
+text-decoration: none;
+}
+
+.btn-create {
+  border: 0.5px solid white;
+  transition: 0.3s;
+  padding: 20px 100px;
+  color: #03A9F4;
+  width: 350px;
+}
+
+.btn-create:hover {
+  transition: 0.5s;
+  background-color: #00BCD4;
+}
+
+.festeam h1 {
+  color: white;
+  font-family: $font;
+  margin-left: 200px;
+}
+
+.festeam p {
+  color: white;
+  font-family: $font;
+  margin-left: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infos {
+  height: 600px;
+  width: 100%;
   display: flex;
 }
 
-.show {
-  background-color: $other-yellow;
-}
-
-.text {
-  background-color: white;
-  padding: 40px;
-  position: relative;
-  top: -120px;
-}
-
-.text h2 {
-  color: $light-orange;
-  margin-bottom: 35px;
-}
-
-.text p {
-   color: $other-orange;
-}
-
-.infos-global {
-  padding: 20px;
-  background-color: white;
-  position:relative;
-  top: -120px;
-  // position: sticky;
-  // top: 80px;
+.img-home {
+  width: 900px;
+  align-items: right;
 }

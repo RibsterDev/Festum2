@@ -1,0 +1,32 @@
+#event {
+  display: flex;
+}
+
+.show-event {
+  background-color: $other-yellow;
+}
+
+.text {
+  background-color: white;
+  padding: 40px;
+  position: relative;
+  top: -120px;
+}
+
+.text h2 {
+  color: $light-orange;
+  margin-bottom: 35px;
+}
+
+.text p {
+   color: $other-orange;
+}
+
+.infos-global {
+  padding: 20px;
+  background-color: white;
+  position:relative;
+  top: -120px;
+  // position: sticky;
+  // top: 80px;
+}

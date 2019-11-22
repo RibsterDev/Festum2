@@ -1,36 +1,40 @@
-<h1>Groups#new</h1>
+<div class="container-group">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-10">
+      <div class="form-groupe">
+        <h1>Créer votre groupe</h1>
+        <%= simple_form_for(@group) do |f| %>
+          <div class="form">
+            <%= f.label 'Nom du groupe' %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="form">
+            <%= f.label "Date de l'évènement" %>
+            <%= f.input_field :date_event%>
+          </div>
+          <div class="form">
+            <%= f.label "Lieux de l'évènement" %>
+            <%= f.text_field :location %>
+          </div>
+          <div class="form">
+            <%= f.label "Temps pour proposer un évènement" %>
+            <%= f.input_field :proposition_duration %>
+          </div>
+          <div class="form">
+            <%= f.label "Temps pour voter" %>
+            <%= f.input_field :vote_duration %>
+          </div>
+          <div class="form">
+            <%= f.label "Ajouter un ami(es)" %>
+            <%= f.input_field :email %>
+            <div class="email">
+              <a href="#" id="add-friend-input" >Ajouter</a>
+            </div>
+          </div>
 
-<div class="container">
-  <%= simple_form_for(@group) do |f| %>
-    <div class="form">
-      <%= f.label 'Nom du groupe' %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="form">
-      <%= f.label "Date de l'évènement" %>
-      <%= f.input_field :date_event%>
-    </div>
-    <div class="form">
-      <%= f.label "Lieux de l'évènement" %>
-      <%= f.text_field :location %>
-    </div>
-    <div class="form">
-      <%= f.label "Temps pour proposer un évènement" %>
-      <%= f.input_field :proposition_duration %>
-    </div>
-    <div class="form">
-      <%= f.label "Temps pour voter" %>
-      <%= f.input_field :vote_duration %>
-    </div>
-    <div class="form">
-      <%= f.label "Ajouter un ami(es)" %>
-      <%= f.input_field :email %>
-      <div class="email">
-        <a href="#" id="add-friend-input" >Ajouter</a>
+          <%= f.submit "Valide ton groupe !", class: "boutton" %>
+          <% end %>
       </div>
     </div>
-
-    <%= f.submit "create a group", class: "btn btn-primary" %>
-    <% end %>
+  </div>
 </div>
-

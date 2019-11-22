@@ -9,6 +9,9 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'geocoder'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -19,6 +22,7 @@ gem 'webpacker'
 gem 'nokogiri'
 
 group :development do
+  gem 'letter_opener', group: :development
   gem 'web-console', '>= 3.3.0'
 end
 

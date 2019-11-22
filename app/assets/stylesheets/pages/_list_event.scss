@@ -1,0 +1,22 @@
+ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+li {
+  padding: 10px;
+}
+
+.list_event li {
+  cursor: grab;
+}
+.list_event li:active {
+  cursor: grabbing;
+}
+.list_event li.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}

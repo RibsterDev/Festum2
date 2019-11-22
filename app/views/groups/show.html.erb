@@ -1,15 +1,27 @@
 <div class="container">
-  <h1><%= @group.name %></h1>
-  <h2><%= @group.location %></h2>
-  <h2><%= @group.date_event %></h2>
-  <h2><%= @group.vote_duration %></h2>
-  <h2><%= @group.proposition_duration %></h2>
-  <h2><%= @group.email %></h2>
-  <%= link_to "Ajouter un event", new_group_event_user_path(@group) %>
-  <%= link_to "Voter", group_votes_path(@group) %>
+  <div class="groupe">
+    <h1><%= @group.name %></h1>
+    <h2><%= @group.location %></h2>
+    <h2><%= @group.date_event %></h2>
+    <h2><%= @group.vote_duration %></h2>
+    <h2><%= @group.proposition_duration %></h2>
+    <h2><%= @group.email %></h2>
 
-  <% @group.event_users.each do |event_user| %>
-    <p><%= event_user.user.email %></p>
-    <p><%= event_user.event.name %></p>
-  <% end %>
+
+    <ul class="list_event-notvoted">
+      <% @group.event_users.each do |event_user| %>
+        <li id="event_choices">
+          <%= event_user.event.name %>
+          <%= event_user.user.name %>
+        </li>
+      <% end %>
+    </ul>
+
+
+    <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
+    <%= link_to "Va voter !", group_votes_path(@group), class: "boutton-groupe" %>
+
+  </div>
 </div>
+
+

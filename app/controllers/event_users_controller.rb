@@ -2,7 +2,16 @@ class EventUsersController < ApplicationController
   def new
     @event_user = EventUser.new
     @group = Group.find(params[:group_id])
-    @events = Event.all
+    @events = EventHome.new(cookies).home
+    @events = @events.geocoded #returns events with coordinates
+
+    @markers = @events.map do |event|
+      {
+        lat: event.lat,
+        lng: event.long,
+        # infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+      }
+    end
   end
 
   def create

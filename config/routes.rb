@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
   # get 'event_users/create'
   # get 'event_users/new'
   # get 'votes/index'
@@ -22,6 +23,10 @@ Rails.application.routes.draw do
   resources :groups do
     resources :event_users, only: [:new, :create]
     resources :votes, only: [:index]
+  end
+
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
   end
   # get 'groups/:id/join'
 end

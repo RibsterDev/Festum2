@@ -1,22 +1,20 @@
 <div id="remove-modal" style="width: 100vw; height: 100vh; z-index: 1001; position: fixed; opacity: 0; display: none;"></div>
 <h1 class="text-center my-4" > LISTE DE TOUS NOS EVENEMENTS</h1>
 
+<% array = [] %>
+ <% array_compte = [] %>
+ <% a = [] %>
+ <% @events.each do |event| %>
+   <% array.include?(event.category) ? array.push(nil) : array.push(event.category)%>
+   <% array_compte.push(event.category) %>
+  <% end %>
+
+
 
 
 
 
 <div class="container event-modal">
-
-<!--
-  <div class="modal-event">
-    <div class= "event-photo">
-      <p>event photo</p>
-    </div>
-    <h6>event name</h6>
-    <div class="event-description">
-    <h6>event description</h6>
-    </div>
-  </div> -->
 
 
   <%= simple_form_for([@group, @event_user]) do |f| %>
@@ -49,14 +47,49 @@
     </div>
 
     <%= f.button :submit %>
+
+ <div class="card-container">
+         <% @events.each_with_index do |event, index| %>
+           <% if array[index] %>
+             <div class ="category" data-category="<%= event.category %>" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))">
+               <h2><%= array[index] ? "#{array[index]} " : "" %></h2>
+
+               <!-- <div class="separator"></div> -->
+               <h3><b><%= array_compte.count(event.category) %></b> évènements</h3>
+             </div>
+             <% else  %>
+             <% end  %>
+           <% end %>
+       </div>
+
+  <% @events.each do |event| %>
+      <div class="event" data-category="<%= event.category %>">
+        <label>
+          <div style="height: 200px; margin-bottom: 20px; background: steelblue">
+
+            <input style="display: none;" type="radio" name="event_id" value="<%= event.id %>">
+
+            <p><%= event.name %></p>
+          </div>
+        </label>
+      </div>
+
   <% end %>
 </div>
 
 <%= link_to "Groupe show", group_path(params[:group_id]) %>
 
 
+  <%= f.button :submit %>
 
-
+   <div
+       id="map"
+       style="width: 100%;
+       height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+     ></div>
+<% end %>
 
 
 
