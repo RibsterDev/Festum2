@@ -3,13 +3,22 @@
 
 }
 
-.btn a {
-  text-decoration: none;
+
+.btn-create a {
+color: white;
+text-decoration: none;
+}
+
+.btn-create {
+  border: 0.5px solid white;
+  transition: 0.3s;
+  padding: 20px 100px;
   color: white;
 }
 
-.btn {
-  border: 0.5px solid white;
+.btn-create:hover {
+  transition: 0.5s;
+  background-color: #03A9F4;
 }
 
 .festeam h1 {
@@ -22,13 +31,15 @@
   color: white;
   font-family: $font;
   margin-left: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .infos {
+  height: 600px;
   width: 100%;
-  background-color: black;
   display: flex;
-
 }
 
 .img-home {
