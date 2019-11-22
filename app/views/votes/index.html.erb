@@ -9,4 +9,4 @@
   <% end %>
 </ul>
 
-<%= link_to "Valide ton vote !", group_votes_path(params[:group_id]), class: "valid-vote" %>
+<%= link_to "Valide ton vote !", group_votes_path(params[:group_id]), method: :post, remote: true, class: "valid-vote" %>
