@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'jeremygibilaro@gmail.com'
+  default from: 'contact@festeam.io'
 
   layout 'mailer'
 end

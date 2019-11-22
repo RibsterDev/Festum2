@@ -11,6 +11,7 @@ gem 'redis'
 gem 'geocoder'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
