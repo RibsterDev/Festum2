@@ -8,3 +8,10 @@ import './add_member.js'
 
 initMapbox();
 initSortable();
+
+
+import { effectModalEvent } from '../plugins/modal_event';
+effectModalEvent();
+
+
+
