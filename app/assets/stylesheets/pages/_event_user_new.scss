@@ -1,0 +1,65 @@
+.events-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+}
+.event-presentation{
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  label{
+    height: 100%;
+    width: 100%;
+  }
+}
+.event-card{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+  h5 {
+    position: absolute;
+    color: white;
+    text-align: center;
+  }
+}
+
+.container .event-modal{
+  position: relative;
+}
+
+.modal-event{
+  z-index: 1002;
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 164px;
+  right: -746px;
+  border-radius: 4px;
+  h6{
+    text-align: center;
+  }
+}
+.active {
+  right: 0px;
+  transition: 0.6s;
+}
+
+.fixed {
+  position: fixed;
+}
+.event-photo{
+  height: 25%;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.event-description{
+  width: 100%;
+  height: 60%;
+  border-top: 1px solid black;
+}
