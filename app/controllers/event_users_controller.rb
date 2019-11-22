@@ -2,7 +2,7 @@ class EventUsersController < ApplicationController
   def new
     @event_user = EventUser.new
     @group = Group.find(params[:group_id])
-    @events = Event.all.limit(5)
+    @events = Event.all
   end
 
   def create

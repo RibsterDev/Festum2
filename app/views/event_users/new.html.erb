@@ -22,7 +22,7 @@
   <%= simple_form_for([@group, @event_user]) do |f| %>
     <div class="events-grid">
       <% @events.each do |event| %>
-        <div class="event-presentation">
+        <div class="event-presentation" data-id="<%= event.id %>">
           <label>
             <% if event.photo_url.present? %>
               <% url = event.photo_url %>
@@ -36,7 +36,7 @@
           </label>
         </div>
 
-        <div class="modal-event">
+        <div class="modal-event" id="modal-<%= event.id %>">
           <div class= "event-photo" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
           </div>
           <h6><%= event.name %></h6>

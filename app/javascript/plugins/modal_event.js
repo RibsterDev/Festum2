@@ -4,17 +4,19 @@ const removeModal = document.querySelector('#remove-modal');
 
 const effectModalEvent = () => {
   console.log('im here');
-  const modalEvent = document.querySelector('.event-presentation')
-  modalEvent.addEventListener('click',() => {
-    document.querySelector('.modal-event').classList.add('active')
-    document.querySelector('.modal-event').classList.add('fixed')
-    removeModal.style.display = 'block';
+  const modalEvent = document.querySelectorAll('.event-presentation')
+  modalEvent.forEach((event) => {
+    event.addEventListener('click',() => {
+      const id = event.dataset.id;
+      document.querySelector(`#modal-${id}`).classList.add('active')
+      removeModal.style.display = 'block';
+    })
+
   })
 };
 
 removeModal.addEventListener('click',() => {
-  document.querySelector('.modal-event').classList.remove('active')
-  document.querySelector('.modal-event').classList.remove('fixed')
+  document.querySelector('.modal-event.active').classList.remove('active')
   removeModal.style.display = 'none';
 })
 
