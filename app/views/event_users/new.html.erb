@@ -64,25 +64,9 @@
 
 
 
-<!--   <% @events.each do |event| %>
-      <div class="event" data-category="<%= event.category %>">
-        <label>
-          <div style="height: 200px; margin-bottom: 20px; background: steelblue">
-
-            <input style="display: none;" type="radio" name="event_id" value="<%= event.id %>">
-
-            <p><%= event.name %></p>
-          </div>
-        </label>
-      </div>
-
-  <% end %>
-</div> -->
 
 <%= link_to "Groupe show", group_path(params[:group_id]) %>
 
-
-  <%= f.button :submit %>
 
    <div
        id="map"
