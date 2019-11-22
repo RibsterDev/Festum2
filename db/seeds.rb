@@ -12,28 +12,28 @@ User.destroy_all
 
 user1 = User.new(
   name: "lea",
-  email: "lcbelzunces@gmail.com",
+  email: "lcbelzunces@festeam.io",
   password: "lealea"
   )
 user1.save!
 
 user2 = User.new(
   name: "evan",
-  email: "evanwichlarz1@hotmail.fr",
+  email: "evanwichlarz1@festeam.io",
   password: "evanevan"
   )
 user2.save!
 
 user3 = User.new(
   name: "jeremy",
-  email: "jeremygibilaro@gmail.com",
+  email: "jeremygibilaro@festeam.io",
   password: "jeremy"
   )
 user3.save!
 
 user4 = User.new(
   name: "nicolas",
-  email: "nicolasmorlot@gmail.com",
+  email: "nicolasmorlot@festeam.io",
   password: "nicolas"
   )
 user4.save!
