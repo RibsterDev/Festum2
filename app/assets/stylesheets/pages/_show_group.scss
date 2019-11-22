@@ -1,14 +1,24 @@
-.form-groupe {
+.groupe {
   width: 540px;
   padding: 30px;
   background-color: white;
   border: 2px solid #202126;
   color: black;
   margin-top: 40px;
-
-  .form {
-    color: black;
-    margin-bottom: 20px;
-  }
 }
 
+.boutton-groupe {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #202126;
+  color: white;
+  text-decoration: none;
+  padding: 7px 10px;
+  &:hover{
+    border: 0.5px solid #202126 ;
+    background-color: transparent;
+    color: #202126;
+    text-decoration: none;
+
+  }
+}

@@ -1,0 +1,30 @@
+.form-groupe {
+  width: 540px;
+  padding: 30px;
+  background-color: white;
+  border: 2px solid #202126;
+  color: black;
+  margin-top: 40px;
+
+  .form {
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: $font;
+  }
+
+  .boutton {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #202126;
+    color: white;
+    &:hover{
+      border: 0.5px solid #202126 ;
+      background-color: transparent;
+      color: #202126;
+
+    }
+  }
+}
