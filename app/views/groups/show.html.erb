@@ -1,26 +1,38 @@
 <div class="container">
   <div class="groupe">
-    <h1><%= @group.name %></h1>
-    <h2><%= @group.location %></h2>
-    <h2><%= @group.date_event %></h2>
-    <h2><%= @group.vote_duration %></h2>
-    <h2><%= @group.proposition_duration %></h2>
-    <h2><%= @group.email %></h2>
-
-
+    <div class="group-name">
+      <h1><%= @group.name %></h1>
+      <div class="group-status">
+        <div class="compte">
+          <h6>Il ne reste plus que <span> 45h 26m 42s</span> pour proposer un évènement !</h6>
+        </div>
+      </div>
+    </div>
+    <div class="group-infos">
+      <div class="intro">
+        <h4>Soirée prévu à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
+       <p>Le groupe est composé de <%= @group.email %></p>
+      </div>
+      <div class="time">
+        <p>Vous avez <%= @group.proposition_duration %> pour choisir un évènement et le proposer au groupe.</p>
+        <p>Vous avez <%= @group.vote_duration %> pour choisir un évènement et le proposer au groupe.</p>
+      </div>
+    </div>
     <ul class="list_event-notvoted">
       <% @group.event_users.each do |event_user| %>
-        <li id="event_choices">
+        <li class="event-choice">
           <%= event_user.event.name %>
           <%= event_user.user.name %>
         </li>
       <% end %>
-    </ul>
+      </ul>
 
 
-    <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
-    <%= link_to "Va voter !", group_votes_path(@group), class: "boutton-groupe" %>
 
+    <div class="boutton-formulaire">
+      <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
+      <%= link_to "Va voter !", group_votes_path(@group), class: "boutton-groupe" %>
+    </div>
   </div>
 </div>
 
