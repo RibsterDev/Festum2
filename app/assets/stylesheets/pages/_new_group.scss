@@ -12,9 +12,18 @@
     margin-bottom: 20px;
   }
 
+  .form-control-label {
+    margin-botton: 0px;
+  }
+
   h1 {
     font-family: $font;
+    font-weight: 100;
     text-align: center;
+  }
+
+  #add-friend-input {
+    cursor: pointer;
   }
 
   .form-control-group{

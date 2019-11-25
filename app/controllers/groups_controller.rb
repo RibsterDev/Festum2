@@ -3,11 +3,15 @@ class GroupsController < ApplicationController
   before_action :find_group, only: [:show]
 
   def index
-    @event = Group.find(params["format"])
-    @event = @event.event_users
-    @event.each do |event_id|
-      @result_total = params[event_id]
-    end
+    # @group = Group.find(params["format"])
+    # # @event = EventUser.find(params["format"])
+    # # @event = @event.event_id
+    # # params.each_key { |event_id| @result_total = params[event_id] }
+    # #   @result_total = params[event_id]
+    # @group.event_users.id.each do |event_id|
+    #   @result_total.nil? ? @result_total = params[event_id] : @result_total << params[event_id]
+    # end
+    # raise
   end
 
   def show
