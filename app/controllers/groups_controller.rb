@@ -6,6 +6,11 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
+    @user_groups_members = UserGroup.where(group: @group)
+     # do |user_groups_member|
+     #      user_groups_member.user
+    @members = @user_groups_members.map(&:user)
   end
 
   def new

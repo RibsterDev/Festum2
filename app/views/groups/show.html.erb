@@ -14,6 +14,9 @@
       </div>
       <div class="members">
         <h5>Membres du groupe :</h5>
+        <% @members.each do |member| %>
+          <%= image_tag (member.photo), class: "avatar-card" %>
+        <% end %>
       </div>
     </div>
     <ul class="list_event-notvoted">

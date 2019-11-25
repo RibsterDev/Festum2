@@ -10,6 +10,8 @@ end
 
 EventUser.destroy_all
 User.destroy_all
+Group.destroy_all
+UserGroup.destroy_all
 
 user1 = User.new(
   name: "lea",
@@ -44,3 +46,18 @@ user4 = User.new(
 user4.save!
 
 users = [user1, user2, user3, user4]
+
+
+groupe1 = Group.create(
+  name: "Soiree du chill",
+  location: "Lyon",
+  date_event: "25-11-25"
+  )
+
+users.each do |user|
+  UserGroup.create(
+    user: user,
+    group: groupe1
+    )
+end
+
