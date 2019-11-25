@@ -14,24 +14,29 @@
       </div>
       <div class="members">
         <h4>Membres :</h4>
-        <p></p>
+        <p> <%=  %></p>
       </div>
     </div>
     <ul class="list_event-notvoted">
       <% @group.event_users.each do |event_user| %>
-        <li class="event-choice">
-          <%= event_user.event.name %>
-          <%= event_user.user.name %>
-        </li>
-      <% end %>
-      </ul>
-
-
+      <div class="card-event-show">
+        <hr>
+          <li class="event-choice">
+            <%= event_user.event.name %>
+            <div>
+              <%= event_user.event.category %>
+            </div>
+            <%= event_user.user.photo_url, class: "avatar" %>
+          </li>
+        <% end %>
+      </div>
+    </ul>
     <div class="boutton-formulaire">
       <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
       <%= link_to "Va voter !", group_votes_path(@group), class: "boutton-groupe" %>
     </div>
   </div>
 </div>
+
 
 
