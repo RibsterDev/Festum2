@@ -6,12 +6,14 @@ import '../plugins/filters';
 import { initSortable } from '../plugins/sortable.js';
 import './add_member.js'
 
+import { effectModalEvent } from '../plugins/modal_event';
+
+effectModalEvent();
+
 initMapbox();
 initSortable();
 
 
-import { effectModalEvent } from '../plugins/modal_event';
-effectModalEvent();
 
 
 

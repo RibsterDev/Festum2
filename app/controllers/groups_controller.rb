@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
     # @group.user = current_user
     if @group.save
       JSON.parse(@group.email).each do |email|
-        mail = UserMailer.with(email: email).send_invitation
+        mail = UserMailer.with(email: email, group: @group).send_invitation
         mail.deliver_now
       end
       redirect_to group_path(@group)
@@ -48,9 +48,6 @@ class GroupsController < ApplicationController
 
   def destroy
   end
-
-
-
 
   private
 
