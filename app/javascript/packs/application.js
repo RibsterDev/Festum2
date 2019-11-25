@@ -5,6 +5,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/filters';
 import { initSortable } from '../plugins/sortable.js';
 import './add_member.js'
+import './flatpicker.js'
+
 
 import { effectModalEvent } from '../plugins/modal_event';
 
