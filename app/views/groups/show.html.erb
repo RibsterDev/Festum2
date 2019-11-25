@@ -3,19 +3,18 @@
     <div class="group-name">
       <h1><%= @group.name %></h1>
       <div class="group-status">
-        <div class="compte">
-          <h6>Il ne reste plus que <span> 45h 26m 42s</span> pour proposer un évènement !</h6>
+        <div class="etat">
+          <h6>Etat du groupe</h6>
         </div>
       </div>
     </div>
     <div class="group-infos">
       <div class="intro">
         <h4>Soirée prévu à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
-       <p>Le groupe est composé de <%= @group.email %></p>
       </div>
-      <div class="time">
-        <p>Vous avez <%= @group.proposition_duration %> pour choisir un évènement et le proposer au groupe.</p>
-        <p>Vous avez <%= @group.vote_duration %> pour choisir un évènement et le proposer au groupe.</p>
+      <div class="members">
+        <h4>Membres :</h4>
+        <p></p>
       </div>
     </div>
     <ul class="list_event-notvoted">
@@ -26,7 +25,6 @@
         </li>
       <% end %>
       </ul>
-
 
 
     <div class="boutton-formulaire">
