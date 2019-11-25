@@ -10,7 +10,6 @@ class GroupsController < ApplicationController
     # #   @result_total = params[event_id]
     # @group.event_users.id.each do |event_id|
     #   @result_total.nil? ? @result_total = params[event_id] : @result_total << params[event_id]
-    end
     # end
     # raise
   end
