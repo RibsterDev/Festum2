@@ -13,14 +13,13 @@
         <h4>Soirée prévu à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
       </div>
       <div class="members">
-        <h4>Membres :</h4>
-        <p> <%=  %></p>
+        <h5>Membres du groupe :</h5>
       </div>
     </div>
     <ul class="list_event-notvoted">
       <div class="card-event-show">
       <% @group.event_users.each do |event_user| %>
-      <hr class="hr-show-group">
+      <hr>
         <li class="event-choice">
         <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
           <div class="card-infos-show">

@@ -35,24 +35,19 @@
 .event-choice {
 border-radius: 10px;
 background-color: white;
-height: 80px;
+height: 90px;
 display: flex;
 position: relative;
 }
 
-.card-event-show{
-margin-left: 15px;
+.card-infos-show {
+  margin-left: 20px;
 }
 
-.img-card-show{
+.img-card-show {
   height: 100%;
   width: 120px;
   object-fit: cover;
-}
-
-
-.event-choice img {
-  height: 40px;
 }
 
 .boutton-groupe {
