@@ -8,33 +8,38 @@ departments.each do |department|
   end
 end
 
+EventUser.destroy_all
 User.destroy_all
 
 user1 = User.new(
   name: "lea",
   email: "lcbelzunces@festeam.io",
-  password: "lealea"
+  password: "lealea",
+  photo: "lea.png"
   )
 user1.save!
 
 user2 = User.new(
   name: "evan",
   email: "evanwichlarz1@festeam.io",
-  password: "evanevan"
+  password: "evanevan",
+  photo: "evan.png"
   )
 user2.save!
 
 user3 = User.new(
   name: "jeremy",
   email: "jeremygibilaro@festeam.io",
-  password: "jeremy"
+  password: "jeremy",
+  photo: "jeremy.png"
   )
 user3.save!
 
 user4 = User.new(
   name: "nicolas",
   email: "nicolasmorlot@festeam.io",
-  password: "nicolas"
+  password: "nicolas",
+  photo: "nicolas.png"
   )
 user4.save!
 

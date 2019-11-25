@@ -25,22 +25,18 @@ text-decoration: none;
 .festeam h1 {
   color: white;
   font-family: $font;
-  margin-left: 200px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  // margin-left: 200px;
 }
 
-.festeam p {
+.festeam h3 {
   color: white;
   font-family: $font;
-  margin-left: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.infos {
-  height: 600px;
-  width: 100%;
-  display: flex;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  // margin-left: 200px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .img-home {

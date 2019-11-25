@@ -5,7 +5,7 @@
 
 @import "show_event";
 @import "new_group";
-@import "list_event_draggable";
+// @import "list_event_draggable";
 @import "list_event";
 @import "votes";
 @import "show_group";
@@ -21,4 +21,5 @@ body {
 
 .main-container {
  flex-grow: 1;
+ background-color: #3F51B5;
 }

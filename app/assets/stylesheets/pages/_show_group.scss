@@ -1,10 +1,49 @@
 .groupe {
-  width: 540px;
   padding: 30px;
   background-color: white;
-  border: 2px solid #202126;
+  // border: 2px solid #202126;
+  border-radius: 10px;
   color: black;
   margin-top: 40px;
+  // box-shadow: 3px 3px 5px rgba(118,136,219,0.8);
+}
+
+.group-infos {
+  width: 100%;
+}
+
+.group-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.compte {
+  width: 200px;
+  background-color: blue;
+  border-radius: 5px;
+
+}
+
+.group-name h1 {
+  font-family: $font;
+}
+
+.list_event-notvoted {
+  background-color: red;
+  padding: 20px;
+}
+
+.event-choice {
+border: 1px solid black;
+padding: 10px;
+margin-bottom: 20px;
+border-radius: 10px;
+background-color: white;
+height: 100%;
+}
+
+.event-choice img {
+  height: 40px;
 }
 
 .boutton-groupe {
@@ -19,6 +58,5 @@
     background-color: transparent;
     color: #202126;
     text-decoration: none;
-
   }
 }
