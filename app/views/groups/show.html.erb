@@ -18,17 +18,18 @@
       </div>
     </div>
     <ul class="list_event-notvoted">
-      <% @group.event_users.each do |event_user| %>
       <div class="card-event-show">
-        <hr>
-          <li class="event-choice">
+      <% @group.event_users.each do |event_user| %>
+      <hr class="hr-show-group">
+        <li class="event-choice">
+        <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
+          <div class="card-infos-show">
             <%= event_user.event.name %>
-            <div>
-              <%= event_user.event.category %>
-            </div>
-            <%= image_tag (event_user.user.photo), class: "avatar" %>
-          </li>
-        <% end %>
+            <%= event_user.event.category %>
+          </div>
+          <%= image_tag (event_user.user.photo), class: "avatar-card" %>
+        </li>
+      <% end %>
       </div>
     </ul>
     <div class="boutton-formulaire">
