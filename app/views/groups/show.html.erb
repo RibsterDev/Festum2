@@ -26,7 +26,7 @@
             <div>
               <%= event_user.event.category %>
             </div>
-            <%= event_user.user.photo %>
+            <%= image_tag (event_user.user.photo), class: "avatar" %>
           </li>
         <% end %>
       </div>
