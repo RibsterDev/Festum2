@@ -9,9 +9,9 @@ departments.each do |department|
 end
 
 EventUser.destroy_all
-User.destroy_all
-Group.destroy_all
 UserGroup.destroy_all
+Group.destroy_all
+User.destroy_all
 
 user1 = User.new(
   name: "lea",
@@ -51,7 +51,9 @@ users = [user1, user2, user3, user4]
 groupe1 = Group.create(
   name: "Soiree du chill",
   location: "Lyon",
-  date_event: "25-11-25"
+  date_event: "25-11-25",
+  proposition_duration: 6,
+  vote_duration: 3
   )
 
 users.each do |user|

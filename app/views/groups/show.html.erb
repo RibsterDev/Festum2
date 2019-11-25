@@ -4,7 +4,15 @@
       <h1><%= @group.name %></h1>
       <div class="group-status">
         <div class="etat">
-          <h6>Etat du groupe</h6>
+          <% if @group.waiting_for_events? %>
+            <p>Faites vos jeux !</p>
+            <% elsif @group.waiting_for_votes? %>
+            <p>Il faut voter !</p>
+            <% elsif @group.finish? %>
+            <p>C'est fini !</p>
+            <% else %>
+            <p> Blablabla</p>
+          <% end %>
         </div>
       </div>
     </div>
