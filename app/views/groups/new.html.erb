@@ -1,40 +1,45 @@
-<div class="container-group">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-md-10">
-      <div class="form-groupe">
-        <h1>Créer votre groupe</h1>
-        <%= simple_form_for(@group) do |f| %>
-          <div class="form">
-            <%= f.label 'Nom du groupe' %>
-            <%= f.text_field :name %>
-          </div>
-          <div class="form">
-            <%= f.label "Date de l'évènement" %>
-            <%= f.input_field :date_event%>
-          </div>
-          <div class="form">
-            <%= f.label "Lieux de l'évènement" %>
-            <%= f.text_field :location %>
-          </div>
-          <div class="form">
-            <%= f.label "Temps pour proposer un évènement" %>
-            <%= f.input_field :proposition_duration %>
-          </div>
-          <div class="form">
-            <%= f.label "Temps pour voter" %>
-            <%= f.input_field :vote_duration %>
-          </div>
-          <div class="form">
-            <%= f.label "Ajouter un ami(es)" %>
-            <%= f.input_field :email %>
-            <div class="email">
-              <a href="#" id="add-friend-input" >Ajouter</a>
-            </div>
-          </div>
-
-          <%= f.submit "Valide ton groupe !", class: "boutton" %>
-          <% end %>
-      </div>
+<div class="container-group" style="background-image: url('<%= image_url "undraw_having_fun_iais.svg"%>')">
+  <div class="container-group-left" >
+    <div class="valeur">
+      <h1>Envie de sortir ce soir ?</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, iure! Illo, cumque vel. Aspernatur earum sunt, a molestias eius mollitia similique. Illo corporis laudantium commodi vel, et rerum sequi numquam!</p>
     </div>
+  </div>
+  <div class="container-group-right">
+
+        <div class="form-groupe">
+          <h1>Créer votre groupe</h1>
+          <%= simple_form_for(@group) do |f| %>
+            <div class="form">
+              <%= f.label 'Nom du groupe', class: 'form-control-label' %>
+              <%= f.text_field :name, class: 'form-control-group' %>
+            </div>
+            <div class="form">
+              <%= f.label "Date de l'évènement", class: 'form-control-label' %>
+              <%= f.input_field :date_event%>
+            </div>
+            <div class="form">
+              <%= f.label "Lieux de l'évènement", class: 'form-control-label' %>
+              <%= f.text_field :location, class: 'form-control-group' %>
+            </div>
+            <div class="form">
+              <%= f.label "Temps pour proposer un évènement", class: 'form-control-label' %>
+              <%= f.input_field :proposition_duration, class: 'form-control-group' %>
+            </div>
+  <!--           <div class="form">
+              <%= f.label "Temps pour voter" %>
+              <%= f.input_field :vote_duration %>
+            </div> -->
+            <div class="form">
+              <%= f.label "Ajouter un ami(es)", class: 'form-control-label' %>
+              <%= f.input_field :email, class: 'form-control-group' %>
+              <div class="email">
+                <a  id="add-friend-input" >Ajouter</a>
+              </div>
+            </div>
+
+            <%= f.submit "Valide ton groupe !", class: "boutton" %>
+            <% end %>
+        </div>
   </div>
 </div>

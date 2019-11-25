@@ -16,10 +16,14 @@ text-decoration: none;
   transition: 0.5s;
   background-color: #00BCD4;
 }
-// #btn-flat-1 {
-//   background: transparent;
-//   color: white;
-// }
+
+#add-friend-input {
+  font-size: 16px;
+}
+
+.add-field {
+  border-radius:10px;
+}
 
 .valid-vote {
   width: 100%;
