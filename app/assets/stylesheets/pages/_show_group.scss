@@ -1,11 +1,10 @@
 .groupe {
   padding: 30px;
   background-color: white;
-  // border: 2px solid #202126;
   border-radius: 10px;
   color: black;
   margin-top: 40px;
-  // box-shadow: 3px 3px 5px rgba(118,136,219,0.8);
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
 }
 
 .group-infos {
@@ -70,3 +69,21 @@ position: relative;
   justify-content: space-between;
 }
 
+.boutton-show{
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: #03A9F4;
+  color: white;
+  transition: 0.3s;
+  &:hover{
+    background-color: #E91E63;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.boutton-show a {
+  text-decoration: none;
+}

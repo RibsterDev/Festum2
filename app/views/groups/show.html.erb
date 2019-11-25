@@ -34,8 +34,8 @@
         <li class="event-choice">
         <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
           <div class="card-infos-show">
-            <%= event_user.event.name %>
-            <%= event_user.event.category %>
+            <p><%= event_user.event.name %></p>
+            <p><%= event_user.event.category %></p>
           </div>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
         </li>
@@ -43,8 +43,8 @@
       </div>
     </ul>
     <div class="boutton-formulaire">
-      <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
-      <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-groupe" %>
+      <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+      <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
     </div>
   </div>
 </div>
