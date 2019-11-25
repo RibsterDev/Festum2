@@ -3,6 +3,12 @@
   background-repeat: no-repeat;
 }
 
+.valeur {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-group-right {
   // display: flex;
   justify-content:center;
@@ -14,4 +20,12 @@
 .container-group-left {
   background-size: cover;
   width: 50%;
+    h1 {
+      text-align: center;
+    }
+    p {
+      color: red;
+      padding: 0 100px;
+      text-align:center;
+    }
  }
