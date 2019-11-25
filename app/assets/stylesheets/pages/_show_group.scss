@@ -17,9 +17,9 @@
   justify-content: space-between;
 }
 
-.compte {
+.etat {
   width: 200px;
-  background-color: blue;
+  // background-color: blue;
   border-radius: 5px;
 
 }
@@ -29,7 +29,7 @@
 }
 
 .list_event-notvoted {
-  background-color: red;
+  // background-color: red;
   padding: 20px;
 }
 
@@ -47,7 +47,7 @@ height: 100%;
 }
 
 .boutton-groupe {
-  width: 100%;
+  width: 200px;
   margin-bottom: 20px;
   background-color: #202126;
   color: white;
@@ -59,4 +59,9 @@ height: 100%;
     color: #202126;
     text-decoration: none;
   }
+}
+
+.boutton-formulaire {
+  display: flex;
+  justify-content: space-between;
 }
