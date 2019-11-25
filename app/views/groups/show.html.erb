@@ -32,12 +32,17 @@
       <% @group.event_users.each do |event_user| %>
       <hr>
         <li class="event-choice">
+
+          
+
         <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
           <div class="card-infos-show">
             <%= event_user.event.name %>
             <%= event_user.event.category %>
+            <%= event_user.score %> Points
           </div>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
+
         </li>
       <% end %>
       </div>
