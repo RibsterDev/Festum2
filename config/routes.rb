@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
   resources :groups do
     resources :event_users, only: [:new, :create]
-    resources :votes, only: [:index]
+    resources :votes, only: [:new, :create]
   end
 
   authenticate :user, lambda { |u| u.admin } do

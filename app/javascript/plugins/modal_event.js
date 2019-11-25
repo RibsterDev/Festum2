@@ -15,11 +15,12 @@ const effectModalEvent = () => {
   })
 };
 
-removeModal.addEventListener('click',() => {
-  document.querySelector('.modal-event.active').classList.remove('active')
-  removeModal.style.display = 'none';
-})
-
+if (removeModal) {
+  removeModal.addEventListener('click',() => {
+    document.querySelector('.modal-event.active').classList.remove('active')
+    removeModal.style.display = 'none';
+  })
+}
 
 export { effectModalEvent };
 
