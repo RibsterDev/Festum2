@@ -13,22 +13,25 @@
         <h4>Soirée prévu à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
       </div>
       <div class="members">
-        <h4>Membres :</h4>
-        <p> <%=  %></p>
+        <h5>Membres du groupe :</h5>
+        <% @members.each do |member| %>
+          <%= image_tag (member.photo), class: "avatar-membre" %>
+        <% end %>
       </div>
     </div>
     <ul class="list_event-notvoted">
-      <% @group.event_users.each do |event_user| %>
       <div class="card-event-show">
-        <hr>
-          <li class="event-choice">
+      <% @group.event_users.each do |event_user| %>
+      <hr>
+        <li class="event-choice">
+        <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
+          <div class="card-infos-show">
             <%= event_user.event.name %>
-            <div>
-              <%= event_user.event.category %>
-            </div>
-            <%= event_user.user.photo %>
-          </li>
-        <% end %>
+            <%= event_user.event.category %>
+          </div>
+          <%= image_tag (event_user.user.photo), class: "avatar-card" %>
+        </li>
+      <% end %>
       </div>
     </ul>
     <div class="boutton-formulaire">
