@@ -4,7 +4,15 @@
       <h1><%= @group.name %></h1>
       <div class="group-status">
         <div class="etat">
-          <h6>Etat du groupe</h6>
+          <% if @group.waiting_for_events? %>
+            <p>Faites vos jeux !</p>
+            <% elsif @group.waiting_for_votes? %>
+            <p>Il faut voter !</p>
+            <% elsif @group.finish? %>
+            <p>C'est fini !</p>
+            <% else %>
+            <p> Blablabla</p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -13,27 +21,37 @@
         <h4>Soirée prévu à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
       </div>
       <div class="members">
-        <h4>Membres :</h4>
-        <p> <%=  %></p>
+        <h5>Membres du groupe :</h5>
+        <% @members.each do |member| %>
+          <%= image_tag (member.photo), class: "avatar-membre" %>
+        <% end %>
       </div>
     </div>
     <ul class="list_event-notvoted">
-      <% @group.event_users.each do |event_user| %>
       <div class="card-event-show">
-        <hr>
-          <li class="event-choice">
-            <%= event_user.event.name %>
-            <div>
-              <%= event_user.event.category %>
-            </div>
-            <%= event_user.user.photo %>
-          </li>
-        <% end %>
+      <% @group.event_users.each do |event_user| %>
+      <hr>
+        <li class="event-choice">
+
+          
+
+        <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
+          <div class="card-infos-show">
+
+           <p><%= event_user.event.name %></p>
+            <p><%= event_user.event.category %></p>
+            <p><%= event_user.score %> Points</p>
+
+          </div>
+          <%= image_tag (event_user.user.photo), class: "avatar-card" %>
+
+        </li>
+      <% end %>
       </div>
     </ul>
     <div class="boutton-formulaire">
-      <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-groupe" %>
-      <%= link_to "Va voter !", group_votes_path(@group), class: "boutton-groupe" %>
+      <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+      <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
     </div>
   </div>
 </div>
