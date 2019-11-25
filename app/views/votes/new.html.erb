@@ -6,7 +6,7 @@
       <ul class="list_event">
         <% @group.event_users.each_with_index do |event_user, index| %>
           <li id="<%= event_user.event.id %>" class="event_choices">
-            <input type="text" name="votes[][event_user_id]" value="<%= event_user.event.id %>">
+            <input type="text" name="votes[][event_user_id]" value="<%= event_user.id %>">
             <%= event_user.event.name %>
             <%= event_user.user.name %>
           </li>
