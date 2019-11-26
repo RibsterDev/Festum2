@@ -22,11 +22,22 @@
     text-align: center;
   }
 
+  h2 {
+    font-family: $font;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .group-img-create {
+    width: 100%;
+  }
+
   #add-friend-input {
     cursor: pointer;
   }
 
   .form-control-group{
+    margin-bottom: 10px;
     display: block;
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :event_users, only: [:new, :create]
     resources :votes, only: [:new, :create]
+    resources :user_groups, only: [:new]
   end
 
   authenticate :user, lambda { |u| u.admin } do

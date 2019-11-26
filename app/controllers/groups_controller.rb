@@ -52,6 +52,10 @@ class GroupsController < ApplicationController
     # join(params)
   end
 
+  def join_group
+
+  end
+
   def update
   end
 

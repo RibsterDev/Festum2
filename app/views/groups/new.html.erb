@@ -1,14 +1,18 @@
-<div class="container-group" style="background-image: url('<%= image_url "undraw_having_fun_iais.svg"%>')">
+
+<div class="container-group">
   <div class="container-group-left" >
     <div class="valeur">
-      <h1>Envie de sortir ce soir ?</h1>
+      <h1>Invite tes potes ?</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, iure! Illo, cumque vel. Aspernatur earum sunt, a molestias eius mollitia similique. Illo corporis laudantium commodi vel, et rerum sequi numquam!</p>
+      <%= image_tag "undraw_friends_online_klj6.svg", style:'margin-left: 50px; width: 100%' %>
     </div>
   </div>
   <div class="container-group-right">
+</div>
+<div class="container-group-right">
 
         <div class="form-groupe">
-          <h1>Créer votre groupe</h1>
+          <h2>Créer votre groupe</h2>
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
               <%= f.label 'Nom du groupe', class: 'form-control-label' %>
@@ -16,7 +20,7 @@
             </div>
             <div class="form">
               <%= f.label "Date de l'évènement", class: 'form-control-label' %>
-              <%= f.input_field :date_event%>
+              <%= f.input_field :date_event, as: :string, class: "flatpikr" %>
             </div>
             <div class="form">
               <%= f.label "Lieux de l'évènement", class: 'form-control-label' %>
@@ -27,8 +31,8 @@
               <%= f.input_field :proposition_duration, class: 'form-control-group' %>
             </div>
             <div class="form">
-              <%= f.label "Temps pour voter" %>
-              <%= f.input_field :vote_duration %>
+              <%= f.label "Temps pour voter", class: 'form-control-label' %>,
+              <%= f.input_field :vote_duration, class: 'form-control-group' %>
             </div>
             <div class="form">
               <%= f.label "Ajouter un ami(es)", class: 'form-control-label' %>
@@ -36,6 +40,7 @@
               <div class="email">
                 <a  id="add-friend-input" >Ajouter</a>
               </div>
+
             </div>
 
             <%= f.submit "Valide ton groupe !", class: "boutton" %>
