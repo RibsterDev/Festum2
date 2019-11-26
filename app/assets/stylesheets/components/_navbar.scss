@@ -1,8 +1,20 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: transparent;
+  background: white;
   position: sticky;
   top: 0px;
+  height: 110px;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items:center;
+  h3 {
+    font-family: $font;
+    font-weight: 100;
+    color: #424e54;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

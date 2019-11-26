@@ -1,7 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "festeam-logo.png" %>
-    <% end %>
+  <div class="logo">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "festeam-logo.png" %>
+      <% end %>
+    <h3>FESTEAM</h3>
+  </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,9 +17,9 @@
         <li class="nav-item">
           <%= link_to "Mes groupes", my_groups_groups_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+<!--         <li class="nav-item">
           <%= link_to "Trouve un évènement", categories_events_path, class: "nav-link" %>
-        </li>
+        </li> -->
         <li class="nav-item">
           <%= link_to "Créer un groupe", new_group_path, class: "nav-link" %>
         </li>

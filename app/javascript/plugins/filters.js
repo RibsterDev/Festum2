@@ -10,6 +10,12 @@ const events = document.querySelectorAll('.event-presentation');
 categories.forEach((filter) => {
   filter.addEventListener('click', () => {
     const categoryName = filter.dataset.category;
+
+    categories.forEach((f) => {
+      f.classList.remove('filter-active')
+    })
+
+    filter.classList.add('filter-active')
     events.forEach((event) => {
       if (categoryName == event.dataset.category) {
         event.style.display = 'block'
@@ -21,3 +27,4 @@ categories.forEach((filter) => {
     })
   })
 })
+
