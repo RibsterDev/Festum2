@@ -10,6 +10,7 @@ class UserMailer < ApplicationMailer
 
   def send_invitation
     @email = params[:email]
+    @group = params[:group]
 
     mail(
       to: @email,

@@ -7,7 +7,33 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr.css";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.toto {
+
+    margin: 10px 0;
+    width: 390px;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.delete {
+  margin-left: 10px;
+  cursor: pointer;
+  font-color: #F44336;
+  font-size: 14px;
+}

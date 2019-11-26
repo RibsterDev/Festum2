@@ -3,7 +3,7 @@ let compteur = 0
 function addMember() {
   compteur += 1
   d = document.querySelector('.email')
-  d.insertAdjacentHTML('beforebegin',`<div id="mail-${compteur}"><input type="text" name="invit-email[]"/><a href="#" class="delete" onclick="removeDiv(${compteur})">Supprimer</a></div>`);
+  d.insertAdjacentHTML('afterend',`<div id="mail-${compteur}"><input type="text" name="invit-email[]" class="toto"/><a class="delete" onclick="removeDiv(${compteur})" style="color: #F44336;">Supprimer</a></div>`);
 }
 
 const addFriendInput = document.querySelector('#add-friend-input')
