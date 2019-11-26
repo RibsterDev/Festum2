@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
   require "sidekiq/web"
-  # get 'event_users/create'
-  # get 'event_users/new'
-  # get 'votes/index'
-  # get 'groups/index'
-  # get 'groups/show'
-  # get 'groups/new'
-  # get 'groups/create'
-  # get 'groups/update'
-  # get 'groups/edit'
-  # get 'groups/destroy'
-  # get 'events/index'
-  # get 'events/show'
+
   devise_for :users
   root to: 'pages#home'
 
@@ -24,7 +13,11 @@ Rails.application.routes.draw do
     resources :event_users, only: [:new, :create]
     resources :votes, only: [:new, :create]
     resources :user_groups, only: [:new]
+    collection do
+      get 'my_groups'
+    end
   end
+
 
   authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'

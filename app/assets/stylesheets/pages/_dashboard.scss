@@ -1,0 +1,24 @@
+.dashboard {
+  widows: 1080px;
+}
+
+.resume {
+  display: flex;
+  margin-top: 40px;
+}
+
+.resume-infos {
+  width: 120px;
+  height: 120px;
+  box-shadow: 2 2 0 rgba(0,0,0,0.5);
+  background-color: red;
+  text-align: center;
+}
+
+.card-my-groups {
+  background-color: blue;
+  height: 200px;
+  margin-top: 20px;
+}
+
+
