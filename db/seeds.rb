@@ -15,7 +15,7 @@ User.destroy_all
 
 user1 = User.new(
   name: "lea",
-  email: "lcbelzunces@festeam.io",
+  email: "lcbelzunces@gmail.com",
   password: "lealea",
   photo: "lea.png"
   )
@@ -23,7 +23,7 @@ user1.save!
 
 user2 = User.new(
   name: "evan",
-  email: "evanwichlarz1@festeam.io",
+  email: "evanwichlarz1@hotmail.fr",
   password: "evanevan",
   photo: "evan.png"
   )
@@ -31,7 +31,7 @@ user2.save!
 
 user3 = User.new(
   name: "jeremy",
-  email: "jeremygibilaro@festeam.io",
+  email: "jeremygibilaro@gmail.com",
   password: "jeremy",
   photo: "jeremy.png"
   )
@@ -39,7 +39,7 @@ user3.save!
 
 user4 = User.new(
   name: "nicolas",
-  email: "nicolasmorlot@festeam.io",
+  email: "nicolasmorlot@fgmail.com",
   password: "nicolas",
   photo: "nicolas.png"
   )
