@@ -21,105 +21,74 @@
       </div>
     </div>
     <div class="etats">
-<!--         <div class="etat1">
+
+      <% if @group.waiting_for_events? %>
+        <div class="etat1">
           <div class="chiffre">
             <p>1</p>
           </div>
-          <p>Faites vos jeux !</p>
-        </div>
-        <div class="etat2">
-          <div class="chiffre">
-            <p>2</p>
-          </div>
-          <p>Il faut voter !</p>
-        </div>
-        <div class="etat3">
-          <div class="chiffre">
-            <p>3</p>
-          </div>
-          <p>C'est fini !</p>
-        </div>
-        <div class="etat1-no">
-          <div class="chiffre">
-            <p>1</p>
-          </div>
-          <p>Faites vos jeux !</p>
+        <p>Faites vos jeux !</p>
         </div>
         <div class="etat2-no">
           <div class="chiffre">
             <p>2</p>
           </div>
-          <p>Il faut voter !</p>
+        <p>Il faut voter !</p>
         </div>
-        <div class="etat3-no">
-          <div class="chiffre">
-            <p>3</p>
-          </div>
-          <p>C'est fini !</p>
-        </div> -->
+          <div class="etat3-no">
+            <div class="chiffre">
+              <p>3</p>
+            </div>
+        <p>C'est fini !</p>
+        </div>
 
-<% if @group.waiting_for_events? %>
-  <div class="etat1">
-    <div class="chiffre">
-      <p>1</p>
-    </div>
-  <p>Faites vos jeux !</p>
-</div>
-<div class="etat2-no">
+      <% elsif @group.waiting_for_votes? %>
+        <div class="etat1-no">
+          <div class="chiffre">
+            <p>1</p>
+          </div>
+        <p>Faites vos jeux !</p>
+        </div>
+        <div class="etat2">
           <div class="chiffre">
             <p>2</p>
           </div>
-          <p>Il faut voter !</p>
+        <p>Il faut voter !</p>
         </div>
         <div class="etat3-no">
           <div class="chiffre">
             <p>3</p>
-          </div>
-          <p>C'est fini !</p>
         </div>
-<% elsif @group.waiting_for_votes? %>
-  <div class="chiffre">
-        <p>1</p>
-      </div>
-      <p>Faites vos jeux !</p>
-    </div>
-  <div class="etat2">
-    <div class="chiffre">
-      <p>2</p>
-    </div>
-    <p>Il faut voter !</p>
-  </div>
- <div class="etat1-no">
-  <div class="etat3-no">
-    <div class="chiffre">
-      <p>3</p>
-    </div>
-    <p>C'est fini !</p>
-  </div>
-<% elsif @group.finish? %>
-  <div class="etat1-no">
-    <div class="chiffre">
-      <p>1</p>
-    </div>
-    <p>Faites vos jeux !</p>
-  </div>
-  <div class="etat2-no">
-    <div class="chiffre">
-      <p>2</p>
-    </div>
-    <p>Il faut voter !</p>
-  </div>
-  <div class="etat3">
-    <div class="chiffre">
-      <p>3</p>
-    </div>
-    <p>C'est fini !</p>
-  </div>
-<% else %>
-  <p>Quelque chose cloche</p>
-<% end %>
+        <p>C'est fini !</p>
+        </div>
 
-</div>
+      <% elsif @group.finish? %>
+        <div class="etat1-no">
+          <div class="chiffre">
+            <p>1</p>
+          </div>
+        <p>Faites vos jeux !</p>
+        </div>
+        <div class="etat2-no">
+          <div class="chiffre">
+            <p>2</p>
+          </div>
+        <p>Il faut voter !</p>
+        </div>
+        <div class="etat3">
+          <div class="chiffre">
+            <p>3</p>
+          </div>
+        <p>C'est fini !</p>
+        </div>
+
+      <% else %>
+          <p>Quelque chose cloche</p>
+        <% end %>
+    </div>
+
+
+
 
 
     <ul class="list_event-notvoted">
@@ -137,11 +106,14 @@
         </li>
       <% end %>
       </div>
+      <% if propose_event?(current_user) %>
+        <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+      <% elsif propose_vote? %>
+        <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+      <% else %>
+        <%= link_to "Résultat !", event_path(@event), class: "boutton-show" %>
+      <% end %>
     </ul>
-    <div class="boutton-formulaire">
-      <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
-      <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
-    </div>
   </div>
 </div>
 

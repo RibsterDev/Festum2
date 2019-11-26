@@ -20,4 +20,12 @@ class Group < ApplicationRecord
   def finish?
    users.count * events.count == votes.count
   end
+
+  def propose_event?(user)
+    user.id == 41
+  end
+
+  def propose_vote?
+    current_user == votes.count(users.count)
+  end
 end
