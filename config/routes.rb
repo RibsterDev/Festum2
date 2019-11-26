@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     resources :user_groups, only: [:new]
   end
 
+  get "/mes-groupes" , to: "mes#list_user_groups", as: :mes_groupes
+
   authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
   end
