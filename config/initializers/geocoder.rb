@@ -15,7 +15,7 @@ Geocoder.configure(
   # (if you want to implement custom error handling);
   # supports SocketError and Timeout::Error
   # always_raise: [],
-
+  timeout: 5,
   # Calculation options
   units: :km,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
