@@ -2,31 +2,56 @@
   display: flex;
 }
 
-.show-event {
-  background-color: $other-yellow;
-}
 
 .text {
   background-color: white;
-  padding: 40px;
-  position: relative;
-  top: -120px;
+  margin-top: 90px;
 }
 
 .text h2 {
-  color: $light-orange;
-  margin-bottom: 35px;
+  font-family: $font;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
+.text h4 {
+  font-family: $font;
+  opacity: 0.6;
+  text-decoration: underline;
+}
 .text p {
-   color: $other-orange;
+  font-family: $font;
+  color: black;
+  margin-bottom: 90px;
 }
 
 .infos-global {
+  margin-top: 90px;
   padding: 20px;
   background-color: white;
-  position:relative;
-  top: -120px;
-  // position: sticky;
-  // top: 80px;
+  position: sticky;
+  top: 100px;
+}
+
+.infos h2 {
+  font-family: $font;
+}
+
+.date p {
+  font-family: $font;
+}
+
+.infos a {
+  text-decoration: none;
+  color: #03A9F4;
+  transition: 0.3s;
+  &:hover {
+    color: #E91E63;
+  }
+}
+
+.infos-p h5 {
+  font-family: $font;
 }
