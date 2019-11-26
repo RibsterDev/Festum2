@@ -18,7 +18,7 @@
     </div>
     <div class="group-infos">
       <div class="intro">
-        <h4>Soirée prévu à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
+        <h4>Soirée prévu à <%= @group.location %> le <%= @group.date_event %></h4>
       </div>
       <div class="members">
         <h5>Membres du groupe :</h5>
