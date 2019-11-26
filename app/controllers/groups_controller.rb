@@ -52,8 +52,8 @@ class GroupsController < ApplicationController
     # join(params)
   end
 
-  def join_group
-
+  def my_groups
+    @my_groups = current_user.groups
   end
 
   def update
