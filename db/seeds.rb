@@ -46,12 +46,13 @@ user4 = User.new(
 user4.save!
 
 users = [user1, user2, user3, user4]
-
+users1 = [user2, user3]
+users2 = [user2, user3, user1]
 
 groupe1 = Group.create(
   name: "Soiree du chill",
   location: "Lyon",
-  date_event: "25-11-25",
+  date_event: "2019-11-27",
   proposition_duration: 6,
   vote_duration: 3
   )
@@ -62,4 +63,5 @@ users.each do |user|
     group: groupe1
     )
 end
+
 
