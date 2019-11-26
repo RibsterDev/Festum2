@@ -1,7 +1,8 @@
 
-departments = [69, 92]
+# penser a ajouter le departement dans l array departements
+departments = [01, 03, 07, 38, 42, 63, 69, 73, 74, 75, 92]
 departments.each do |department|
-  content = File.read("#{Rails.root}/db/events#{department}.json")
+  department < 10 ? content = File.read("#{Rails.root}/db/events0#{department}.json") : content = File.read("#{Rails.root}/db/events#{department}.json")
   events = JSON.parse(content)
   events.each do |event|
     Event.create!(event)

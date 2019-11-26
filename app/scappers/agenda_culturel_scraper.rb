@@ -7,7 +7,7 @@ class AgendaCulturelScraper
   end
 
   def scrap
-    events.map do |path|
+    data = events.map do |path|
       url_complete = "#{@url}#{path}"
       html_file = open(url_complete).read
       html_doc = Nokogiri::HTML(html_file)
@@ -47,6 +47,7 @@ class AgendaCulturelScraper
         event_url: html_doc.search('.underline').attribute('href').nil? ? "no_url" : html_doc.search('.underline').attribute('href').value
       }
     end
+    data.uniq { |e| e[:name] }
   end
 
   private
