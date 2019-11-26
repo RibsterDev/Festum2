@@ -1,3 +1,4 @@
+
 .btn-create a {
 color: white;
 text-decoration: none;
@@ -11,11 +12,37 @@ text-decoration: none;
   color: #03A9F4;
   width: 350px;
 }
+.btn-create-small {
+  border: 0.5px solid white;
+  transition: 0.3s;
+  padding: 20px 100px;
+  color: #03A9F4;
+  width: 350px;
+}
+.filter{
+  background-color:#DFF6F0 ;
+  border-radius: 25px;
+  height: 100px;
+  text-align: center;
+  h3{
+    font-size: 1rem;
+  }
+  &:hover{
+    color: white;
+  }
+}
 
 .btn-create:hover {
   transition: 0.5s;
   background-color: #00BCD4;
 }
+
+.btn-create-small:hover {
+  transition: 0.5s;
+  background-color: #00BCD4;
+  color: white;
+}
+
 
 #add-friend-input {
   font-size: 16px;
@@ -24,6 +51,7 @@ text-decoration: none;
 .add-field {
   border-radius:10px;
 }
+
 
 .valid-vote {
   width: 100%;
