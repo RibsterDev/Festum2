@@ -1,50 +1,139 @@
 <div class="container">
   <div class="groupe">
-    <div class="group-name">
-      <h1><%= @group.name %></h1>
-      <div class="group-status">
-        <div class="etat">
-          <% if @group.waiting_for_events? %>
-            <p>Faites vos jeux !</p>
-            <% elsif @group.waiting_for_votes? %>
-            <p>Il faut voter !</p>
-            <% elsif @group.finish? %>
-            <p>C'est fini !</p>
-            <% else %>
-            <p> Blablabla</p>
+    <div class="infos-permanentes">
+      <div class="permanentes">
+        <div class="groupe-nom">
+          <h1><%= @group.name %></h1>
+        </div>
+        <div class="members">
+          <% @members.each do |member| %>
+            <%= image_tag (member.photo), class: "avatar-membre" %>
           <% end %>
         </div>
       </div>
-    </div>
-    <div class="group-infos">
-      <div class="intro">
-        <h4>Soirée prévu à <%= @group.location %> le <%= @group.date_event %></h4>
-      </div>
-      <div class="members">
-        <h5>Membres du groupe :</h5>
-        <% @members.each do |member| %>
-          <%= image_tag (member.photo), class: "avatar-membre" %>
-        <% end %>
+      <div class="date-lieu">
+        <div class="date">
+         <p><%= @group.date_event %></p>
+        </div>
+        <div class="lieu">
+         <p><%= @group.location %></p>
+        </div>
       </div>
     </div>
+    <div class="etats">
+<!--         <div class="etat1">
+          <div class="chiffre">
+            <p>1</p>
+          </div>
+          <p>Faites vos jeux !</p>
+        </div>
+        <div class="etat2">
+          <div class="chiffre">
+            <p>2</p>
+          </div>
+          <p>Il faut voter !</p>
+        </div>
+        <div class="etat3">
+          <div class="chiffre">
+            <p>3</p>
+          </div>
+          <p>C'est fini !</p>
+        </div>
+        <div class="etat1-no">
+          <div class="chiffre">
+            <p>1</p>
+          </div>
+          <p>Faites vos jeux !</p>
+        </div>
+        <div class="etat2-no">
+          <div class="chiffre">
+            <p>2</p>
+          </div>
+          <p>Il faut voter !</p>
+        </div>
+        <div class="etat3-no">
+          <div class="chiffre">
+            <p>3</p>
+          </div>
+          <p>C'est fini !</p>
+        </div> -->
+
+<% if @group.waiting_for_events? %>
+  <div class="etat1">
+    <div class="chiffre">
+      <p>1</p>
+    </div>
+  <p>Faites vos jeux !</p>
+</div>
+<div class="etat2-no">
+          <div class="chiffre">
+            <p>2</p>
+          </div>
+          <p>Il faut voter !</p>
+        </div>
+        <div class="etat3-no">
+          <div class="chiffre">
+            <p>3</p>
+          </div>
+          <p>C'est fini !</p>
+        </div>
+<% elsif @group.waiting_for_votes? %>
+  <div class="chiffre">
+        <p>1</p>
+      </div>
+      <p>Faites vos jeux !</p>
+    </div>
+  <div class="etat2">
+    <div class="chiffre">
+      <p>2</p>
+    </div>
+    <p>Il faut voter !</p>
+  </div>
+ <div class="etat1-no">
+  <div class="etat3-no">
+    <div class="chiffre">
+      <p>3</p>
+    </div>
+    <p>C'est fini !</p>
+  </div>
+<% elsif @group.finish? %>
+  <div class="etat1-no">
+    <div class="chiffre">
+      <p>1</p>
+    </div>
+    <p>Faites vos jeux !</p>
+  </div>
+  <div class="etat2-no">
+    <div class="chiffre">
+      <p>2</p>
+    </div>
+    <p>Il faut voter !</p>
+  </div>
+  <div class="etat3">
+    <div class="chiffre">
+      <p>3</p>
+    </div>
+    <p>C'est fini !</p>
+  </div>
+<% else %>
+  <p>Quelque chose cloche</p>
+<% end %>
+
+</div>
+
+
     <ul class="list_event-notvoted">
       <div class="card-event-show">
       <% @group.event_users.each do |event_user| %>
       <hr>
         <li class="event-choice">
-
-
-
         <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
           <div class="card-infos-show">
-
            <p><%= event_user.event.name %></p>
             <p><%= event_user.event.category %></p>
             <p><%= event_user.score %> Points</p>
-
           </div>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
-
         </li>
       <% end %>
       </div>
