@@ -6,6 +6,7 @@
 .text {
   background-color: white;
   margin-top: 90px;
+  padding: 30px;
 }
 
 .text h2 {
@@ -32,11 +33,12 @@
   padding: 20px;
   background-color: white;
   position: sticky;
-  top: 100px;
+  top: 140px;
 }
 
 .infos h2 {
   font-family: $font;
+  padding-bottom: 20px;
 }
 
 .date p {
