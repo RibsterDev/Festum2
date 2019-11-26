@@ -4,12 +4,12 @@
 // })
 
 
-const categories = document.querySelectorAll('.category');
+const categories = document.querySelectorAll('.filter');
 const events = document.querySelectorAll('.event-presentation');
 
-categories.forEach((category) => {
-  category.addEventListener('click', () => {
-    const categoryName = category.dataset.category;
+categories.forEach((filter) => {
+  filter.addEventListener('click', () => {
+    const categoryName = filter.dataset.category;
     events.forEach((event) => {
       if (categoryName == event.dataset.category) {
         event.style.display = 'block'
