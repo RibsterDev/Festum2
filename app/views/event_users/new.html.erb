@@ -60,7 +60,7 @@
             <div class="event-details">
               <h5><%= event.name %></h5>
               <p><%= event.description[0..150] %>...</p>
-              <%= link_to "Plus de détails", event_path(event) %>
+              <%= link_to "Plus de détails", event_path(event), class: "details" %>
               <%= f.button :button, "Proposer cet événement", type: :submit, name: "event_id", value: "#{event.id}", class: "btn-add-event" %>
             </div>
 
