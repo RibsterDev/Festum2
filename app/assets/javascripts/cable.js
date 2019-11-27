@@ -9,5 +9,9 @@
   this.App || (this.App = {});
 
   App.cable = ActionCable.createConsumer();
+  App.cable.subscriptions.create(
+    { channel: 'GroupChannel'},
+    { received: messageFromServer } )
 
 }).call(this);
+
