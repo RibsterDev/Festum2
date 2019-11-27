@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
     # end
     # raise
   event_id
+end
 
   def show
     @group = Group.find(params[:id])

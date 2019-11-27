@@ -21,11 +21,11 @@ class Group < ApplicationRecord
    users.count * events.count == votes.count
   end
 
-  def propose_event?(user)
-    user.id == 41
+  def propose_event?
+    false
   end
 
   def propose_vote?
-    current_user == votes.count(users.count)
+   false
   end
 end
