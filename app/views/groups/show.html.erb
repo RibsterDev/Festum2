@@ -106,12 +106,20 @@
         </li>
       <% end %>
       </div>
-      <% if propose_event?(current_user) %>
+      <% if current_user.proposed_event?(@group) %>
         <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
-      <% elsif propose_vote? %>
-        <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+      <% elsif !current_user.proposed_vote?(@group) %>
+        <% if @group.waiting_for_events? %>
+          <p>En attente...</p>
+        <% else %>
+          <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+        <% end %>
       <% else %>
-        <%= link_to "Résultat !", event_path(@event), class: "boutton-show" %>
+        <% if @group.waiting_for_votes? %>
+          <p>En attente des autres votes...</p>
+        <% else %>
+          <%= link_to "Résultat !", event_path(@event), class: "boutton-show" %>
+        <% end %>
       <% end %>
     </ul>
   </div>
