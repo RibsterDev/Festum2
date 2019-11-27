@@ -13,10 +13,10 @@
       </div>
       <div class="date-lieu">
         <div class="date">
-         <p><%= @group.date_event %></p>
+         <p><%= @group.date_event.strftime("%d %B %Y") %></p>
         </div>
         <div class="lieu">
-         <p><%= @group.location %></p>
+          <p><%= @group.location %></p>
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@
           <%= link_to "Résultat !", event_path(@result_all, params[:feu]), class: "boutton-show" %>
         <% end %>
       <% end %>
-    </ul>autres
+    </ul>
   </div>
 </div>
 
