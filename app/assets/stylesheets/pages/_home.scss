@@ -1,43 +1,73 @@
-// Specific CSS for your home-page
-// .btn-create a {
-// color: white;
-// text-decoration: none;
-// }
-
-// .btn-create {
-//   border: 0.5px solid white;
-//   transition: 0.3s;
-//   padding: 20px 100px;
-//   color: #03A9F4;
-//   width: 350px;
-// }
-
-// .btn-create:hover {
-//   transition: 0.5s;
-//   background-color: #00BCD4;
-// }
-
-.festeam h1 {
-  color: white;
+.title-home {
   font-family: $font;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  font-size: 54px;
+  line-height: 80px;
   margin-bottom: 20px;
-  // margin-left: 200px;
+  margin-left: 150px;
+  // color: #424e54;
+  background: rgb(3,169,244);
+  background: linear-gradient(280deg, rgba(3,169,244,1) 0%, rgba(233,30,99,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+      span {
+          letter-spacing: 1.5;
+          font-weight: 600;
+      }
 }
 
-.festeam h3 {
-  color: white;
-  font-family: $font;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-  margin-bottom: 30px;
+.subtitle{
+  margin-left: 150px;
 }
+
+.banner-home {
+  height: 100%;
+  background-size: cover;
+  background-image: image-url('undraw_having_fun_iais.svg');
+}
+
+.container-group-home {
+  display: flex;
+  background-repeat: no-repeat;
+  height: calc(100vh - 190px);
+}
+
+.container-group-right-home {
+  width: 50%;
+  justify-content:center;
+  margin: 0 auto;
+}
+
+.container-group-left-home {
+  background-size: cover;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+   h1 {
+      color: #FF9800;
+      font-family: $font;
+      text-align: center;
+      font-weight: 100;
+      padding-bottom: 20px;
+    }
+    p {
+      margin-left: 50px;
+      margin-bottom: 50px;
+      color: #8e8e8e;
+      padding: 0 100px;
+      text-align:left;
+      font-weight: 100;
+      font-size: 20px;
+    }
+ }
 
 .boutton-home{
-  width: 200px;
+  width: 300px;
   border-radius: 5px;
-  padding: 10px;
+  margin-left: 150px;
+  padding: 20px;
   text-align: center;
-  // margin-bottom: 10px;
   background-color: #03A9F4;
   color: white;
   transition: 0.3s;
@@ -45,9 +75,23 @@
     background-color: #E91E63;
     color: white;
   }
-
   a {
     text-decoration: none;
     color: white;
   }
 }
+
+// .festeam h1 {
+//   color: white;
+//   font-family: $font;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+//   margin-bottom: 20px;
+//   // margin-left: 200px;
+// }
+
+// .festeam h3 {
+//   color: white;
+//   font-family: $font;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+//   margin-bottom: 30px;
+// }

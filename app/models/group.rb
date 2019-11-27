@@ -20,4 +20,5 @@ class Group < ApplicationRecord
   def finish?
    users.count * events.count == votes.count
   end
+
 end
