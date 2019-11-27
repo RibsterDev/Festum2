@@ -98,6 +98,7 @@ users1.each_with_index do |u, i|
   EventUser.create!(event: events_group1[i], user: u, group: groupe1)
 end
 
+#GROUP 1 all users proposed event and user 3 has voted.
 
 events_group2 = Event.all.sample(2)
 users2.each_with_index do |u, i|

@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
 
   def proposed_vote?(group)
-    false
+
   end
 
   private
