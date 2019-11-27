@@ -24,10 +24,11 @@
 }
 
 .card-container {
-  margin-top: 100px;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto auto;
+  // margin-top: 100px;
+  // display: grid;
+  // grid-gap: 10px;
+  // grid-template-columns: auto auto auto auto;
+  display: flex;
 }
 
 .category h2 a {

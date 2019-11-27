@@ -7,7 +7,7 @@ class AgendaCulturelScraper
   end
 
   def scrap
-    events.map do |path|
+    data = events.map do |path|
       url_complete = "#{@url}#{path}"
       html_file = open(url_complete).read
       html_doc = Nokogiri::HTML(html_file)
@@ -30,16 +30,29 @@ class AgendaCulturelScraper
       (results).empty? ? results = Geocoder.search("France, #{@department}000") : results
       results = results.first.coordinates
       # "#{html_doc.search('.place').text.gsub(/\n/, "")}, #{departement}"
-      catego = html_doc.search('h1').text.split(" ")
+      catego = path.split("/")
+      # p catego
+      catego[0] = "" ? catego[0] = catego[1] : catego[0]
+      # p catego[0]
+      catego[0] = catego[0].pluralize.capitalize
+      # p catego[0]
 
+      if ["Expositions", "Theatres", "Danses", "Concerts", "Arts-du-spectacles", "Jeune-publics"].include?(html_doc.search('h1').text.split(" ")[0].pluralize.capitalize)
+       clear_name = html_doc.search('h1').text.split(" ")[1..-1]
+       clear_name = clear_name.join(" ")
+      else
+        clear_name = html_doc.search('h1').text
+      end
+
+      # p html_doc.search('.place').text.gsub(/\n/, "")
 
       {
-        name: html_doc.search('h1').text,
+        name: clear_name,
         date_start: Date.new(a, m, d),
         date_end: Date.new(a_end, m_end, d_end),
         address: "#{html_doc.search('.place').text.gsub(/\n/, "")}, #{@department}",
         category: catego[0],
-        #      sub_category:
+        sub_category: html_doc.search('.place').text.gsub(/\n/, ""),
         photo_url: html_doc.search('.img-polaroid').attribute('src').value,
         lat: results[0],
         long: results[1],
@@ -47,6 +60,7 @@ class AgendaCulturelScraper
         event_url: html_doc.search('.underline').attribute('href').nil? ? "no_url" : html_doc.search('.underline').attribute('href').value
       }
     end
+    data.uniq { |e| e[:name] }
   end
 
   private

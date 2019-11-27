@@ -7,7 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "flatpickr/dist/flatpickr.css";
+// @import "flatpickr/dist/flatpickr.min.css";
 
 // Your CSS partials
 @import "components/index";
@@ -37,3 +37,5 @@
   font-color: #F44336;
   font-size: 14px;
 }
+
+//

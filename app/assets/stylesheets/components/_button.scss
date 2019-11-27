@@ -1,3 +1,9 @@
+.btn-add-event {
+  width: 250px;
+  color: #fff;
+  background-color: #03A9F4;
+}
+
 
 .btn-create a {
 color: white;
@@ -8,9 +14,9 @@ text-decoration: none;
 .btn-create {
   border: 0.5px solid white;
   transition: 0.3s;
-  padding: 20px 100px;
+  // padding: 20px 100px;
   color: #03A9F4;
-  width: 350px;
+  width: 250px;
 }
 .btn-create-small {
   border: 0.5px solid white;
@@ -20,10 +26,22 @@ text-decoration: none;
   width: 350px;
 }
 .filter{
-  background-color:#DFF6F0 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  background-color: white ;
+  border: 1px solid grey;
   border-radius: 25px;
-  height: 100px;
+  height: 40px;
   text-align: center;
+  h2{
+    margin: 0 0;
+    color: #2F2E41;
+    font-family: $font;
+    font-weight: 100;
+    font-size: 16px;
+  }
   h3{
     font-size: 1rem;
   }
