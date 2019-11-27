@@ -1,3 +1,31 @@
+.rules {
+  padding: 0 50px;
+}
+
+.img-ruleone {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding: 20px 0;
+  // border-radius: 50%;
+  // height: 200px;
+  // width: 200px;
+  // background-color: #e8e8e8;
+}
+
+.img-ruletwo {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding: 20px 0;
+}
+
+.img-ruletree {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
 .form-groupe {
   width: 540px;
   padding: 30px;
@@ -37,6 +65,7 @@
   }
 
   .form-control-group{
+
     margin-bottom: 10px;
     display: block;
     width: 100%;
