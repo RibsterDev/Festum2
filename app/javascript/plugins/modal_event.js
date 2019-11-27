@@ -3,7 +3,6 @@
 const removeModal = document.querySelector('#remove-modal');
 
 const effectModalEvent = () => {
-  console.log('im here');
   const modalEvent = document.querySelectorAll('.event-presentation')
   modalEvent.forEach((event) => {
     event.addEventListener('click',() => {

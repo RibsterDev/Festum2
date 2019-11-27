@@ -25,7 +25,6 @@ class EventsController < ApplicationController
     cookies[:name] = params[:name]
 
     cookies[:event_id] = params[:id]
-
     # if user_signed_in?
     #   @is_creator = current_user == @event.creator
     # else
