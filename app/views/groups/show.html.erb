@@ -87,10 +87,6 @@
         <% end %>
     </div>
 
-
-
-
-
     <ul class="list_event-notvoted">
       <div class="card-event-show">
       <% @group.event_users.each do |event_user| %>
@@ -118,7 +114,7 @@
         <% if @group.waiting_for_votes? %>
           <p>En attente des autres votes...</p>
         <% else %>
-          <%= link_to "Résultat !", event_path(@event), class: "boutton-show" %>
+          <%= link_to "Résultat !", event_path(@result_all), class: "boutton-show" %>
         <% end %>
       <% end %>
     </ul>
