@@ -11,17 +11,17 @@
 
       <div class="rules" style="display:flex;">
         <div class="rule-one">
-          <div class="img-ruleone"><%= image_tag "invit2.png", style:'margin-left: 50px; width: 50%' %></div>
-          <h4>1. Invite tes potes !</h4>
+          <div class="img-ruleone"><%= image_tag "invit.jpg", style:'margin-left: 50px; width: 50%' %></div>
+          <h4>1. Créé un groupe avec tes potes </h4>
           <p class="rule-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quam, totam natus unde incidunt fuga, dicta quibusdam, illum optio explicabo molestiae. Debitis minus aliquam libero hic dolores suscipit quas neque.</p>
         </div>
         <div class="rule-two">
-          <div class="img-ruletwo"><%= image_tag "vote.png", style:'margin-left: 50px; width: 50%' %></div>
-          <h4>2. Propose une sortie et vote</h4>
+          <div class="img-ruletwo"><%= image_tag "vote.jpg", style:'margin-left: 50px; width: 50%' %></div>
+          <h4>2. Chacun propose un événement et vote</h4>
           <p class="rule-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quam, totam natus unde incidunt fuga, dicta quibusdam, illum optio explicabo molestiae. Debitis minus aliquam libero hic dolores suscipit quas neque.</p>
         </div>
         <div class="rule-tree">
-          <div class="img-ruletree"><%= image_tag "undraw_having_fun_iais.svg", style:'margin-left: 50px; width: 50%' %></div>
+          <div class="img-ruletree"><%= image_tag "party.jpg", style:'margin-left: 50px; width: 50%' %></div>
           <h4>3. Découvre l'univers de tes potes</h4>
           <p class="rule-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quam, totam natus unde incidunt fuga, dicta quibusdam, illum optio explicabo molestiae. Debitis minus aliquam libero hic dolores suscipit quas neque.</p>
         </div>
@@ -45,16 +45,14 @@
               <%= f.label "Lieux de l'évènement", class: 'form-control-label' %>
               <%= f.text_field :location, class: 'form-control-group' %>
             </div>
-            <!-- <div style="visibility: hidden;"> -->
-            <div class="form">
+            <!-- <div class="form">
               <%= f.label "Temps pour proposer un évènement", class: 'form-control-label' %>
               <%= f.input_field :proposition_duration, class: 'form-control-group' %>
             </div>
             <div class="form">
               <%= f.label "Temps pour voter", class: 'form-control-label' %>,
               <%= f.input_field :vote_duration, class: 'form-control-group' %>
-            </div>
-          <!-- </div> -->
+            </div> -->
             <div class="form">
               <%= f.label "Ajouter un ami(es)", class: 'form-control-label' %>
               <%= f.input_field :email, class: 'form-control-group' %>
