@@ -6,6 +6,15 @@
     background-position-y: 300px;
 }
 
+  // .rules {
+  //   display:flex;
+  // }
+
+  // .rule-description{
+  //   color:red;
+  // }
+
+
 .valeur {
   // display: flex;
   justify-content: center;
@@ -24,6 +33,11 @@
   background-size: cover;
   width: 50%;
   // padding-top: 130px;
+  .rule-description {
+    color: #7b7b7b;
+    margin: 0 0;
+    padding: 0 25px;
+    }
     h1 {
       color: #FF9800;
       font-family: $font;

@@ -3,7 +3,7 @@ Rails.application.configure do
   config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
   # config.action_mailer.default_url_options = { host: "https://festumtwo.herokuapp.com/" }
 
-  config.action_mailer.default_url_options = { host: "https//festeam.io" }
+  config.action_mailer.default_url_options = { host: "http://festeam.io" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

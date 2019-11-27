@@ -6,16 +6,18 @@ class Group < ApplicationRecord
   has_many :votes, through: :event_users
 
   def waiting_for_events?
-    users.count > events.count ||
-      (created_at + proposition_duration.days) < DateTime.current
+    users.count > events.count || events.count.zero?
+    # ||
+    #   (created_at + proposition_duration.days) < DateTime.current
   end
 
   def waiting_for_votes?
-    votes.count > users.count ||
-      ((created_at - proposition_duration) + vote_duration.days) < DateTime.current
+    users.count * events.count > votes.count
+    # ||
+    #   ((created_at - proposition_duration) + vote_duration.days) < DateTime.current
   end
 
   def finish?
-    users.count == votes.count
+   users.count * events.count == votes.count
   end
 end

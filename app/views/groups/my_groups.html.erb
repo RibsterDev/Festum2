@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="dashboard">
+    <div class="resume">
+      <div class="resume-infos">
+        <p>09</p>
+        <p>Groupes</p>
+      </div>
+      <div class="resume-infos">
+        <p>4</p>
+        <p>Victoires</p>
+      </div>
+      <div class="resume-infos">
+        <p>2</p>
+        <p>Défaites</p>
+      </div>
+    </div>
+    <% if @my_groups.empty? %>
+      <p>N'attendez plus créer votre en invitant vos amis</p>
+    <% else %>
+    <div class="cards-my-groups">
+      <% @my_groups.each do |group| %>
+        <div class="card-my-groups">
+          <p><%= group.name %></p>
+          <p><%= group.date_event %></p>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+

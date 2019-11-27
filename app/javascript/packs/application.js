@@ -17,5 +17,30 @@ initSortable();
 
 
 
+// fonction mis en mode degueulasse pour l'alert quand un user rejoint le groupe
+
+const messageFromServer = (data) => {
+  console.log("===============")
+  console.log("je suis dans messageFromServer")
+  console.log(data)
+  showFlashMessage(data.flash_message)
+}
+
+
+const showFlashMessage = (flashMessage) => {
+  const divMessage = `
+    <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+      ${flashMessage}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  `
+  const navbar = document.querySelector('.navbar')
+  navbar.insertAdjacentHTML('afterend', divMessage)
+}
+
+window.messageFromServer = messageFromServer
+
 
 

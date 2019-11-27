@@ -32,7 +32,7 @@ class EventHome
   end
 
   def filter_by_date_start
-    @events = @events.where("date_start <= ? AND ? <= date_end", @params[:date_start], @params[:date_start])
+    @events = @events.where("date_start <= ? AND ? <= date_end", @params[:date_start].to_date, @params[:date_start].to_date)
     # (@params[:date_start]: (:date_start.midnight - 1.day)..date_end.midnight)
   end
 
