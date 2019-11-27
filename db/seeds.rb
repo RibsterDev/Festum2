@@ -1,6 +1,4 @@
-
 # penser a ajouter le departement dans l array departements
-
 Vote.destroy_all
 EventUser.destroy_all
 UserGroup.destroy_all
