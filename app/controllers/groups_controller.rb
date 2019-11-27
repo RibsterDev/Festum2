@@ -12,7 +12,8 @@ class GroupsController < ApplicationController
     #   @result_total.nil? ? @result_total = params[event_id] : @result_total << params[event_id]
     # end
     # raise
-  event_id
+    event_id
+  end
 
   def show
     @group = Group.find(params[:id])
@@ -39,6 +40,7 @@ class GroupsController < ApplicationController
     # cookies[:date_start] = @group.date_event
     # @group.user = current_user
     if @group.save
+      @group.users << current_user
       JSON.parse(@group.email).each do |email|
         mail = UserMailer.with(email: email, group: @group).send_invitation
         mail.deliver_now
