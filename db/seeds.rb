@@ -40,7 +40,7 @@ user3.save!
 
 user4 = User.new(
   name: "nicolas",
-  email: "nicolasmorlot@fgmail.com",
+  email: "nicolasmorlot@gmail.com",
   password: "nicolas",
   photo: "nicolas.png"
   )
