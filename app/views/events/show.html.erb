@@ -1,3 +1,5 @@
+
+
 <% if @event.photo_url.present? %>
   <% url = @event.photo_url %>
 <% else %>
@@ -5,6 +7,11 @@
 <%end %>
 
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
+  <% if params["format"] %>
+
+    <canvas id="canvas">
+    </canvas>
+  <% end %>
   <div class="container">
     <h1><%=@event.name%></h1>
   </div>
@@ -40,4 +47,6 @@
     </div>
   </div>
 </div>
+
+
 

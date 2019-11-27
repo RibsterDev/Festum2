@@ -113,10 +113,11 @@
         <% if @group.waiting_for_votes? %>
           <p>En attente des autres votes...</p>
         <% else %>
-          <%= link_to "Résultat !", event_path(@result_all), class: "boutton-show" %>
+        <% params[:feu] = true %>
+          <%= link_to "Résultat !", event_path(@result_all, params[:feu]), class: "boutton-show" %>
         <% end %>
       <% end %>
-    </ul>
+    </ul>autres
   </div>
 </div>
 
