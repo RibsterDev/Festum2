@@ -18,11 +18,11 @@ class User < ApplicationRecord
   after_create :send_welcome_email
 
   def proposed_event?(group)
-    !event_users.where(group_id: group.id).any?
+    event_users.where(group_id: group.id).any?
   end
 
-  def proposed_vote?(group)
-    event_users.where(user_id: id).any?
+  def voted?(group)
+    Vote.joins(:event_user).where(votes: { user_id: id }, event_users: { group_id: group.id }).exists?
   end
 
   private

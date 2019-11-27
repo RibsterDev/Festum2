@@ -26,6 +26,7 @@ class GroupsController < ApplicationController
         "#{event_user.event_id}" => "#{event_user.score}"
       }
     end
+    p result_all
     @result_all = result_all.max_by{|k,v| v}
 
   end

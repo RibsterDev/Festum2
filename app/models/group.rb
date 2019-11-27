@@ -6,7 +6,7 @@ class Group < ApplicationRecord
   has_many :votes, through: :event_users
 
   def waiting_for_events?
-    users.count > events.count || events.count.zero?
+    users.count > events.count
     # ||
     #   (created_at + proposition_duration.days) < DateTime.current
   end
