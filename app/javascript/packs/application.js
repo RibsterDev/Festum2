@@ -22,14 +22,25 @@ initSortable();
 const messageFromServer = (data) => {
   console.log("===============")
   console.log("je suis dans messageFromServer")
-  notifUser(data.user)
+  console.log(data)
+  showFlashMessage(data.flash_message)
 }
 
 
-const notifUser = (user) => {
-  alert(`${user.email} a rejoint le groupe !`)
+const showFlashMessage = (flashMessage) => {
+  const divMessage = `
+    <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+      ${flashMessage}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  `
+  const navbar = document.querySelector('.navbar')
+  navbar.insertAdjacentHTML('afterend', divMessage)
 }
 
 window.messageFromServer = messageFromServer
+
 
 

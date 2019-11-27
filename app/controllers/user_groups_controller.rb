@@ -5,7 +5,8 @@ class UserGroupsController < ApplicationController
     @group = Group.find(params[:group_id])
     @user_group = UserGroup.create(user: @user, group: @group)
 
-    ActionCable.server.broadcast("group_#{@group.id}", { user: { email: @user.email } })
+    message = "#{@user.email} à rejoint le groupe #{@group.name}"
+    ActionCable.server.broadcast("group_#{@group.id}", { user: @user, photo: helpers.image_path(@user.photo), flash_message: message })
 
     redirect_to group_path(@group)
   end

@@ -87,10 +87,6 @@
         <% end %>
     </div>
 
-
-
-
-
     <ul class="list_event-notvoted">
       <div class="card-event-show">
       <% @group.event_users.each do |event_user| %>
@@ -106,12 +102,20 @@
         </li>
       <% end %>
       </div>
-      <% if propose_event?(current_user) %>
+      <% if !current_user.proposed_event?(@group) %>
         <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
-      <% elsif propose_vote? %>
-        <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+      <% elsif !current_user.voted?(@group) %>
+        <% if @group.waiting_for_events? %>
+          <p>En attente des autres propositions...</p>
+        <% else %>
+          <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+        <% end %>
       <% else %>
-        <%= link_to "Résultat !", event_path(@event), class: "boutton-show" %>
+        <% if @group.waiting_for_votes? %>
+          <p>En attente des autres votes...</p>
+        <% else %>
+          <%= link_to "Résultat !", event_path(@result_all), class: "boutton-show" %>
+        <% end %>
       <% end %>
     </ul>
   </div>

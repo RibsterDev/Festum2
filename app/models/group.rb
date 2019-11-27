@@ -12,7 +12,7 @@ class Group < ApplicationRecord
   end
 
   def waiting_for_votes?
-    users.count * events.count < votes.count
+    users.count * events.count > votes.count
     # ||
     #   ((created_at - proposition_duration) + vote_duration.days) < DateTime.current
   end
@@ -21,11 +21,4 @@ class Group < ApplicationRecord
    users.count * events.count == votes.count
   end
 
-  def propose_event?
-    false
-  end
-
-  def propose_vote?
-   false
-  end
 end

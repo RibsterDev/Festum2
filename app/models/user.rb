@@ -17,9 +17,26 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email
 
+  def proposed_event?(group)
+    event_users.where(group_id: group.id).any?
+  end
+
+  def voted?(group)
+    Vote.joins(:event_user).where(votes: { user_id: id }, event_users: { group_id: group.id }).exists?
+  end
+
   private
 
   def send_welcome_email
     UserMailer.with(user: self).welcome.deliver_now
   end
 end
+
+
+  # def propose_event?
+  #   current_user.id == event_users.present?
+  # end
+
+  # def propose_vote?
+  #   current_user == votes.count(users.count)
+  # end
