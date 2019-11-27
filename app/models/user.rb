@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def proposed_vote?(group)
-    false
+    event_users.where(user_id: id).any?
   end
 
   private

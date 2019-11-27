@@ -15,11 +15,19 @@ class GroupsController < ApplicationController
   event_id
 
   def show
+    result_all = {}
     @group = Group.find(params[:id])
     @user_groups_members = UserGroup.where(group: @group)
      # do |user_groups_member|
      #      user_groups_member.user
     @members = @user_groups_members.map(&:user)
+    @group.event_users.each do |event_user|
+      result_all = {
+        "#{event_user.event_id}" => "#{event_user.score}"
+      }
+    end
+    @result_all = result_all.max_by{|k,v| v}
+
   end
 
   def new
