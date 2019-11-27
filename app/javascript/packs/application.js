@@ -17,5 +17,19 @@ initSortable();
 
 
 
+// fonction mis en mode degueulasse pour l'alert quand un user rejoint le groupe
+
+const messageFromServer = (data) => {
+  console.log("===============")
+  console.log("je suis dans messageFromServer")
+  notifUser(data.user)
+}
+
+
+const notifUser = (user) => {
+  alert(`${user.email} a rejoint le groupe !`)
+}
+
+window.messageFromServer = messageFromServer
 
 

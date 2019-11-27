@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'nokogiri'
+gem 'awesome_print'
 
 group :development do
   gem 'letter_opener', group: :development

@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
     #   @result_total.nil? ? @result_total = params[event_id] : @result_total << params[event_id]
     # end
     # raise
-  end
+  event_id
 
   def show
     @group = Group.find(params[:id])
