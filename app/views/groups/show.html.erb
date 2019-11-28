@@ -13,7 +13,7 @@
       </div>
       <div class="date-lieu">
         <div class="date">
-         <p><%= @group.date_event %></p>
+         <p><%= @group.date_event.strftime("%d %B, %Y") %></p>
         </div>
         <div class="lieu">
          <p><%= @group.location %></p>
