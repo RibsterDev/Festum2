@@ -3,7 +3,7 @@
   background: white;
   position: sticky;
   top: 0px;
-  height: 110px;
+  height: 90px;
   z-index: 1000;
 }
 
@@ -30,3 +30,19 @@
   color: white;
 }
 
+.onglet-groupe {
+  width: 100%;
+  transition: 0.3s;
+  border-radius: 50px;
+  color: white;
+  background-color: #8bc34a;
+  padding: 8px;
+  &:hover{
+  background-color: #8bc34a;
+  color: white;
+  }
+}
+
+a.onglet-groupe {
+  text-decoration: none;
+}
