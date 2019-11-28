@@ -31,7 +31,7 @@
 <div class="container-group-right">
 
         <div class="form-groupe">
-          <h2>Créer votre groupe</h2>
+          <h2>Créer ton groupe</h2>
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
               <%= f.label 'Quel nom veux-tu donner à ton groupe ?', class: 'form-control-label' %>
@@ -57,7 +57,7 @@
               <%= f.label "Ajoute tes amis !", class: 'form-control-label' %>
               <%= f.input_field :email, class: 'form-control-group', placeholder: "benjamin.prejent@gmail.com" %>
               <div class="email">
-                <a  id="add-friend-input" >Ajoute plus d'amis !</a>
+                <a  id="add-friend-input" ><i class="fas fa-plus-circle"></i></a>
               </div>
 
             </div>
