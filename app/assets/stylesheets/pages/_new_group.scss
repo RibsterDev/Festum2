@@ -83,6 +83,7 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
+
   .input-group {
     background: red;
   }
@@ -102,4 +103,9 @@
 
     }
   }
+}
+
+.fa-plus-circle {
+  font-size: 24px;
+  color: gray;
 }
