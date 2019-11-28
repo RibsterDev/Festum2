@@ -58,10 +58,12 @@
               <input style=" display: none;" type="radio" name="event_id" value="<%= event.id %>">
             </div>
             <div class="event-details">
-              <h5><%= event.name %></h5>
+              <h6 id="category-card"><%= event.category %></h6>
+              <h5 id="address-card"><%= event.address %></h5>
+              <h4 id="name-card"><%= event.name %></h4>
               <p><%= event.description[0..150] %>...</p>
               <%= link_to "Plus de détails", event_path(event), class: "details" %>
-              <%= f.button :button, "Proposer cet événement", type: :submit, name: "event_id", value: "#{event.id}", class: "btn-add-event" %>
+              <%= f.button :button, "Proposer cet événement", type: :submit, name: "event_id", value: "#{event.id}", class: "boutton-show-2" %>
             </div>
           </label>
         </div>
