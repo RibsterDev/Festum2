@@ -12,8 +12,9 @@
             <input type="hidden" name="votes[][event_user_id]" value="<%= event_user.id %>">
             <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
               <div class="card-infos-show">
+               <h6><%= event_user.event.category %></h6>
+               <span><%= event_user.event.address %></span>
                <p><%= event_user.event.name %></p>
-               <p><%= event_user.event.category %></p>
               </div>
               <%= image_tag (event_user.user.photo), class: "avatar-card" %>
           </li>
