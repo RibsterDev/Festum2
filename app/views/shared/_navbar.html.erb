@@ -15,12 +15,6 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Mes groupes", my_groups_groups_path, class: "nav-link" %>
-        </li>
-<!--         <li class="nav-item">
-          <%= link_to "Trouve un évènement", categories_events_path, class: "nav-link" %>
-        </li> -->
-        <li class="nav-item">
           <%= link_to "Créer un groupe", new_group_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
