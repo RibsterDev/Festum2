@@ -28,18 +28,17 @@ const messageFromServer = (data) => {
 
 const showFlashMessage = (flashMessage) => {
   const divMessage = `
-    <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+    <div class="alert alert-primary" role="alert">
       ${flashMessage}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
+
   `
   const navbar = document.querySelector('.navbar')
   navbar.insertAdjacentHTML('afterend', divMessage)
 }
 
 window.messageFromServer = messageFromServer
+
 
 
 
