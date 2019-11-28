@@ -13,34 +13,36 @@
     </canvas>
   <% end %>
   <div class="container">
-    <h1><%=@event.name%></h1>
+    <h1 id="nom-evenement"><%=@event.name%></h1>
+    <h4 id="salle"><%=@event.address %></h4>
   </div>
 </div>
 <div class="show-event">
   <div class="container" id="event">
     <div class="col-md-8 col-lg-8">
       <div class="text">
-        <h4><%= @event.sub_category%> à <%=@event.address %></h4>
-        <h2><%=@event.name%></h2>
+        <h4>Description de l'événement :</h4>
         <p><%=@event.description%></p>
       </div>
     </div>
     <div class="col-md-3 col-lg-3">
       <div class="infos-global">
         <div class="infos">
+          <p>Catégorie :</p>
           <h2><%= @event.category %></h2>
           <div class="date">
+            <p>Date :</p>
             <% if @event.date_start != @event.date_end %>
-              <p><%= @event.date_start %></p>
-              <p><%= @event.date_end %></p>
+              <p>Du <%= @event.date_start.strftime("%d %B %Y")%> <br> au <%= @event.date_end.strftime("%d %B %Y")%></p>
             <% else %>
+            <p>Le</p>
               <p><%= @event.date_start %></p>
             <% end %>
           </div>
           <div class="infos-p">
-            <h5>Plus d'informations</h5>
-            <%= link_to "Site web de l'évènement", @event.event_url, target: :"_blank" %>
-            </p>
+            <h5>Plus d'informations sur<br>le site l'événement :</h5>
+            <%= link_to "Site web", @event.event_url, target: :"_blank" %>
+
           </div>
         </div>
       </div>

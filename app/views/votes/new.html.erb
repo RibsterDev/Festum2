@@ -1,7 +1,7 @@
 <div class="container">
   <div class="vote">
     <h1>Il est l'heure de voter !</h1>
-    <h3>Class les evenements du plus &#8615; au moins interressant selon toi! </h3>
+    <h3>Classe les evenements du plus &#8615; au moins interressant selon toi! </h3>
     <p>Glisser déposer selon votre ordre de préférence.</p>
     <form action="<%= group_votes_path(@group) %>" method="post">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
@@ -12,15 +12,15 @@
             <input type="hidden" name="votes[][event_user_id]" value="<%= event_user.id %>">
             <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
               <div class="card-infos-show">
+               <h6><%= event_user.event.category %></h6>
+               <span><%= event_user.event.address %></span>
                <p><%= event_user.event.name %></p>
-               <p><%= event_user.event.category %></p>
-                  <% event_user.user.name %>
               </div>
               <%= image_tag (event_user.user.photo), class: "avatar-card" %>
           </li>
         <% end %>
       </ul>
-      <input type="submit" value="Valide ton vote !" class="valid-vote" />
+      <input type="submit" value="Valide ton vote !" class="boutton-show-vote" />
     </form>
   </div>
 </div>

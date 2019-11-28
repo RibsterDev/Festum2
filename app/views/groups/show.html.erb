@@ -114,10 +114,12 @@
            <span><%= event_user.event.address  %></span>
            <p><%= event_user.event.name %></p>
           </div>
-          <%= image_tag (event_user².user.photo), class: "avatar-card" %>
+
+          <%= event_user.user.name %>
+          <%= image_tag (event_user.user.photo), class: "avatar-card" %>
         </li>
           <% end %>
-          <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+          <% link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
       </div>
 
 <!--------------------- 01 PROPOSE UN EVENT --------------------------------->
@@ -145,8 +147,11 @@
           <p>En attente des autres propositions...</p>
         <% else %>
 
-          <% link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+        <div class="boutton-show">
+
+          <%= link_to "Va voter !", new_group_vote_path(@group)%>
         <% end %>
+        </div>
 
 <!------------------------------------------------------>
 

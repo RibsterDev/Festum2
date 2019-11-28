@@ -19,8 +19,15 @@
     <div class="card-container">
 
 
+      <div class ="btn-create filter" data-category= "all">
+         <h2>Tous (<%=compte_total.count %>)</h2>
+
+      </div>
+
+
       <% @events.each_with_index do |event, index| %>
         <% if array[index] %>
+
           <div class ="btn-create filter" data-category="<%= event.category %>">
             <h2><%= array[index] ? "#{array[index]} " : "" %>(<%= array_compte.count(event.category) %>)</h2>
 
@@ -28,6 +35,7 @@
             <!-- <h3><b><%= array_compte.count(event.category) %></b> évènements</h3> -->
           </div>
           <% else  %>
+
           <% end  %>
       <% end %>
     </div>
@@ -43,7 +51,6 @@
 
   <div class="contain-event-map">
 
-
     <div class="events-grid">
       <% @events.each do |event| %>
 
@@ -54,16 +61,17 @@
             <% else %>
               <% url ="https://images.unsplash.com/photo-1571575522341-be760794a35b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"%>
             <% end %>
-            <div class ="event-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
+            <div class ="event-card" style="background-image: url(<%= url %>);">
               <input style=" display: none;" type="radio" name="event_id" value="<%= event.id %>">
             </div>
             <div class="event-details">
-              <h5><%= event.name %></h5>
+              <h6 id="category-card"><%= event.category %></h6>
+              <h5 id="address-card"><%= event.address %></h5>
+              <h4 id="name-card"><%= event.name %></h4>
               <p><%= event.description[0..150] %>...</p>
               <%= link_to "Plus de détails", event_path(event), class: "details" %>
-              <%= f.button :button, "Proposer cet événement", type: :submit, name: "event_id", value: "#{event.id}", class: "btn-add-event" %>
+              <%= f.button :button, "Proposer cet événement", type: :submit, name: "event_id", value: "#{event.id}", class: "boutton-show-2" %>
             </div>
-
           </label>
         </div>
       <% end %>

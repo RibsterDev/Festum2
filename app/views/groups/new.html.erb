@@ -4,14 +4,15 @@
   <div class="container-group-left" >
 
     <div class="valeur">
-      <h1>Et si on sortait ?</h1>
-      <p>Parceque tu en as marre de passer toujours les mêmes soirées avec tees avec (familles :D),, nous sommes là pour vous faire découvrire de nouvelle expériences et découvrir l'univers de tes proches</p>
-      <%#= image_tag "undraw_friends_online_klj6.svg", style:'margin-left: 50px; width: 100%' %>
+      <h1>Qu'est ce qu'on Fest ?</h1>
+        <%#= image_tag "undraw_friends_online_klj6.svg", style:'margin-left: 50px; width: 100%' %>
+
     </div>
 
       <div class="rules" style="display:flex;">
         <div class="rule-one">
           <div class="img-ruleone"><%= image_tag "invit.jpg", style:'margin-left: 50px; width: 50%' %></div>
+
           <h4>1. Créé un groupe avec tes potes et propose un événement </h4>
          <!--  <p class="rule-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quam, totam natus unde incidunt fuga, dicta quibusdam, illum optio explicabo molestiae. Debitis minus aliquam libero hic dolores suscipit quas neque.</p> -->
         </div>
@@ -24,6 +25,7 @@
           <div class="img-ruletree"><%= image_tag "party.jpg", style:'margin-left: 50px; width: 50%' %></div>
           <h4>3. Découvre l'univers de tes potes</h4>
           <!-- <p class="rule-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quam, totam natus unde incidunt fuga, dicta quibusdam, illum optio explicabo molestiae. Debitis minus aliquam libero hic dolores suscipit quas neque.</p> -->
+
         </div>
     </div>
   </div>
@@ -31,19 +33,19 @@
 <div class="container-group-right">
 
         <div class="form-groupe">
-          <h2>Créer votre groupe</h2>
+          <h2>Créer ton groupe</h2>
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
-              <%= f.label 'Nom du groupe', class: 'form-control-label' %>
-              <%= f.text_field :name, class: 'form-control-group' %>
+              <%= f.label 'Quel nom pour ton groupe ?', class: 'form-control-label' %>
+              <%= f.text_field :name, class: 'form-control-group', placeholder: "Soirée des potos" %>
             </div>
             <div class="form">
-              <%= f.label "Date de l'évènement", class: 'form-control-label' %>
-              <%= f.input_field :date_event, as: :string, class: "flatpikr" %>
+              <%= f.label "À quelle date veux-tu organiser la soirée ?", class: 'form-control-label' %>
+              <%= f.input_field :date_event, as: :string, class: "flatpikr"%>
             </div>
             <div class="form">
-              <%= f.label "Lieux de l'évènement", class: 'form-control-label' %>
-              <%= f.text_field :location, class: 'form-control-group' %>
+              <%= f.label "Dans quelle ville ?", class: 'form-control-label' %>
+              <%= f.text_field :location, class: 'form-control-group', placeholder: "Lyon" %>
             </div>
  <!--            <div class="form">
               <%= f.label "Temps pour proposer un évènement", class: 'form-control-label' %>
@@ -54,10 +56,10 @@
               <%= f.input_field :vote_duration, class: 'form-control-group' %>
             </div>
 ² -->            <div class="form">
-              <%= f.label "Ajouter un ami(es)", class: 'form-control-label' %>
-              <%= f.input_field :email, class: 'form-control-group' %>
+              <%= f.label "Ajoute tes amis !", class: 'form-control-label' %>
+              <%= f.input_field :email, class: 'form-control-group', placeholder: "benjamin.prejent@gmail.com" %>
               <div class="email">
-                <a  id="add-friend-input" >Ajouter</a>
+                <a  id="add-friend-input" ><i class="fas fa-plus-circle"></i></a>
               </div>
 
             </div>

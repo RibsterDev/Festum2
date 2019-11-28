@@ -11,7 +11,7 @@
      </div>
       <div class="events-loc">
          <% @events.each do |event| %>
-         <% a.push(event.category) %>
+         <!-- <% a.push(event.category) %> -->
          <% end %>
          <hr>
          <h4><b><%= a.count %></b> évènements à <%= cookies[:address] %> le <%= cookies[:date_start] %></h4>
