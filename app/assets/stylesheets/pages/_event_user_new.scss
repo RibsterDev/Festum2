@@ -157,3 +157,14 @@
   border-top: 1px solid black;
 }
 
+.details {
+  color: black;
+  text-decoration: none;
+}
+
+a.details {
+  text-decoration: none;
+  &:hover{
+    color: #03a9f4;
+  }
+}
