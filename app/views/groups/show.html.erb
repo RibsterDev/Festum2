@@ -1,33 +1,44 @@
 <div class="container">
   <div class="groupe">
+
     <div class="infos-permanentes">
       <div class="permanentes">
         <div class="groupe-nom">
           <h1><%= @group.name %></h1>
+            <div class="date-lieu">
+              <div class="lieu">
+                <p>A <%= @group.location %> le</p>
+              </div>
+              <div class="date">
+               <p><%= @group.date_event.strftime("%d %B %Y") %></p>
+              </div>
+            </div>
         </div>
         <div class="members">
+          <p>Les membres de mon groupe</p>
           <% @members.each do |member| %>
+            <%= image_tag (member.photo), class: "avatar-membre" %>
+            <%= image_tag (member.photo), class: "avatar-membre" %>
+            <%= image_tag (member.photo), class: "avatar-membre" %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
           <% end %>
         </div>
-      </div>
-      <div class="date-lieu">
-        <div class="date">
-         <p><%= @group.date_event.strftime("%d %B %Y") %></p>
         </div>
-        <div class="lieu">
-          <p><%= @group.location %></p>
-        </div>
-      </div>
-    </div>
-    <div class="etats">
 
+      </div>
+
+
+    <hr>
+
+<!------------------------------------------------------>
+
+    <div class="etats">
       <% if @group.waiting_for_events? %>
         <div class="etat1">
           <div class="chiffre">
             <p>1</p>
           </div>
-        <p>Fait ta propostition !</p>
+        <p>Propose une activité !</p>
         </div>
         <div class="etat2-no">
           <div class="chiffre">
@@ -39,7 +50,7 @@
             <div class="chiffre">
               <p>3</p>
             </div>
-        <p>C'est fini !</p>
+        <p>Résultat des votes !</p>
         </div>
 
       <% elsif @group.waiting_for_votes? %>
@@ -59,7 +70,7 @@
           <div class="chiffre">
             <p>3</p>
         </div>
-        <p>C'est fini !</p>
+        <p>Résultat des votes !</p>
         </div>
 
       <% elsif @group.finish? %>
@@ -79,36 +90,66 @@
           <div class="chiffre">
             <p>3</p>
           </div>
-        <p>C'est fini !</p>
+        <p>Résultat des votes !</p>
         </div>
 
       <% else %>
           <p>Quelque chose cloche</p>
         <% end %>
     </div>
+      <hr>
+
+<!--------------------- 02 va voter----- --------------------------------->
 
     <ul class="list_event-notvoted">
       <div class="card-event-show">
-      <% @group.event_users.each do |event_user| %>
-      <hr>
+        <% @group.event_users.each do |event_user| %>
+      <!-- <hr> -->
         <li class="event-choice">
-        <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
+
+            <%= image_tag (event_user.event.photo_url), class: "img-card-show" %>
+
           <div class="card-infos-show">
+           <h6><%= event_user.event.category %></h6>
+           <span><%= event_user.event.address  %></span>
            <p><%= event_user.event.name %></p>
-            <p><%= event_user.event.category %></p>
           </div>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
         </li>
-      <% end %>
+          <% end %>
+          <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
       </div>
+
+<!--------------------- 01 PROPOSE UN EVENT --------------------------------->
+
       <% if !current_user.proposed_event?(@group) %>
-        <%= link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+      <!-- <hr> -->
+      <div class="img-add-event", style="display: flex; justify-content: center; align-items: center;">
+          <div class="move">
+            <span>
+              Tu n'as pas encore proposé d'activité pour ta soirée du <%= @group.date_event.strftime("%d %B %Y")  %>.
+            </span>
+
+            <%= link_to "Proposer une activité", new_group_event_user_path(@group), class: "boutton-show" %>
+          </div>
+          <div>
+            <%= image_tag 'undraw_add_content_d1tf2.svg', style:"height: 350px; width: 350px;" %>
+          </div>
+        </div>
+        <% link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+
+<!--------------------- 02 Va voter --------------------------------->
+
       <% elsif !current_user.voted?(@group) %>
         <% if @group.waiting_for_events? %>
           <p>En attente des autres propositions...</p>
         <% else %>
-          <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+
+          <% link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
         <% end %>
+
+<!------------------------------------------------------>
+
       <% else %>
         <% if @group.waiting_for_votes? %>
           <p>En attente des autres votes...</p>
