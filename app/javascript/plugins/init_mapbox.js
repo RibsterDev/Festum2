@@ -22,7 +22,7 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       // if
       const popup = new mapboxgl.Popup()
-        .setHTML(`<div class="img-map"><h5>${marker.name}</h5> <img src='${marker.photo_url}' class="img-card-show" /> </div>`)
+        .setHTML(`<img src='${marker.photo_url}' class="img-card-show" /> </div> <div class="imgmap"><h5>${marker.name}</h5> `)
         // .setContent(marker.photo_url)
 
 
