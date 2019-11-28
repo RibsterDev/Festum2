@@ -5,9 +5,10 @@ UserGroup.destroy_all
 Group.destroy_all
 User.destroy_all
 
-if ENV['SEED_EVENTS'] == 'true'
-  Event.destroy_all
-  departments = [01, 03, 07, 38, 42, 63, 69, 73, 74, 75, 92]
+# if ENV['SEED_EVENTS'] == 'true'
+#   Event.destroy_all
+  departments = [69]
+  # departments = [01, 03, 07, 38, 42, 63, 69, 73, 74, 75, 92]
   departments.each do |department|
     department < 10 ? content = File.read("#{Rails.root}/db/events0#{department}.json") : content = File.read("#{Rails.root}/db/events#{department}.json")
     events = JSON.parse(content)
@@ -15,7 +16,6 @@ if ENV['SEED_EVENTS'] == 'true'
       Event.create!(event)
     end
   end
-end
 
 
 
