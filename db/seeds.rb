@@ -5,8 +5,10 @@ UserGroup.destroy_all
 Group.destroy_all
 User.destroy_all
 
-# if ENV['SEED_EVENTS'] == 'true'
+if ENV['SEED_EVENTS'] == 'true'
+
   Event.destroy_all
+
   departments = [69]
   # departments = [01, 03, 07, 38, 42, 63, 69, 73, 74, 75, 92]
   departments.each do |department|
@@ -16,7 +18,7 @@ User.destroy_all
       Event.create!(event)
     end
   end
-# end
+end
 
 
 
