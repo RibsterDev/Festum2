@@ -21,7 +21,11 @@ categories.forEach((filter) => {
         event.style.display = 'block'
         // event.dataset.lat
         // event.dataset.long
-      } else {
+      }else if (categoryName == "all"){
+        event.classList.remove('filter-active')
+        event.style.display = 'block'
+      }
+       else {
         event.style.display = 'none'
       }
     })
