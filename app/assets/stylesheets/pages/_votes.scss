@@ -1,7 +1,14 @@
 .event_choices {
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 160px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 .vote {
@@ -16,7 +23,7 @@
 
 .boutton-show-vote{
   font-family: $font;
-  font-size: 18px;
+  font-size: 20px;
   width: 300px;
   border-radius: 5px;
   padding: 10px;
