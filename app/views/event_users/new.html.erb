@@ -51,7 +51,6 @@
 
   <div class="contain-event-map">
 
-
     <div class="events-grid">
       <% @events.each do |event| %>
 
@@ -62,7 +61,7 @@
             <% else %>
               <% url ="https://images.unsplash.com/photo-1571575522341-be760794a35b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"%>
             <% end %>
-            <div class ="event-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
+            <div class ="event-card" style="background-image: url(<%= url %>);">
               <input style=" display: none;" type="radio" name="event_id" value="<%= event.id %>">
             </div>
             <div class="event-details">
