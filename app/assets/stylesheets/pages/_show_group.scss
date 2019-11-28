@@ -1,10 +1,14 @@
+.members p {
+  text-align: center;
+}
+
 .groupe {
   padding: 30px;
   background-color: white;
   border-radius: 10px;
   color: black;
   margin-top: 40px;
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+  // box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
 }
 
 .group-infos {
@@ -19,25 +23,29 @@
 
 .permanentes h1 {
   font-family: $font;
+  font-weight: 600;
   font-size: 56px
 }
 
 .date-lieu {
   display: flex;
-  justify-content: space-between;
+  // flex-direction: column;
+  // justify-content: space-between;
   margin-bottom: 20px;
 
   .date p {
-    font-size: 32px;
+    font-size: 20px;
   }
 
   .lieu p {
-    font-size: 32px;
+    margin-right: 10px;
+    font-size: 20px;
   }
 }
 
 .avatar-membre {
   width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin-right: 10px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
@@ -49,65 +57,109 @@
  }
 
 .etat1 {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  justify-content: center;
   width: 100%;
   background-color: #03A9F4;
   color: white;
-  border-radius: 7px;
-  margin-right: 80px;
+  // border-radius: 7px;
+  // margin-right: 80px;
   p {
+   margin: 0 10px;
   font-size: 20px;
   }
 }
 
 .etat2 {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  justify-content: center;
   width: 100%;
   background-color: #03A9F4;
   color: white;
-  border-radius: 7px;
+  // border-radius: 7px;
+  margin: 0 0px;
   p {
+    margin: 0 10px;
   font-size: 20px;
   }
 }
 
 .etat3 {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  justify-content: center;
   width: 100%;
   background-color: #03A9F4;
   color: white;
-  border-radius: 7px;
+  // border-radius: 7px;
   p {
+    margin: 0 10px;
   font-size: 20px;
   }
 }
 
 .etat1-no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // padding: 10px 10px;
   width: 100%;
-  background-color: rgba(3, 169, 244,0.4);
-  color: white;
-  border-radius: 7px;
-  margin-right: 80px;
+  background-color: #efefef;
+  color: #5c676d;
+  // border-radius: 7px;
+  // margin-right: 80px;
   p {
+    margin: 0 10px;
   font-size: 20px;
   }
 }
 
 .etat2-no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  border-right: 1px solid #dadada;
   width: 100%;
-  background-color: rgba(3, 169, 244,0.4);
-  color: white;
-  border-radius: 7px;
-  margin-right: 80px;
+  background-color: #efefef;
+  color: #5c676d;
+  // border-radius: 7px;
+  // margin: 0 10px;
   p {
+    margin: 0 10px;
   font-size: 20px;
   }
 }
 
 .etat3-no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
   width: 100%;
-  background-color: rgba(3, 169, 244,0.4);
-  color: white;
-  border-radius: 7px;
+  background-color: #efefef;
+  color: #5c676d;
+  // border-radius: 7px;
   p {
+    margin: 0 10px;
   font-size: 20px;
+  }
+}
+
+.move {
+  font-family: $font;
+  font-weight: 100;
+  font-size: 35px;
+  color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  span {
+    margin-bottom: 20px;
   }
 }
 
@@ -126,22 +178,43 @@
 }
 
 .event-choice {
-border-radius: 10px;
-background-color: white;
-height: 90px;
-display: flex;
-position: relative;
-margin-bottom: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 160px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .card-infos-show {
-  margin-left: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  padding: 10px 50px;
+  p {
+    color: #5c676d;
+    letter-spacing: 3px;
+    font-family: $font;
+    font-size: 30px;
+    font-weight: 100;
+  }
+  h6 {
+    font-family: $font;
+    font-size: 14px;
+    color: #a7a7a7;
+  }
 }
 
 .img-card-show {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+  margin-left: -30px;
+    height: 130px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .boutton-groupe {
@@ -165,7 +238,9 @@ margin-bottom: 30px;
 }
 
 .boutton-show{
-  width: 200px;
+  font-family: $font;
+  font-size: 20px;
+  width: 300px;
   border-radius: 5px;
   padding: 10px;
   text-align: center;

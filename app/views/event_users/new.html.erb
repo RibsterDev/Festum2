@@ -19,8 +19,15 @@
     <div class="card-container">
 
 
+      <div class ="btn-create filter" data-category= "all">
+         <h2>Tous (<%=compte_total.count %>)</h2>
+
+      </div>
+
+
       <% @events.each_with_index do |event, index| %>
         <% if array[index] %>
+
           <div class ="btn-create filter" data-category="<%= event.category %>">
             <h2><%= array[index] ? "#{array[index]} " : "" %>(<%= array_compte.count(event.category) %>)</h2>
 
@@ -28,6 +35,7 @@
             <!-- <h3><b><%= array_compte.count(event.category) %></b> évènements</h3> -->
           </div>
           <% else  %>
+
           <% end  %>
       <% end %>
     </div>
@@ -60,7 +68,7 @@
             <div class="event-details">
               <h5><%= event.name %></h5>
               <p><%= event.description[0..150] %>...</p>
-              <%= link_to "Plus de détails", event_path(event) %>
+              <%= link_to "Plus de détails", event_path(event), class: "details" %>
               <%= f.button :button, "Proposer cet événement", type: :submit, name: "event_id", value: "#{event.id}", class: "btn-add-event" %>
             </div>
 
@@ -91,14 +99,13 @@
         <%end%>
     </div>
   </div>
+<% end %>
 </div>
 
 
-<%= link_to "Groupe show", group_path(params[:group_id]) %>
 
 
 
-<% end %>
 
 
 
