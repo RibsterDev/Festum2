@@ -5,7 +5,7 @@
 
 .text {
   background-color: white;
-  margin-top: 90px;
+  margin-top: 70px;
   padding: 30px;
 }
 
@@ -19,8 +19,10 @@
 
 .text h4 {
   font-family: $font;
-  opacity: 0.6;
-  text-decoration: underline;
+  color: #868686;
+  // text-decoration: underline;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 .text p {
   font-family: $font;
@@ -29,7 +31,8 @@
 }
 
 .infos-global {
-  margin-top: 90px;
+  margin-top: 70px;
+  margin-bottom: 50px;
   padding: 20px;
   background-color: white;
   position: sticky;
@@ -38,7 +41,11 @@
 
 .infos h2 {
   font-family: $font;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+.infos p {
+  margin-bottom: 10px;
 }
 
 .date p {
@@ -49,6 +56,7 @@
   text-decoration: none;
   color: #03A9F4;
   transition: 0.3s;
+  font-size: 16px;
   &:hover {
     color: #E91E63;
   }
@@ -56,4 +64,6 @@
 
 .infos-p h5 {
   font-family: $font;
+  color: #868686;
+  font-size: 16px;
 }
