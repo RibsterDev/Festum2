@@ -46,7 +46,8 @@ class EventsController < ApplicationController
       {
         lat: event.lat,
         lng: event.long,
-        # infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+        infoWindow: render_to_string(partial: "map_info_window", locals: { event: event }),
+        image_url: helpers.asset_url(event.photo_url)
       }
     end
   end

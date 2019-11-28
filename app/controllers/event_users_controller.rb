@@ -9,7 +9,9 @@ class EventUsersController < ApplicationController
       {
         lat: event.lat,
         lng: event.long,
-        # infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+        name: event.name,
+        photo_url: event.photo_url,
+        # infoWindow: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
   end
