@@ -1,15 +1,43 @@
 .event_choices {
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 160px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 .vote {
-  border: 2px solid black;
   padding: 20px 30px;
   margin-top: 50px;
 
   h1 {
     font-family: $font;
   }
+}
+
+
+.boutton-show-vote{
+  font-family: $font;
+  font-size: 20px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: #03A9F4;
+  color: white;
+  transition: 0.3s;
+  &:hover{
+    background-color: #E91E63;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.boutton-show-vote a {
+  text-decoration: none;
 }
