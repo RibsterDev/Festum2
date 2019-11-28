@@ -2,6 +2,15 @@
   display: flex;
 }
 
+#nom-evenement {
+  color: white;
+  font-size: 80px;
+}
+
+#salle {
+  color: white;
+  font-size: 40px;
+}
 
 .text {
   background-color: white;
@@ -23,6 +32,7 @@
   // text-decoration: underline;
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: left;
 }
 .text p {
   font-family: $font;
