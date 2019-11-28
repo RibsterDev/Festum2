@@ -13,10 +13,10 @@
       </div>
       <div class="date-lieu">
         <div class="date">
-         <p><%= @group.date_event %></p>
+         <p><%= @group.date_event.strftime("%d %B %Y") %></p>
         </div>
         <div class="lieu">
-         <p><%= @group.location %></p>
+          <p><%= @group.location %></p>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
           <div class="chiffre">
             <p>1</p>
           </div>
-        <p>Faites vos jeux !</p>
+        <p>Fait ta propostition !</p>
         </div>
         <div class="etat2-no">
           <div class="chiffre">
@@ -96,7 +96,6 @@
           <div class="card-infos-show">
            <p><%= event_user.event.name %></p>
             <p><%= event_user.event.category %></p>
-            <p><%= event_user.score %> Points</p>
           </div>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
         </li>
@@ -118,7 +117,7 @@
           <%= link_to "Résultat !", event_path(@result_all, params[:feu]), class: "boutton-show" %>
         <% end %>
       <% end %>
-    </ul>autres
+    </ul>
   </div>
 </div>
 

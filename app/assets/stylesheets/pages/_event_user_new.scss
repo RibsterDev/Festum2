@@ -14,6 +14,7 @@
 }
 
 .main-container h4 {
+    color: #5c676d;
     text-align:center;
   }
 
@@ -156,3 +157,14 @@
   border-top: 1px solid black;
 }
 
+.details {
+  color: black;
+  text-decoration: none;
+}
+
+a.details {
+  text-decoration: none;
+  &:hover{
+    color: #03a9f4;
+  }
+}

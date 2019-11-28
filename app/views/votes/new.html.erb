@@ -1,12 +1,13 @@
 <div class="container">
   <div class="vote">
     <h1>Il est l'heure de voter !</h1>
+    <p>Glisser déposer selon votre ordre de préférence.</p>
     <form action="<%= group_votes_path(@group) %>" method="post">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
       <ul class="list_event">
         <% @group.event_users.each_with_index do |event_user, index| %>
           <li id="<%= event_user.event.id %>" class="event_choices">
-            <input type="text" name="votes[][event_user_id]" value="<%= event_user.id %>">
+            <input type="hidden" name="votes[][event_user_id]" value="<%= event_user.id %>">
             <%= event_user.event.name %>
             <%= event_user.user.name %>
           </li>

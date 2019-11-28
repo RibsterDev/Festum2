@@ -31,12 +31,3 @@ class User < ApplicationRecord
     UserMailer.with(user: self).welcome.deliver_now
   end
 end
-
-
-  # def propose_event?
-  #   current_user.id == event_users.present?
-  # end
-
-  # def propose_vote?
-  #   current_user == votes.count(users.count)
-  # end

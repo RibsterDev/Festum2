@@ -3,32 +3,24 @@ class GroupsController < ApplicationController
   before_action :find_group, only: [:show]
 
   def index
-    # @group = Group.find(params["format"])
-    # # @event = EventUser.find(params["format"])
-    # # @event = @event.event_id
-    # # params.each_key { |event_id| @result_total = params[event_id] }
-    # #   @result_total = params[event_id]
-    # @group.event_users.id.each do |event_id|
-    #   @result_total.nil? ? @result_total = params[event_id] : @result_total << params[event_id]
-    # end
-    # raise
   end
 
   def show
-    result_all = {}
+    @result_all.nil? ? @result_all = {} : @result_all
     @group = Group.find(params[:id])
     @user_groups_members = UserGroup.where(group: @group)
      # do |user_groups_member|
      #      user_groups_member.user
     @members = @user_groups_members.map(&:user)
-    @group.event_users.each do |event_user|
-      result_all = {
-        "#{event_user.event_id}" => "#{event_user.score}"
-      }
-    end
-    p result_all
-    @result_all = result_all.max_by{|k,v| v}
+    @group.event_users.each_with_index do |event_user, index|
+      @result_all [
+        "#{event_user.event_id}"] = "#{event_user.score}"
 
+      # raise
+      p @result_all
+    end
+    # p @result_all
+    @result_all = @result_all.max_by{|k,v| v}
   end
 
   def new
@@ -54,12 +46,9 @@ class GroupsController < ApplicationController
         mail.deliver_now
       end
       redirect_to group_path(@group)
-
     else
       render :new
     end
-
-    # join(params)
   end
 
   def my_groups
