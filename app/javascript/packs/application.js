@@ -9,11 +9,11 @@ import './flatpicker.js'
 import '../plugins/win';
 
 import { effectModalEvent } from '../plugins/modal_event';
+import { removeInvitation } from '../plugins/vanishdiv';
 
 effectModalEvent();
 initMapbox();
 initSortable();
-
 
 
 // fonction mis en mode degueulasse pour l'alert quand un user rejoint le groupe
@@ -22,24 +22,25 @@ const messageFromServer = (data) => {
   console.log("===============")
   console.log("je suis dans messageFromServer")
   console.log(data)
-  showFlashMessage(data.flash_message)
+  showFlashMessage(data.photo, data.flash_message)
 }
 
 
-const showFlashMessage = (flashMessage) => {
+const showFlashMessage = (photoMessage, flashMessage) => {
   const divMessage = `
-    <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+    <div class="invitation alert-primary" role="alert">
+      <img src="${photoMessage}"  class= "avatar-membre">
       ${flashMessage}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
+
   `
   const navbar = document.querySelector('.navbar')
   navbar.insertAdjacentHTML('afterend', divMessage)
+  setTimeout(removeInvitation, 3000)
 }
 
 window.messageFromServer = messageFromServer
+
 
 
 
