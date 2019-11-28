@@ -18,9 +18,9 @@
           <p>Les membres de mon groupe</p>
           <% @members.each do |member| %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
+           <!--  <%= image_tag (member.photo), class: "avatar-membre" %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
-            <%= image_tag (member.photo), class: "avatar-membre" %>
-            <%= image_tag (member.photo), class: "avatar-membre" %>
+            <%= image_tag (member.photo), class: "avatar-membre" %> -->
           <% end %>
         </div>
         </div>
@@ -138,7 +138,7 @@
             <%= image_tag 'undraw_add_content_d1tf2.svg', style:"height: 350px; width: 350px;" %>
           </div>
         </div>
-        <% link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+        <% link_to "Proposer une activité", new_group_event_user_path(@group), class: "boutton-show" %>
 
 <!--------------------- 02 Va voter --------------------------------->
 
