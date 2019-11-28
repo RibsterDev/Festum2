@@ -10,13 +10,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
-                      // marker.addEventListener('click', () => {
-                      // const event_id = marker.dataset.id;
-                      // popups.push(event_id);
-                      // console.log(popups);
-                      // console.log("je suis ici");
 
-                      // addMarkersToMap(map, popups)
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -40,6 +34,7 @@ const initMapbox = () => {
     };
 
     fitMapToMarkers(map, markers);
+
  }
 };
 
