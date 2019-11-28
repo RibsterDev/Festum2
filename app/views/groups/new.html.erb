@@ -34,16 +34,16 @@
           <h2>Créer votre groupe</h2>
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
-              <%= f.label 'Nom du groupe', class: 'form-control-label' %>
-              <%= f.text_field :name, class: 'form-control-group' %>
+              <%= f.label 'Quel nom veux-tu donner à ton groupe ?', class: 'form-control-label' %>
+              <%= f.text_field :name, class: 'form-control-group', placeholder: "Soirée des potos" %>
             </div>
             <div class="form">
-              <%= f.label "Date de l'évènement", class: 'form-control-label' %>
-              <%= f.input_field :date_event, as: :string, class: "flatpikr" %>
+              <%= f.label "À quelle date veux-tu organiser la soirée ?", class: 'form-control-label' %>
+              <%= f.input_field :date_event, as: :string, class: "flatpikr"%>
             </div>
             <div class="form">
-              <%= f.label "Lieux de l'évènement", class: 'form-control-label' %>
-              <%= f.text_field :location, class: 'form-control-group' %>
+              <%= f.label "Dans quelle ville ?", class: 'form-control-label' %>
+              <%= f.text_field :location, class: 'form-control-group', placeholder: "Lyon" %>
             </div>
  <!--            <div class="form">
               <%= f.label "Temps pour proposer un évènement", class: 'form-control-label' %>
@@ -54,10 +54,10 @@
               <%= f.input_field :vote_duration, class: 'form-control-group' %>
             </div>
 ² -->            <div class="form">
-              <%= f.label "Ajouter un ami(es)", class: 'form-control-label' %>
-              <%= f.input_field :email, class: 'form-control-group' %>
+              <%= f.label "Ajoute tes amis !", class: 'form-control-label' %>
+              <%= f.input_field :email, class: 'form-control-group', placeholder: "benjamin.prejent@gmail.com" %>
               <div class="email">
-                <a  id="add-friend-input" >Ajouter</a>
+                <a  id="add-friend-input" >Ajoute plus d'amis !</a>
               </div>
 
             </div>
