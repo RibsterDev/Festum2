@@ -32,15 +32,15 @@
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
               <%= f.label 'Quel nom pour ton groupe ?', class: 'form-control-label' %>
-              <%= f.text_field :name, class: 'form-control-group', placeholder: "Soirée des potos" %>
+              <%= f.text_field :name, class: 'form-control-group', placeholder: "Ex : Soirée des potos" %>
             </div>
             <div class="form">
               <%= f.label "À quelle date veux-tu organiser la soirée ?", class: 'form-control-label' %>
-              <%= f.input_field :date_event, as: :string, class: "flatpikr"%>
+              <%= f.input_field :date_event, as: :string, class: "flatpikr", placeholder: "Ex : 07 décembre 2019" %>
             </div>
             <div class="form">
               <%= f.label "Dans quelle ville ?", class: 'form-control-label' %>
-              <%= f.text_field :location, class: 'form-control-group', placeholder: "Lyon" %>
+              <%= f.text_field :location, class: 'form-control-group', placeholder: "Ex : Lyon" %>
             </div>
  <!--            <div class="form">
               <%= f.label "Temps pour proposer un évènement", class: 'form-control-label' %>
@@ -52,7 +52,7 @@
             </div>
 ² -->            <div class="form">
               <%= f.label "Ajoute tes amis !", class: 'form-control-label' %>
-              <%= f.input_field :email, class: 'form-control-group', placeholder: "benjamin.prejent@gmail.com" %>
+              <%= f.input_field :email, class: 'form-control-group', placeholder: "Ex : benjamin.prejent@gmail.com" %>
               <div class="email">
                 <a  id="add-friend-input" ><i class="fas fa-plus-circle"></i></a>
               </div>
