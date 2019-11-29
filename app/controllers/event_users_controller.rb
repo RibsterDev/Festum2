@@ -12,6 +12,7 @@ class EventUsersController < ApplicationController
         name: event.name,
         address: event.address,
         category: event.category,
+        details: event_path(event),
         photo_url: event.photo_url,
         # infoWindow: render_to_string(partial: "info_window", locals: { event: event })
       }
