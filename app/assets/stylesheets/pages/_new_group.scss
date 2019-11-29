@@ -2,6 +2,19 @@
   padding: 0 50px;
 }
 
+.rule-one {
+  width: 30%
+}
+
+.rule-two {
+  margin: 0 20px;
+  width: 30%
+}
+
+.rule-tree {
+  width: 30%
+}
+
 .img-ruleone {
   display: flex;
   align-items: center;
@@ -23,6 +36,7 @@
 .img-ruletree {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 20px 0;
 }
 

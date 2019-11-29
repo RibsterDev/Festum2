@@ -31,15 +31,15 @@
 }
 
 .onglet-groupe {
-  font-size: 14px;
+    font-size: 14px;
     width: 100%;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border-radius: 5px;
-    color: #e91e63;
+    color: #5C676D;
     /* background-color: #e91e63; */
     padding: 8px 20px;
-    border: 1px solid #e91e63;
+    border: 1px solid #5C676D;
   &:hover{
   background-color: #e91e63;
   color: white;
