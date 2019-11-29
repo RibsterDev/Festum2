@@ -35,7 +35,6 @@
           <h2>Créer votre groupe</h2>
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
-
               <%= f.label 'Quel nom pour ton groupe ?', class: 'form-control-label' %>
               <%= f.text_field :name, class: 'form-control-group', placeholder: "Ex : Soirée des potos" %>
             </div>
@@ -45,19 +44,15 @@
             </div>
             <div class="form">
               <%= f.label "Dans quelle ville ?", class: 'form-control-label' %>
-              <%= f.text_field :location, class: 'form-control-group', placeholder: "Ex : Lyon" %
+              <%= f.text_field :location, class: 'form-control-group', placeholder: "Ex : Lyon" %>
             </div>
            <div class="form">
-
               <%= f.label "Ajoute tes amis !", class: 'form-control-label' %>
               <%= f.input_field :email, class: 'form-control-group', placeholder: "Ex : benjamin.prejent@gmail.com" %>
-
               <div class="email">
-                <a  id="add-friend-input" >Ajouter</a>
+                <a  id="add-friend-input" ><i class="fas fa-plus-circle"></i></a>
               </div>
-
             </div>
-
             <%= f.submit "Valide ton groupe !", class: "boutton" %>
             <% end %>
         </div>
