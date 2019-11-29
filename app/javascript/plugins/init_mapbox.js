@@ -19,7 +19,9 @@ const initMapbox = () => {
         .setHTML(`<img src='${marker.photo_url}' class="img-card-show" />
           <p>${marker.category}</p>
           <h6 class="italic"> ${marker.address}</h6>
-          <h5 class="tit">${marker.name}</h5> `)
+          <h5 class="tit">${marker.name}</h5>
+          <p><a href=${marker.details} >
+           details </p>`)
         // .setContent(marker.photo_url)
 
 
