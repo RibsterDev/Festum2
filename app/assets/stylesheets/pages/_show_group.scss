@@ -18,7 +18,7 @@
 .permanentes {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .permanentes h1 {
@@ -257,4 +257,11 @@
 .boutton-show a {
   color: white;
   text-decoration: none;
+}
+
+.infos-permanentes {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #f9f9f9;
 }
