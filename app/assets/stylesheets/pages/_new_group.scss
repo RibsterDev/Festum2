@@ -109,3 +109,10 @@
   font-size: 24px;
   color: gray;
 }
+
+::placeholder {
+  color: black;
+  opacity: 0.3;
+  font-size: 14px;
+  // font-style: italic;
+}

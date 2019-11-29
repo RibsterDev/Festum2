@@ -35,28 +35,23 @@
           <h2>Créer votre groupe</h2>
           <%= simple_form_for(@group) do |f| %>
             <div class="form">
-              <%= f.label 'Nom du groupe', class: 'form-control-label' %>
-              <%= f.text_field :name, class: 'form-control-group' %>
+
+              <%= f.label 'Quel nom pour ton groupe ?', class: 'form-control-label' %>
+              <%= f.text_field :name, class: 'form-control-group', placeholder: "Ex : Soirée des potos" %>
             </div>
             <div class="form">
-              <%= f.label "Date de l'évènement", class: 'form-control-label' %>
-              <%= f.input_field :date_event, as: :string, class: "flatpikr" %>
+              <%= f.label "À quelle date veux-tu organiser la soirée ?", class: 'form-control-label' %>
+              <%= f.input_field :date_event, as: :string, class: "flatpikr", placeholder: "Ex : 07 décembre 2019" %>
             </div>
             <div class="form">
-              <%= f.label "Lieux de l'évènement", class: 'form-control-label' %>
-              <%= f.text_field :location, class: 'form-control-group' %>
+              <%= f.label "Dans quelle ville ?", class: 'form-control-label' %>
+              <%= f.text_field :location, class: 'form-control-group', placeholder: "Ex : Lyon" %
             </div>
- <!--            <div class="form">
-              <%= f.label "Temps pour proposer un évènement", class: 'form-control-label' %>
-              <%= f.input_field :proposition_duration, class: 'form-control-group' %>
-            </div>
-            <div class="form">
-              <%= f.label "Temps pour voter", class: 'form-control-label' %>,
-              <%= f.input_field :vote_duration, class: 'form-control-group' %>
-            </div>
-² -->            <div class="form">
-              <%= f.label "Ajouter un ami(es)", class: 'form-control-label' %>
-              <%= f.input_field :email, class: 'form-control-group' %>
+           <div class="form">
+
+              <%= f.label "Ajoute tes amis !", class: 'form-control-label' %>
+              <%= f.input_field :email, class: 'form-control-group', placeholder: "Ex : benjamin.prejent@gmail.com" %>
+
               <div class="email">
                 <a  id="add-friend-input" >Ajouter</a>
               </div>
