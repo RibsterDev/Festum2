@@ -5,6 +5,7 @@ UserGroup.destroy_all
 Group.destroy_all
 User.destroy_all
 
+
 if ENV['SEED_EVENTS'] == 'true'
 
   Event.destroy_all

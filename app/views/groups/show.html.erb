@@ -18,9 +18,9 @@
           <p>Les membres de mon groupe</p>
           <% @members.each do |member| %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
+           <!--  <%= image_tag (member.photo), class: "avatar-membre" %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
-            <%= image_tag (member.photo), class: "avatar-membre" %>
-            <%= image_tag (member.photo), class: "avatar-membre" %>
+            <%= image_tag (member.photo), class: "avatar-membre" %> -->
           <% end %>
         </div>
         </div>
@@ -28,7 +28,7 @@
       </div>
 
 
-    <hr>
+    <!-- <hr> -->
 
 <!------------------------------------------------------>
 
@@ -97,7 +97,7 @@
           <p>Quelque chose cloche</p>
         <% end %>
     </div>
-      <hr>
+      <!-- <hr> -->
 
 <!--------------------- 02 va voter----- --------------------------------->
 
@@ -114,10 +114,12 @@
            <span><%= event_user.event.address  %></span>
            <p><%= event_user.event.name %></p>
           </div>
+
+          <%= event_user.user.name %>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
         </li>
           <% end %>
-          <%= link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+          <% link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
       </div>
 
 <!--------------------- 01 PROPOSE UN EVENT --------------------------------->
@@ -136,7 +138,7 @@
             <%= image_tag 'undraw_add_content_d1tf2.svg', style:"height: 350px; width: 350px;" %>
           </div>
         </div>
-        <% link_to "Propose ton évènement", new_group_event_user_path(@group), class: "boutton-show" %>
+        <% link_to "Proposer une activité", new_group_event_user_path(@group), class: "boutton-show" %>
 
 <!--------------------- 02 Va voter --------------------------------->
 
@@ -145,8 +147,11 @@
           <p>En attente des autres propositions...</p>
         <% else %>
 
-          <% link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
+        <div class="boutton-show">
+
+          <%= link_to "Va voter !", new_group_vote_path(@group)%>
         <% end %>
+        </div>
 
 <!------------------------------------------------------>
 
