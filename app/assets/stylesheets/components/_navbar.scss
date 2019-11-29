@@ -5,6 +5,13 @@
   top: 0px;
   height: 90px;
   z-index: 1000;
+  box-shadow: -1px -1px 5px #63626254;
+}
+
+.navbar-lewagon .nav-item.dropdown {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
 }
 
 .logo {
@@ -41,6 +48,7 @@
     padding: 8px 20px;
     border: 1px solid #5C676D;
   &:hover{
+  border: 1px solid #e91e63;
   background-color: #e91e63;
   color: white;
   }
