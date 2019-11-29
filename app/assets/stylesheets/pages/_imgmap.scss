@@ -1,15 +1,26 @@
-.imgmap{
 
-}
 .mapboxgl-popup-content{
-  h5{
+  p{
+    color: #98887F;
+    font-size: 16px;
+    margin-left: 4px;
+    margin-top: 4px;
+  }
+  h6{
     font-size: 12px;
-    margin-left: 8px;
-    margin-top: 12px;
+    margin-left: 4px;
+    margin-top: 4px;
 
   }
+  .italic{
+    font-style: italic;
+  }
+  .tit{
+    color: black;
+    font-style: bold;
+  }
   img{
-    margin: 8px;
+    margin: 4px;
 
   }
 }

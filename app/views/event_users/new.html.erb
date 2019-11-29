@@ -82,21 +82,7 @@
        id="map"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      <% @events.each do |event| %>
-        <% if event.photo_url.present? %>
-          <% url = event.photo_url %>
-            <% else %>
-              <% url ="https://images.unsplash.com/photo-1571575522341-be760794a35b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"%>
-            <% end %>
-            <div class="modal-event" id="modal-<%= event.id %>">
-              <div class= "event-photo" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
-              </div>
-              <h6><%= event.name %></h6>
-              <div class="event-description">
-                <p><%= event.description[0...1200] %></p>
-              </div>
-            </div>
-        <%end%>
+
     </div>
   </div>
 <% end %>
