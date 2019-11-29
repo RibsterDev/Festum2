@@ -7,7 +7,7 @@
           <h1><%= @group.name %></h1>
             <div class="date-lieu">
               <div class="lieu">
-                <p>A <%= @group.location %> le</p>
+                <p>À <%= @group.location %> le</p>
               </div>
               <div class="date">
                <p><%= @group.date_event.strftime("%d %B %Y") %></p>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="members">
-          <p>Les membres de mon groupe</p>
+          <p>Les membres du groupe</p>
           <% @members.each do |member| %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
            <!--  <%= image_tag (member.photo), class: "avatar-membre" %>
@@ -115,7 +115,6 @@
            <p><%= event_user.event.name %></p>
           </div>
 
-          <%= event_user.user.name %>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
         </li>
           <% end %>
