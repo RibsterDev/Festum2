@@ -26,6 +26,7 @@ text-decoration: none;
   width: 350px;
 }
 .filter{
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,6 +50,14 @@ text-decoration: none;
     color: white;
   }
 }
+
+.btn-create.filter.filter-active h2 {
+  color: white;
+}
+
+.filter h2:hover {
+    color: white;
+  }
 
 .btn-create:hover {
   border: 0px;
