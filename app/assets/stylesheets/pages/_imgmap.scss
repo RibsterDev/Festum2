@@ -2,23 +2,24 @@
 .mapboxgl-popup-content{
   p{
     color: #98887F;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 4px;
     margin-top: 4px;
+    margin-bottom: 4px;
   }
   h6{
-    font-size: 12px;
     margin-left: 4px;
-    margin-top: 4px;
+    color: #370000;
 
   }
-  .italic{
-    font-style: italic;
+  h5{
+    margin-left: 4px;
+    margin-top: 4px;
+    color:#9DADC3;
   }
-  .tit{
-    color: black;
-    font-style: bold;
-  }
+
+
+
   img{
     margin: 4px;
 
