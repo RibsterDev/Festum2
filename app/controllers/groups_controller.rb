@@ -1,26 +1,30 @@
 class GroupsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create, :index]
   before_action :find_group, only: [:show]
+  RESULT_ALL = Hash.new { |hash, key| hash[key] = 0 }
 
   def index
   end
 
   def show
-    @result_all.nil? ? @result_all = {} : @result_all
+    # probleme des votes = le hash @result_all qui doit contenir tout les resultats de votes pour chaque event en a qu'un seul
+    # RESULT_ALL.nil? ? RESULT_ALL = {} : RESULT_ALL
     @group = Group.find(params[:id])
     @user_groups_members = UserGroup.where(group: @group)
      # do |user_groups_member|
      #      user_groups_member.user
     @members = @user_groups_members.map(&:user)
     @group.event_users.each_with_index do |event_user, index|
-      @result_all [
-        "#{event_user.event_id}"] = "#{event_user.score}"
+      RESULT_ALL["#{event_user.event_id}"] = event_user.score
 
+
+      p RESULT_ALL
       # raise
-      p @result_all
     end
-    # p @result_all
-    @result_all = @result_all.max_by{|k,v| v}
+    # raise
+    # p RESULT_ALL
+    @result_all = RESULT_ALL.max_by{|k,v| v}
+    # raise
   end
 
   def new
