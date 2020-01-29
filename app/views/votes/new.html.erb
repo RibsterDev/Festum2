@@ -15,7 +15,11 @@
                <span><%= event_user.event.address %></span>
                <p><%= event_user.event.name %></p>
               </div>
+              <% if event_user.user.photo %>
               <%= image_tag (event_user.user.photo), class: "avatar-card" %>
+              <% else %>
+              <%= image_tag "festeam-logo.png", class: "avatar-card" %>
+              <% end %>
           </li>
         <% end %>
       </ul>

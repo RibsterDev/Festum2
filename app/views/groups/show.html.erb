@@ -17,10 +17,11 @@
         <div class="members">
           <p>Les membres du groupe</p>
           <% @members.each do |member| %>
+          <% if member.photo %>
             <%= image_tag (member.photo), class: "avatar-membre" %>
-           <!--  <%= image_tag (member.photo), class: "avatar-membre" %>
-            <%= image_tag (member.photo), class: "avatar-membre" %>
-            <%= image_tag (member.photo), class: "avatar-membre" %> -->
+            <% else %>
+            <%= image_tag "festeam-logo.png", class: "avatar-membre" %>
+            <% end %>
           <% end %>
         </div>
         </div>
@@ -114,8 +115,11 @@
            <span><%= event_user.event.address  %></span>
            <p><%= event_user.event.name %></p>
           </div>
-
+          <% if event_user.user.photo %>
           <%= image_tag (event_user.user.photo), class: "avatar-card" %>
+          <% else %>
+          <%= image_tag "festeam-logo.png", class: "avatar-card" %>
+          <% end %>
         </li>
           <% end %>
           <% link_to "Va voter !", new_group_vote_path(@group), class: "boutton-show" %>
