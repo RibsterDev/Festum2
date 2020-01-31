@@ -2,6 +2,8 @@ class EventUsersController < ApplicationController
   def new
     @event_user = EventUser.new
     @group = Group.find(params[:group_id])
+    cookies[:address] = @group.location
+    cookies[:date_start] = @group.date_event
     @events = EventHome.new(cookies).home
     @events = @events.geocoded #returns events with coordinates
 
