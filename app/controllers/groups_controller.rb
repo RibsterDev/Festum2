@@ -34,6 +34,8 @@ class GroupsController < ApplicationController
   def create
     cookies[:date_start] = params["group"]["date_event"]
     cookies[:address] = params["group"]["location"]
+    params[:date_start] = cookies[:date_start]
+    params[:address] = cookies[:address]
     # emails = []
     params["invit-email"].nil? ? emails = [] : emails = params["invit-email"]
     emails << params["group"]["email"]
