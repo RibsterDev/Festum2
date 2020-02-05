@@ -59,56 +59,56 @@ users1 = [user1, user2, user3, user4]
 users2 = [user1, user3]
 users3 = [user1, user2, user3]
 
-groupe1 = Group.create(
-  name: "Soiree du chill",
-  location: "Lyon",
-  date_event: "2019-11-27",
-  proposition_duration: 6,
-  vote_duration: 3
-)
+# groupe1 = Group.create(
+#   name: "Soiree du chill",
+#   location: "Lyon",
+#   date_event: "2019-11-27",
+#   proposition_duration: 6,
+#   vote_duration: 3
+# )
 
 
-groupe2 = Group.create(
-  name: "Soiree du group2",
-  location: "Lyon",
-  date_event: "2019-11-27",
-  proposition_duration: 6,
-  vote_duration: 3
-)
+# groupe2 = Group.create(
+#   name: "Soiree du group2",
+#   location: "Lyon",
+#   date_event: "2019-11-27",
+#   proposition_duration: 6,
+#   vote_duration: 3
+# )
 
-groupe3 = Group.create(
-  name: "Soiree du group3",
-  location: "Lyon",
-  date_event: "2019-11-27",
-  proposition_duration: 6,
-  vote_duration: 3
-)
+# groupe3 = Group.create(
+#   name: "Soiree du group3",
+#   location: "Lyon",
+#   date_event: "2019-11-27",
+#   proposition_duration: 6,
+#   vote_duration: 3
+# )
 
-UserGroup.create(users1.map {|u| {user: u, group: groupe1}})
-UserGroup.create(users2.map {|u| {user: u, group: groupe2}})
-UserGroup.create(users3.map {|u| {user: u, group: groupe3}})
+# UserGroup.create(users1.map {|u| {user: u, group: groupe1}})
+# UserGroup.create(users2.map {|u| {user: u, group: groupe2}})
+# UserGroup.create(users3.map {|u| {user: u, group: groupe3}})
 
-ap "group1: #{groupe1.id}"
-ap "group2: #{groupe2.id}"
-ap "group3: #{groupe3.id}"
+# ap "group1: #{groupe1.id}"
+# ap "group2: #{groupe2.id}"
+# ap "group3: #{groupe3.id}"
 
 
-#GROUP 1 all users proposed event.
+# #GROUP 1 all users proposed event.
 
-events_group1 = Event.all.sample(4)
-users1.each_with_index do |u, i|
-  EventUser.create!(event: events_group1[i], user: u, group: groupe1)
-end
+# events_group1 = Event.all.sample(4)
+# users1.each_with_index do |u, i|
+#   EventUser.create!(event: events_group1[i], user: u, group: groupe1)
+# end
 
-#GROUP 1 all users proposed event and user 3 has voted.
+# #GROUP 1 all users proposed event and user 3 has voted.
 
-events_group2 = Event.all.sample(2)
-users2.each_with_index do |u, i|
-  EventUser.create!(event: events_group2[i], user: u, group: groupe2)
-end
+# events_group2 = Event.all.sample(2)
+# users2.each_with_index do |u, i|
+#   EventUser.create!(event: events_group2[i], user: u, group: groupe2)
+# end
 
-Vote.create!(sort: 0, user: user3, event_user: EventUser.find_by(user: user1, group: groupe2))
-Vote.create!(sort: 1, user: user3, event_user: EventUser.find_by(user: user3, group: groupe2))
+# Vote.create!(sort: 0, user: user3, event_user: EventUser.find_by(user: user1, group: groupe2))
+# Vote.create!(sort: 1, user: user3, event_user: EventUser.find_by(user: user3, group: groupe2))
 
 
 
