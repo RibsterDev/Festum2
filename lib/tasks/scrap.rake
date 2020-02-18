@@ -7,3 +7,14 @@ namespace :scrap do
     end
   end
 end
+
+namespace :scrap do
+  task :le_carnet_des_bars => :environment do
+    events = LeCarnetDesBarsScraper.new
+    events.scrap
+
+    File.open("#{Rails.root}/db/eventsbars.json", 'wb') do |file|
+      file.write(events.to_json)
+    end
+  end
+end
