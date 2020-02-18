@@ -27,11 +27,11 @@ if ENV['SEED_EVENTS'] == 'true'
       Event.create!(event)
     end
   end
-    content = File.read("#{Rails.root}/db/eventsbars.json")
-        events = JSON.parse(content)
-    events.each do |event|
-      Event.create!(event)
-    end
+    # content = File.read("#{Rails.root}/db/eventsbars.json")
+    #     events = JSON.parse(content)
+    # events.each do |event|
+    #   Event.create!(event)
+    # end
 end
 
 
