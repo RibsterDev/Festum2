@@ -5,7 +5,8 @@ class EventUsersController < ApplicationController
     cookies[:address] = @group.location
     cookies[:date_start] = @group.date_event
     @events = EventHome.new(cookies).home
-    @events = @events.geocoded #returns events with coordinates
+
+    # @events = @events.geocoded #returns events with coordinates
 
     @markers = @events.map do |event|
       {
@@ -18,6 +19,7 @@ class EventUsersController < ApplicationController
         photo_url: event.photo_url,
         # infoWindow: render_to_string(partial: "info_window", locals: { event: event })
       }
+      # raise
     end
   end
 

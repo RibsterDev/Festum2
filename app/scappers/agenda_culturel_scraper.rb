@@ -19,6 +19,11 @@ class AgendaCulturelScraper
       m = m.to_i
       d = d.to_i
 
+      date_start = a.nil? || m.nil? || d.nil? ? Date.yesterday : Date.new(a, m, d)
+      # p a
+      # p m
+      # p d
+
       a_end = html_doc.search('.date-end .annee').text.empty? ? html_doc.search('.annee').text : html_doc.search('.date-end .annee').text
       m_end = html_doc.search('.date-end .mois').text.empty? ? francais_chiffre[html_doc.search('.mois').text] : francais_chiffre[html_doc.search('.date-end .mois').text]
       d_end = html_doc.search('.date-end .date').text.empty? ? html_doc.search('.date').text.first(2) : html_doc.search('.date-end .date').text.first(2)
@@ -45,10 +50,22 @@ class AgendaCulturelScraper
       end
 
       # p html_doc.search('.place').text.gsub(/\n/, "")
+       p name = clear_name
+       p date_start = date_start
+       p date_end = Date.new(a_end, m_end, d_end)
+       p address = "#{html_doc.search('.place').text.gsub(/\n/, "")}, #{@department}"
+       p category = catego[0]
+       p sub_category = html_doc.search('.place').text.gsub(/\n/, "")
+       p photo_url = html_doc.search('.img-polaroid').attribute('src').value
+       p lat = results[0]
+       p long = results[1]
+       p description =  html_doc.search('.description').text.gsub(/\n/, "")
+       p event_url = html_doc.search('.underline').attribute('href').nil? ? "no_url" : html_doc.search('.underline').attribute('href').value
+
 
       {
         name: clear_name,
-        date_start: Date.new(a, m, d),
+        date_start: date_start,
         date_end: Date.new(a_end, m_end, d_end),
         address: "#{html_doc.search('.place').text.gsub(/\n/, "")}, #{@department}",
         category: catego[0],
@@ -59,6 +76,7 @@ class AgendaCulturelScraper
         description:  html_doc.search('.description').text.gsub(/\n/, ""),
         event_url: html_doc.search('.underline').attribute('href').nil? ? "no_url" : html_doc.search('.underline').attribute('href').value
       }
+
     end
     data.uniq { |e| e[:name] }
   end

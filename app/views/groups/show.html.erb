@@ -10,7 +10,11 @@
                 <p>À <%= @group.location %> le</p>
               </div>
               <div class="date">
+                <% if @group.date_event.nil? %>
+                <%= @group.date_event = DateTime.now %>
+                <% else %>
                <p><%= @group.date_event.strftime("%d %B %Y") %></p>
+               <% end %>
               </div>
             </div>
         </div>
