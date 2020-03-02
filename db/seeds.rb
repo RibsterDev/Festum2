@@ -10,6 +10,8 @@ if ENV['SEED_EVENTS'] == 'true'
 
   Event.destroy_all
   # # departments = [01, 03, 07, 38, 42, 63, 69, 73, 74, 75, 92]
+
+
    departments1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   departments2 = (10..95).to_a
   departments = departments1 + departments2
@@ -27,11 +29,14 @@ if ENV['SEED_EVENTS'] == 'true'
       Event.create!(event)
     end
   end
-    # content = File.read("#{Rails.root}/db/eventsbars.json")
-    #     events = JSON.parse(content)
-    # events.each do |event|
-    #   Event.create!(event)
-    # end
+#   bar_json = [1, 2, 3, 4]
+# bar_json.each do |fichier|
+#     content = File.read("#{Rails.root}/db/eventsbars2#{fichier}.json")
+#         events = JSON.parse(content)
+#     events.each do |event|
+#       Event.create!(event)
+#     end
+#   end
 end
 
 

@@ -59,7 +59,7 @@ class AgendaCulturelScraper
        p photo_url = html_doc.search('.img-polaroid').attribute('src').value
        p lat = results[0]
        p long = results[1]
-       p description =  html_doc.search('.description').text.gsub(/\n/, "")
+       p description = html_doc.search('.description').text.gsub(/\n/, "")
        p event_url = html_doc.search('.underline').attribute('href').nil? ? "no_url" : html_doc.search('.underline').attribute('href').value
 
 
