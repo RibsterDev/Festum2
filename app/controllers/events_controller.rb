@@ -40,7 +40,7 @@ class EventsController < ApplicationController
     # cookies[:address] = Event.near(params[:address], 50)
     @events = EventHome.new(cookies).home
     true == false
-    @events = @events.geocoded #returns events with coordinates
+    # @events = @events.geocoded #returns events with coordinates
 
     @markers = @events.map do |event|
       {

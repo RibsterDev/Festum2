@@ -22,6 +22,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'nokogiri'
 gem 'awesome_print'
+gem 'rest-client'
 
 group :development do
   gem 'letter_opener', group: :development
