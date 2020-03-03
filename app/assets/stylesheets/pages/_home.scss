@@ -15,6 +15,9 @@
           font-weight: 600;
       }
 }
+.space-font {
+  font-family: $font;
+}
 
 .subtitle{
   margin-left: 150px;
@@ -100,13 +103,14 @@
 }
 
 
-@media(max-width: 910px) {
+@media(min-width: 1000px) {
 .title-home {
   font-family: $font;
   font-size: 54px;
   line-height: 80px;
   margin-bottom: 20px;
   margin-left: 150px;
+  margin-top: 20px;
   // color: #424e54;
   // background: rgb(3,169,244);
   background: linear-gradient(280deg, rgba(3,169,244,1) 0%, rgba(233,30,99,1) 100%);
