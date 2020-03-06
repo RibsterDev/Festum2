@@ -7,18 +7,18 @@
  *
  * If using `postcss-import`, use this import instead:
  *
- * @import "tailwindcss/preflight";
- */
 @tailwind preflight;
+ */
+/*@import "tailwindcss/preflight";*/
 
 /**
  * This injects any component classes registered by plugins.
  *
  * If using `postcss-import`, use this import instead:
  *
- * @import "tailwindcss/components";
- */
 @tailwind components;
+ */
+/*@import "tailwindcss/components";*/
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
@@ -32,9 +32,9 @@
  *
  * Or if using a preprocessor or `postcss-import`:
  *
- * @import "components/buttons";
- * @import "components/forms";
  */
+ /*@import "components/buttons";*/
+ /*@import "components/forms";*/
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
@@ -42,9 +42,9 @@
  *
  * If using `postcss-import`, use this import instead:
  *
- * @import "tailwindcss/utilities";
- */
 @tailwind utilities;
+ */
+/*@import "tailwindcss/utilities";*/
 
 /**
  * Here you would add any custom utilities you need that don't come out of the
@@ -57,6 +57,6 @@
  *
  * Or if using a preprocessor or `postcss-import`:
  *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
  */
+ /** @import "utilities/background-patterns";*/
+ /** @import "utilities/skew-transforms";*/

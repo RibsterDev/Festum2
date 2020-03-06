@@ -4,7 +4,7 @@
     <div class="infos-permanentes">
       <div class="permanentes">
         <div class="groupe-nom">
-          <h1><%= @group.name %></h1>
+          <h1 id="taille-nom-group"><%= @group.name %></h1>
             <div class="date-lieu">
               <div class="lieu">
                 <p>À <%= @group.location %> le</p>
@@ -43,7 +43,7 @@
           <div class="chiffre">
             <p>1</p>
           </div>
-        <p>Propose une activité !</p>
+        <p class="etat-mot">Propose une activité !</p>
         </div>
         <div class="etat2-no">
           <div class="chiffre">
@@ -63,7 +63,7 @@
           <div class="chiffre">
             <p>1</p>
           </div>
-        <p>Faites vos jeux !</p>
+        <p class="etat-mot">Propose une activité !</p>
         </div>
         <div class="etat2">
           <div class="chiffre">
@@ -83,7 +83,7 @@
           <div class="chiffre">
             <p>1</p>
           </div>
-        <p>Faites vos jeux !</p>
+        <p class="etat-mot">Propose une activité !</p>
         </div>
         <div class="etat2-no">
           <div class="chiffre">
@@ -142,7 +142,7 @@
             <%= link_to "Proposer une activité", new_group_event_user_path(@group), class: "boutton-show" %>
           </div>
           <div>
-            <%= image_tag 'undraw_add_content_d1tf2.svg', style:"height: 350px; width: 350px;" %>
+            <%= image_tag 'undraw_add_content_d1tf2.svg', class: "undraw_add_content" %>
           </div>
         </div>
         <% link_to "Proposer une activité", new_group_event_user_path(@group), class: "boutton-show" %>

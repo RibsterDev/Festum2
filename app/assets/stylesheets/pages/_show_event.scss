@@ -1,3 +1,4 @@
+@media(max-width: 300000px) {
 #event {
   display: flex;
 }
@@ -76,4 +77,88 @@
   font-family: $font;
   color: #868686;
   font-size: 16px;
+}
+}
+@media(max-width: 1000px) {
+  #event {
+  display: flex;
+  padding-left: 0px;
+}
+
+#nom-evenement {
+  color: white;
+  font-size: 32px;
+}
+
+#salle {
+  color: white;
+  font-size: 21px;
+}
+
+.text {
+  background-color: white;
+  margin-top: 70px;
+  padding: 15px;
+}
+
+.text h2 {
+  font-family: $font;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.text h4 {
+  font-family: $font;
+  color: #868686;
+  // text-decoration: underline;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.text p {
+  font-family: $font;
+  color: black;
+  margin-bottom: 90px;
+}
+
+.infos-global {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  padding: 20px 0px;
+
+  background-color: white;
+  position: sticky;
+  top: 140px;
+}
+
+.infos h2 {
+  font-family: $font;
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+.infos p {
+  margin-bottom: 10px;
+}
+
+.date p {
+  font-family: $font;
+}
+
+.infos a {
+  text-decoration: none;
+  color: #03A9F4;
+  transition: 0.3s;
+  font-size: 16px;
+  &:hover {
+    color: #E91E63;
+  }
+}
+
+.infos-p h5 {
+  font-family: $font;
+  color: #868686;
+  font-size: 16px;
+}
 }
