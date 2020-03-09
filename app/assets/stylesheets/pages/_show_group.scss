@@ -280,6 +280,7 @@
 @media(max-width: 1000px) {
 .members p {
   text-align: center;
+  font-size: 15px;
 }
 
 .groupe {
@@ -309,17 +310,17 @@
 
 .date-lieu {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   // justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   .date p {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .lieu p {
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -564,6 +565,6 @@ font-size: 3px;
   width: 120px;
 }
 #taille-nom-group {
-  font-size: 30px;
+  font-size: 20px;
 }
 }
