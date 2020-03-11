@@ -238,6 +238,7 @@
   .form {
     color: black;
     margin-bottom: 20px;
+    font-size: 0.8rem;
   }
 
   .form-control-label {
@@ -277,7 +278,7 @@
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
@@ -314,6 +315,7 @@
 .fa-plus-circle {
   font-size: 24px;
   color: gray;
+  margin-left: 276px;
 }
 
 ::placeholder {
@@ -351,6 +353,7 @@
 .responsive-container-group-right {
   // display: flex;
   justify-content:center;
+  background-size: cover;
   // margin: 0 auto;
   // padding: 78px;
   // flex-grow: 1;
